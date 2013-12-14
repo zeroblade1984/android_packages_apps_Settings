@@ -206,6 +206,7 @@
         <item>@string/shortcut_action_lastapp</item>
         <item>@string/shortcut_action_screenshot</item>
         <item>@string/shortcut_action_none</item>
+        <item>@string/shortcut_action_theme_switch</item>
     </string-array>
 
     <string-array name="shortcut_action_values" translatable="false">
@@ -222,6 +223,7 @@
         <item>**lastapp**</item>
         <item>**screenshot**</item>
         <item>**null**</item>
+        <item>**theme_switch**</item>
     </string-array>
 
     <string-array name="shortcut_action_screen_off_entries">
@@ -808,6 +810,7 @@
         <item>Middle</item>
         <item>Bottom</item>
     </string-array>
+    
     <string-array name="tab_position_entryValues">
         <item>0</item>
         <item>1</item>
@@ -819,10 +822,24 @@
         <item>Medium</item>
         <item>Large</item>
     </string-array>
+    
     <string-array name="tab_size_entryValues">
         <item>1.0</item>
         <item>1.5</item>
         <item>2.0</item>
+    </string-array>
+	
+	<!-- Themes -->
+    <string-array name="theme_auto_mode_entries">
+	<item>@string/theme_auto_mode_off</item>
+	<item>@string/theme_auto_mode_lightsensor</item>
+	<item>@string/theme_auto_mode_twilight</item>
+    </string-array>
+
+    <string-array name="theme_auto_mode_values" translatable="false">
+	<item>0</item>
+	<item>1</item>
+	<item>2</item>
     </string-array>
 
     <!-- Slim Actions For Shortcuts -->
