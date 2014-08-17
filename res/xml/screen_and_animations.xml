@@ -41,6 +41,12 @@
             android:summary="@string/aokp_animation_summary"
             android:fragment="com.android.settings.temasek.fragments.AnimationControls" />
 
+        <PreferenceScreen
+            android:key="overscroll_effects"
+            android:title="@string/ui_overscroll_title"
+            android:summary="@string/overscroll_weight_summary"
+            android:fragment="com.android.settings.temasek.OverscrollEffects" />
+
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="disable_torch_on_screen_off"
             android:title="@string/disable_torch_screen_off_title"
