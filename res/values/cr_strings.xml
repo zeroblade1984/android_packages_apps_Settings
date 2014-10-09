@@ -7,4 +7,8 @@
     <!-- Do NOT translate this -->
    <string name="temasek_version_default">Build V0</string>
 
+    <!-- Changelog -->
+    <string name="changelog_temasek_title">Changelog</string>
+    <string name="changelog_temasek_error">Unable to load changelog</string>
+
 </resources>

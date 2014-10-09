@@ -33,6 +33,11 @@
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
 
+        <!-- Changelog -->
+        <PreferenceScreen android:key="changelog"
+                android:title="@string/changelog_temasek_title"
+                android:fragment="com.android.settings.temasek.Changelog" />
+
         <!-- CyanogenMod Updates -->
         <PreferenceScreen android:key="cm_updates"
                 android:title="@string/cmupdate_settings_title"
