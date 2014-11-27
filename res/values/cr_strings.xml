@@ -936,4 +936,9 @@
     <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
     <string name="theme_reset_message">Reset theme state to default?</string>
 
+    <!--Power menu -->
+    <string name="power_category">Power button</string>
+    <string name="lockscreen_enable_power_menu_title">Enable on lock screen</string>
+    <string name="actions_category">Actions</string>
+
 </resources>

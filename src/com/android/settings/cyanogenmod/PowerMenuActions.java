@@ -27,6 +27,7 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -39,6 +40,8 @@ import com.android.internal.util.cm.PowerMenuConstants;
 import static com.android.internal.util.cm.PowerMenuConstants.*;
 import com.android.settings.widget.NumberPickerPreference;
 
+import com.android.internal.widget.LockPatternUtils;
+
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +50,11 @@ public class PowerMenuActions extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
     final static String TAG = "PowerMenuActions";
 
+    private static final String ACTION_CATEGORY = "action_category";
+    private static final String POWER_MENU_LOCKSCREEN = "lockscreen_enable_power_menu";
     private static final String SCREENSHOT_DELAY = "screenshot_delay";
+
+    private SystemSettingSwitchPreference mPowerMenuLockscreen;
 
     private CheckBoxPreference mRebootPref;
     private CheckBoxPreference mScreenshotPref;
@@ -79,10 +86,20 @@ public class PowerMenuActions extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.power_menu_settings);
         mContext = getActivity().getApplicationContext();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mPrefSet = getPreferenceScreen();
 
         mCr = getActivity().getContentResolver();
+
+        final PreferenceCategory actionCategory =
+                (PreferenceCategory) prefScreen.findPreference(ACTION_CATEGORY);
+
+        final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
+        mPowerMenuLockscreen = (SystemSettingSwitchPreference) findPreference(POWER_MENU_LOCKSCREEN);
+        if (!lockPatternUtils.isSecure()) {
+            prefScreen.removePreference(mPowerMenuLockscreen);
+        }
 
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
@@ -133,6 +150,10 @@ public class PowerMenuActions extends SettingsPreferenceFragment
     @Override
     public void onStart() {
         super.onStart();
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final PreferenceCategory actionCategory =
+                (PreferenceCategory) prefScreen.findPreference(ACTION_CATEGORY);
 
         if (mRebootPref != null) {
             mRebootPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_REBOOT));
