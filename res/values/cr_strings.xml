@@ -941,4 +941,8 @@
     <string name="lockscreen_enable_power_menu_title">Enable on lock screen</string>
     <string name="actions_category">Actions</string>
 
+    <!-- Block QS on secure lockscreen -->
+    <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
+    <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen.</string>
+
 </resources>
