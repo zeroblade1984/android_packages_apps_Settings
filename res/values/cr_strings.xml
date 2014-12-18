@@ -26,7 +26,7 @@
     <string name="dialog_restart">Restart</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="reset_message">Reset all entries to default?</string>
-    <string name="extras_temasek_settings">temasek extras</string>
+    <string name="extras_temasek_settings">Temasek Extras</string>
 
     <!-- Changelog -->
     <string name="changelog_temasek_title">Changelog</string>
