@@ -19,6 +19,12 @@
     android:title="@string/temasek_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- App circle bar -->
+    <PreferenceScreen
+         android:key="app_circle_bar"
+         android:fragment="com.android.settings.temasek.AppCircleBar"
+         android:title="@string/app_circle_bar_title"/>
+
     <!-- Display -->
     <PreferenceScreen
          android:key="display_settings"
