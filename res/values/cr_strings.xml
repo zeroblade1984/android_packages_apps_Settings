@@ -25,4 +25,7 @@
     <!-- SuperSU -->
     <string name="supersu_title">SuperSU</string>
 
+    <!-- OTA update -->
+    <string name="ota_title">OTA update</string>
+
 </resources>
