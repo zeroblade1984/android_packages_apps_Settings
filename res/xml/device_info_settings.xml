@@ -133,12 +133,6 @@
                 android:title="@string/model_name"
                 android:summary="@string/device_info_default"/>
 
-        <!-- Mod version -->
-        <Preference android:key="mod_version"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/mod_version"
-                android:summary="@string/mod_version_default" />
-
         <!-- Device firmware version -->
         <Preference android:key="firmware_version" 
                 style="?android:preferenceInformationStyle"
@@ -163,6 +157,18 @@
                 android:title="@string/kernel_version"
                 android:summary="@string/device_info_default"/>
 
+        <!-- Mod version -->
+        <Preference android:key="mod_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/mod_version"
+                android:summary="@string/mod_version_default" />
+
+	<!-- Temasek version -->
+        <Preference android:key="temasek_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/temasek_version_title"
+                android:summary="@string/temasek_version_default"/>
+
         <!-- Build date -->
         <Preference android:key="build_date"
                 style="?android:preferenceInformationStyle"
@@ -174,12 +180,6 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/build_number"
                 android:summary="@string/device_info_default"/>
-
-	<!-- Temasek version -->
-        <Preference android:key="temasek_version"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/temasek_version_title"
-                android:summary="@string/temasek_version_default"/>
 
         <!-- SELinux status information -->
         <Preference android:key="selinux_status"
