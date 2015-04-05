@@ -53,12 +53,12 @@ import android.widget.TextView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.android.internal.util.crdroid.ActionConfig;
-import com.android.internal.util.crdroid.ActionConstants;
-import com.android.internal.util.crdroid.ActionHelper;
-import com.android.internal.util.crdroid.ImageHelper;
-import com.android.internal.util.crdroid.DeviceUtils;
-import com.android.internal.util.crdroid.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.temasek.ActionConfig;
+import com.android.internal.util.temasek.ActionConstants;
+import com.android.internal.util.temasek.ActionHelper;
+import com.android.internal.util.temasek.ImageHelper;
+import com.android.internal.util.temasek.DeviceUtils;
+import com.android.internal.util.temasek.DeviceUtils.FilteredDeviceFeaturesArray;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
