@@ -7,6 +7,9 @@
     <!-- Do NOT translate this -->
    <string name="temasek_version_default">Build V0</string>
 
+    <!-- temasek spare parts -->
+    <string name="temasek_settings_title">Temasek spare parts</string>
+
     <!-- General strings -->
     <string name="attention">Attention</string>
     <string name="reset">Reset</string>
