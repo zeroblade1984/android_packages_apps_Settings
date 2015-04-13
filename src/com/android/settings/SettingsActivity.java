@@ -118,6 +118,7 @@ import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.temasek.AmbientSettings;
+import com.android.settings.temasek.NavBarSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.voice.VoiceInputSettings;
@@ -334,7 +335,8 @@ public class SettingsActivity extends Activity
             QSTiles.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
             AmbientSettings.class.getName(),
-            DisplayRotation.class.getName()
+            DisplayRotation.class.getName(),
+            NavBarSettings.class.getName()
     };
 
 
