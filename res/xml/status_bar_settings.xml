@@ -96,8 +96,7 @@
         <PreferenceScreen
             android:key="battery_bar"
             android:fragment="com.android.settings.temasek.BatteryBar"
-            android:title="@string/battery_bar"
-            android:icon="@drawable/ic_settings_battery" />
+            android:title="@string/battery_bar" />
 
         <PreferenceScreen
             android:key="carrier_options"
