@@ -14,6 +14,7 @@
     <string name="screen_and_animations_title">Screen and animations</string>
     <string name="display_settings">Display</string>
     <string name="display_settings_title">Display settings</string>
+    <string name="general_options_title">General</string>
 
     <!-- General strings -->
     <string name="attention">Attention</string>
@@ -813,6 +814,7 @@
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
 
     <!-- Status bar - Clock -->
+    <string name="status_bar_clock_category">Clock</string>
     <string name="clock_color_title">Color</string>
     <string name="status_bar_clock_style_reset">Reset color</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
