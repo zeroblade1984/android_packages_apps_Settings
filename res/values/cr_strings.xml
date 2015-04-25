@@ -763,13 +763,6 @@
     <string name="shake_pulse_mode">Shake and pulse</string>
     <string name="pulse_only_mode">Pulse (default)</string>
 
-    <!-- Overflow button -->
-    <string name="keys_overflow_title">Overflow button</string>
-    <string name="keys_overflow_toast">The action overflow button may not be visible or hidden until apps are restarted</string>
-    <string name="overflow_auto_detect">Auto detect</string>
-    <string name="overflow_show">Show</string>
-    <string name="overflow_hide">Hide</string>
-
     <!-- User Selectable Tether Networks-->
     <string name="tether_usb_network_summary">Press to change USB Network</string>
     <string name="tether_usb_network_text">USB Tether Network</string>
