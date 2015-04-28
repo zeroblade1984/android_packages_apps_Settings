@@ -179,7 +179,7 @@
         <!-- Viper4Android -->
         <dashboard-tile
             android:id="@+id/viper_settings"
-            android:icon="@drawable/ic_settings_viper"
+            android:icon="@drawable/ic_settings_system"
             android:title="@string/viper_title">
             <intent
                 android:action="android.intent.action.MAIN"
@@ -261,7 +261,7 @@
                 android:id="@+id/notification_drawer_settings"
                 android:title="@string/notification_drawer_title"
                 android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
-                android:icon="@drawable/ic_settings_notification_drawer"
+                android:icon="@drawable/ic_settings_notifications"
                 settings:advanced="true"
                 />
 
@@ -401,7 +401,7 @@
         <!-- OTA Update -->
         <dashboard-tile
             android:id="@+id/ota_settings"
-            android:icon="@drawable/ic_settings_viper"
+            android:icon="@drawable/ic_settings_system"
             android:title="@string/ota_title">
             <intent
                 android:action="android.intent.action.MAIN"
