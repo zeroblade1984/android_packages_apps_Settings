@@ -14,6 +14,8 @@ public class TemasekSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "TemasekSettings";
 
+    private static final String KEY_HEADS_UP_SETTINGS = "heads_up_enabled";
+
     private Preference mHeadsUp;
 
     @Override
@@ -21,14 +23,15 @@ public class TemasekSettings extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.temasek_settings);
 
-        mHeadsUp = findPreference(Settings.System.HEADS_UP_NOTIFICATION);
+        mHeadsUp = findPreference(KEY_HEADS_UP_SETTINGS);
     }
 
     @Override
     public void onResume() {
         super.onResume();
+
         boolean headsUpEnabled = Settings.System.getInt(
-                getContentResolver(), Settings.System.HEADS_UP_NOTIFICATION,1) != 0;
+                getContentResolver(), Settings.System.HEADS_UP_USER_ENABLED, Settings.System.HEADS_UP_USER_ON) != 0;
         mHeadsUp.setSummary(headsUpEnabled
                 ? R.string.summary_heads_up_enabled : R.string.summary_heads_up_disabled);
     }
