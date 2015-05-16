@@ -775,16 +775,16 @@
     <string name="show_unac_and_overcounted_stats_summary">Показывать данные статистики батареи, которые не относятся ни к чему конкретному и обычно попадают в прочее</string>
 
     <!-- Battery Bar -->
-    <string name="battery_icon">Стиль иконки </string>
-    <string name="battery_not_title">Battery icon in notifications</string>
-    <string name="battery_bar_title">Полоса батареи</string>
-    <string name="battery_bar">Расположение полосы батареи</string>
+    <string name="battery_icon">Стиль иконки батареи</string>
+    <string name="battery_not_title">Иконка батареи в уведомлениях</string>
+    <string name="battery_not_summary">Иконка батареи появится на месте кнопки \"Очистить всё\"</string>
+    <string name="battery_bar_location">Расположение полосы батареи</string>
     <string name="battery_bar_color">Цвет полосы батареи</string>
-    <string name="battery_bar_cat">Стиль полосы батареи</string>
-    <string name="battery_bar_style_title">Выравнивание полосы батареи</string>
+    <string name="battery_bar">Настройки полосы батареи</string>
+    <string name="battery_bar_style_title">Стиль полосы батареи</string>
     <string name="battery_bar_thickness_title">Толщина полосы батареи</string>
     <string name="battery_bar_animate_title">Анимация зарядки</string>
-    <string name="battery_bar_animate_summary">Изменение анимации зарядки может привести к негативным впечатлениям от использования. Включайте только по собственному усмотрению.</string>
+    <string name="battery_bar_animate_summary">Изменение анимации зарядки может привести к негативным впечатлениям от использования. Включайте на своё усмотрение.</string>
 
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_category">Часы и дата</string>
@@ -800,7 +800,7 @@
     <string name="status_bar_show_clock_second_title">Показывать секунды</string>
 
     <!-- Pie control -->
-    <string name="pie_control_title">Pie control</string>
+    <string name="pie_control_title">Pie-навигация</string>
     <string name="pie_control_summary">Включить \"Pie-навигацию\" для облегчения использования \"Расширенного рабочего стола\"</string>
     <string name="pie_control_size">Размер Pie</string>
     <string name="pie_control_trigger_positions">Параметры переключения</string>
@@ -996,5 +996,8 @@
     <string name="nfc_polling_mode_screen_off">Включенный экран</string>
     <string name="nfc_polling_mode_screen_locked">Включенный заблокированный экран</string>
     <string name="nfc_polling_mode_screen_unlocked">Включенный разблокированный экран (по умолчанию)</string>
+
+    <!-- Notification drawer clear all icon -->
+    <string name="notification_drawer_clear_all_icon_color_title">Цвет кнопки \"Очистить всё\"</string>
 
 </resources>
