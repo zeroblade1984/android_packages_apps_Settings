@@ -113,7 +113,6 @@
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Удаление последнего %1$s отключит весь второй уровень pie.</string>
     <string name="shortcut_action_theme_switch">Переключатель тем</string>
 
-
     <string name="shortcuts_applications">Приложения</string>
     <string name="shortcuts_select_custom_app_title">Выбрать собственное приложение</string>
     <string name="shortcuts_icon_picker_type">Выбрать тип значка:</string>
@@ -382,8 +381,10 @@
     <!-- Slim lockscreen shortcuts -->
     <string name="lockscreen_shortcuts_title">Ярлыки посередине экрана</string>
     <string name="lockscreen_shortcuts_summary">Посмотреть или изменить ярлыки посередине экрана блокировки</string>
-    <string name="lockscreen_shorcuts_longpress_title">Долгое нажатие на ярлык</string>
-    <string name="lockscreen_shorcuts_longpress_summary">Открывать выбранные ярлыки экрана блокировки по долгому нажатию</string>
+    <string name="lockscreen_shorcuts_launch_type_title">Тип нажатия на ярлык</string>
+    <string name="lockscreen_shortcuts_single_tap">Нажатие</string>
+    <string name="lockscreen_shortcuts_double_tap">Двойное нажатие</string>
+    <string name="lockscreen_shortcuts_longpress">Долгое нажатие</string>
 
      <!-- QuickSettings: Smart Pulldown -->
     <string name="smart_pulldown_title">\"Умная\" панель уведомлений</string>
@@ -589,6 +590,10 @@
     <string name="heads_up_time_out_8sec">8 секунд</string>
     <string name="heads_up_time_out_10sec">10 секунд</string>
     <string name="heads_up_time_out_never">Никогда</string>
+    <string name="heads_up_bg_color_title">Цвет фона</string>
+    <string name="heads_up_text_color_title">Цвет текста</string>
+    <string name="heads_up_colors_title">Пользовательские цвета</string>
+    <string name="heads_up_colors_summary">Настройки цвета всплывающих уведомлений</string>
 
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Принудительное обнаружение сервера</string>
@@ -759,7 +764,7 @@
     <string name="battery_saver_style_reset_message">Сбросить цвет предупреждения о энергосбережении?</string>
 
     <!-- Alarms and no interrupt zen mode -->
-    <string name="zen_mode_none_category">Без прерываний</string>
+    <string name="zen_mode_none_category">Не беспокоить</string>
     <string name="zen_mode_alarms">Разрешить будильник</string>
 
     <!-- Text for forcing expanded notifications -->
@@ -918,7 +923,7 @@
 
     <!-- Block QS on secure lock screen -->
     <string name="block_on_secure_keyguard_title">Отключить на экране блокировки</string>
-    <string name="block_on_secure_keyguard_summary">Отключить быстрые настройки на экране блокировки.</string>
+    <string name="block_on_secure_keyguard_summary">Отключить быстрые настройки на защищённом экране блокировки.</string>
 
     <!-- Instant reboot -->
     <string name="advanced_reboot_oneclick">Нажатие для перезагрузки</string>
