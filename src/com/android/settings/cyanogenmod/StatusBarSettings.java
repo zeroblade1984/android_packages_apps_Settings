@@ -47,7 +47,6 @@ import android.widget.EditText;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.util.Helpers;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
@@ -75,7 +74,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String KEY_CARRIERLABEL_PREFERENCE = "carrier_options";
     private static final String KEY_STATUS_BAR_NETWORK_ARROWS= "status_bar_show_network_activity";
     private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker_enabled";
-    private static final String SHOW_FOURG = "show_fourg";
 
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
@@ -98,7 +96,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private PreferenceScreen mCarrierLabel;
     private SwitchPreference mNetworkArrows;
     private SwitchPreference mTicker;
-    private SwitchPreference mShowFourG;
 
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
@@ -233,15 +230,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                 .getContentResolver(), Settings.System.STATUSBAR_CLOCK_FONT_STYLE,
                 4)));
         mFontStyle.setSummary(mFontStyle.getEntry());
-
-        //  4G LTE switch
-        mShowFourG = (SwitchPreference) prefSet.findPreference(SHOW_FOURG);
-        if (Utils.isWifiOnly(getActivity())) {
-            prefSet.removePreference(mShowFourG);
-        } else {
-            mShowFourG.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.SHOW_FOURG, 0) == 1));
-        }
 
         setHasOptionsMenu(true);
         mCheckPreferences = true;
@@ -383,12 +371,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_FONT_STYLE, val);
             mFontStyle.setSummary(mFontStyle.getEntries()[index]);
-            return true;
-        } else if  (preference == mShowFourG) {
-            boolean enabled = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SHOW_FOURG, enabled ? 1:0);
-            Helpers.restartSystemUI();
             return true;
         }
         return false;
