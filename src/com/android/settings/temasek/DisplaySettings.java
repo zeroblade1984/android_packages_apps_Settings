@@ -19,8 +19,10 @@ import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.IActivityManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -31,9 +33,15 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.text.Editable;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
+import android.view.IWindowManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.WindowManagerGlobal;
+import android.view.WindowManagerImpl;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -60,20 +68,42 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         int newDensityValue;
 
         mLcdDensityPreference = (ListPreference) findPreference(KEY_LCD_DENSITY);
-        int defaultDensity = DisplayMetrics.DENSITY_DEVICE;
+        int defaultDensity = getDefaultDensity();
         String[] densityEntries = new String[9];
         for (int idx = 0; idx < 8; ++idx) {
             int pct = (75 + idx*5);
             densityEntries[idx] = Integer.toString(defaultDensity * pct / 100);
         }
         densityEntries[8] = getString(R.string.custom_density);
-        int currentDensity = DisplayMetrics.DENSITY_CURRENT;
+        int currentDensity = getDefaultDensity();
         mLcdDensityPreference.setEntries(densityEntries);
         mLcdDensityPreference.setEntryValues(densityEntries);
         mLcdDensityPreference.setValue(String.valueOf(currentDensity));
         mLcdDensityPreference.setOnPreferenceChangeListener(this);
         updateLcdDensityPreferenceDescription(currentDensity);
 
+    }
+
+    private int getDefaultDensity() {
+        IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
+                Context.WINDOW_SERVICE));
+        try {
+            return wm.getInitialDisplayDensity(Display.DEFAULT_DISPLAY);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return DisplayMetrics.DENSITY_DEVICE;
+    }
+
+    private int getCurrentDensity() {
+        IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
+                Context.WINDOW_SERVICE));
+        try {
+            return wm.getBaseDisplayDensity(Display.DEFAULT_DISPLAY);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return DisplayMetrics.DENSITY_DEVICE;
     }
 
     @Override
@@ -88,9 +118,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             if (strValue.equals(getResources().getString(R.string.custom_density))) {
                 showDialog(DIALOG_DENSITY);
             } else {
-                int value = Integer.parseInt((String) objValue);
-                writeLcdDensityPreference(value);
-                updateLcdDensityPreferenceDescription(value);
+                try {
+                    int value = Integer.parseInt((String) objValue);
+                    writeLcdDensityPreference(preference.getContext(), value);
+                    updateLcdDensityPreferenceDescription(value);
+            } catch (NumberFormatException e) {
+                Log.e(TAG, "could not persist display density setting", e);
+            }
             }
         }
         return false;
@@ -109,22 +143,45 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         preference.setSummary(summary);
     }
 
-    public void writeLcdDensityPreference(int value) {
-        try {
-            SystemProperties.set("persist.sys.lcd_density", Integer.toString(value));
-        }
-        catch (Exception e) {
-            Log.w(TAG, "Unable to save LCD density");
-        }
-        try {
-            final IActivityManager am = ActivityManagerNative.asInterface(ServiceManager.checkService("activity"));
-            if (am != null) {
-                am.restart();
+    private void writeLcdDensityPreference(final Context context, final int density) {
+        final IActivityManager am = ActivityManagerNative.asInterface(
+                ServiceManager.checkService("activity"));
+        final IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
+                Context.WINDOW_SERVICE));
+        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected void onPreExecute() {
+                ProgressDialog dialog = new ProgressDialog(context);
+                dialog.setMessage(getResources().getString(R.string.restarting_ui));
+                dialog.setCancelable(false);
+                dialog.setIndeterminate(true);
+                dialog.show();
             }
-        }
-        catch (RemoteException e) {
-            Log.e(TAG, "Failed to restart");
-        }
+            @Override
+            protected Void doInBackground(Void... params) {
+                // Give the user a second to see the dialog
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    // Ignore
+                }
+
+                try {
+                    wm.setForcedDisplayDensity(Display.DEFAULT_DISPLAY, density);
+                } catch (RemoteException e) {
+                    Log.e(TAG, "Failed to set density to " + density, e);
+                }
+
+                // Restart the UI
+                try {
+                    am.restart();
+                } catch (RemoteException e) {
+                    Log.e(TAG, "Failed to restart");
+                }
+                return null;
+            }
+        };
+        task.execute();
     }
 
     public Dialog onCreateDialog(int dialogId) {
