@@ -22,8 +22,6 @@
     <string name="enabled">Включено</string>
     <string name="disabled">Отключено</string>
     <string name="ok">Ок</string>
-    <string name="dialog_restart">Перезагрузить</string>
-    <string name="dialog_cancel">Отмена</string>
     <string name="reset_message">Сбросить все параметры на значения по умолчанию?</string>
     <string name="extras_temasek_settings">Дополнения от Temasek</string>
     <string name="reset_default_message">Сбросить по умолчанию</string>
@@ -75,6 +73,10 @@
     <string name="shortcut_action_back">Назад</string>
     <string name="shortcut_action_kill">Закрыть приложение</string>
     <string name="shortcut_action_lastapp">Последнее приложение</string>
+    <string name="shortcut_action_menu_big">Меню (большое)</string>
+    <string name="shortcut_action_notifications">Уведомления</string>
+    <string name="shortcut_action_qs">Быстрые настройки</string>
+    <string name="shortcut_action_torch">Фонарик</string>
     <string name="shortcut_action_screenshot">Скриншот</string>
     <string name="shortcut_action_menu">Меню</string>
     <string name="shortcut_action_ime">Выбор способа ввода</string>
@@ -305,23 +307,6 @@
     <string name="recents_clear_all_dismiss_all_summary">Выберите, нужно ли очищать все задачи или игнорировать текущие</string>
     <string name="recents_show_membar_title">Строка использования ОЗУ</string>
     <string name="recents_show_membar_summary">Показывать строку с текущим использованием ОЗУ устройства</string>
-
-    <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking LCD density -->
-    <!-- temasek display settings screen, setting option name to change LCD density -->
-    <string name="lcd_density">Плотность экрана</string>
-    <string name="dialog_title_lcd_density">Плотность экрана</string>
-    <!-- temasek display settings screen, setting option summary to change LCD density -->
-    <string name="lcd_density_summary">xxx DPI</string>
-    <string name="custom_density_title">Задайте своё значение</string>
-    <string name="custom_density_summary">При любых проблемах с совместимостью Play Store, убедитесь, что у вас установлена Multi-DPI версия Play Store</string>
-    <string name="custom_density_summary_invalid">\"НЕДОПУСТИМОЕ ЗНАЧЕНИЕ DPI!\"</string>
-    <string name="custom_density">Пользовательская</string>
-    <string name="set_custom_density_title">Задать своё значение DPI</string>
-    <string name="set_custom_density_set">Задать</string>
-    <string name="custom_density_dialog_title">ВНИМАНИЕ!</string>
-    <string name="custom_density_dialog_summary">Изменение стандартной плотности экрана может приводить к некорректной работе некоторых приложений, и/или в Play Store будет писать, что некоторые программы несовместимы с вашим устройством.</string>
-    <string name="dpi">DPI</string>
-    <string name="custom_density_warning">Перезагрузить систему и применить выбранное значение DPI?</string>
 
     <!-- Toast animations -->
     <string name="toast_animation_title">Анимация всплывающих уведомлений</string>
@@ -579,6 +564,8 @@
     <string name="heads_up_dismiss_on_remove_title">Поведение при свайпе</string>
     <string name="heads_up_dismiss_on_remove_summary_enabled">Скрывать уведомление вместо удаления</string>
     <string name="heads_up_dismiss_on_remove_summary_disabled">Скрывать и удалять уведомление</string>
+    <string name="show_headsup_button_title">Показывать кнопку быстрого доступа</string>
+    <string name="show_headsup_button_summary">Показывать кнопку быстрого доступа в заголовке строки состояния</string>
 
     <!-- Heads up timeout -->
     <string name="heads_up_time_out_title">Длительность</string>
@@ -590,10 +577,17 @@
     <string name="heads_up_time_out_8sec">8 секунд</string>
     <string name="heads_up_time_out_10sec">10 секунд</string>
     <string name="heads_up_time_out_never">Никогда</string>
-    <string name="heads_up_bg_color_title">Цвет фона</string>
-    <string name="heads_up_text_color_title">Цвет текста</string>
-    <string name="heads_up_colors_title">Пользовательские цвета</string>
-    <string name="heads_up_colors_summary">Настройки цвета всплывающих уведомлений</string>
+    
+    <!-- Heads up snooze -->
+    <string name="heads_up_snooze_title">Длительность \"отложить\"</string>
+    <string name="heads_up_snooze_summary">При нажатии кнопки \"Отложить\" \"Всплывающие уведомления\" будут приостановлены на <xliff:g id="number">%d</xliff:g> минут.</string>
+    <string name="heads_up_snooze_disabled_summary">Функция \"Отложить\" отключена.</string>
+    <string name="heads_up_snooze_1min">1 минута</string>
+    <string name="heads_up_snooze_3min">3 минуты</string>
+    <string name="heads_up_snooze_5min">5 минут</string>
+    <string name="heads_up_snooze_10min">10 минут</string>
+    <string name="heads_up_snooze_15min">15 минут</string>
+    <string name="heads_up_snooze_20min">20 минут</string>
 
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Принудительное обнаружение сервера</string>
@@ -672,6 +666,10 @@
     <!-- Long press on lock screen lock icon to sleep -->
     <string name="longpress_lock_icon_to_sleep_title">Долгое нажатие на иконку блокировки для сна</string>
     <string name="longpress_lock_icon_to_sleep_summary">эта опция не будет работать, если включен защищенный режим</string>
+    
+    <!-- Double tap gesture anywhere on the lock screen put device to sleep -->
+    <string name="double_tap_sleep_anywhere_title">Двойное нажатие для сна везде</string>
+    <string name="double_tap_sleep_anywhere_summary">Двойное нажатие для сна в любом месте экрана блокировки</string>
 
     <!-- Quick Settings -->
     <string name="qs_screenshot_tile">Скриншот</string>
@@ -1004,5 +1002,72 @@
 
     <!-- Notification drawer clear all icon -->
     <string name="notification_drawer_clear_all_icon_color_title">Цвет кнопки \"Очистить всё\"</string>
+    
+    <!-- Status bar expanded header: Custom background color -->
+    <string name="background_header_title">Цвет фона заголовка</string>
+    
+    <!-- Task Manager -->
+    <string name="enable_task_manager_title">Диспетчер задач</string>
+    <string name="enable_task_manager_summary">Кнопка диспетчера задач в расширенной области панели уведомлений.</string>
+
+    <!-- Status bar power menu -->
+    <string name="status_bar_power_menu_title">Кнопка питания в расширенной строке состояния</string>
+    <string name="status_bar_power_menu_dialog_title">Задать действия при обычном и долгом нажатиях</string>
+    <string name="status_bar_power_menu_off">Отключено</string>
+    <string name="status_bar_power_menu_action_screen_off">Выкл. экрана - Меню кнопки питания</string>
+    <string name="status_bar_power_menu_action_dialog">Меню кнопки питания - Выкл. экрана</string>
+
+    <!-- Disable torch when screen goes off -->
+    <string name="disable_torch_screen_off_title">Отключения фонарика при выключенном экране</string>
+    <string name="disable_torch_screen_off_delay_title">Задержка</string>
+    <string name="torch_screen_off_one_second">1 секунда</string>
+    <string name="torch_screen_off_ten_second">10 секунд (по умолчанию)</string>
+    <string name="torch_screen_off_thirty_second">30 секунд</string>
+    <string name="torch_screen_off_one_minute">1 минута</string>
+    <string name="torch_screen_off_five_minutes">5 минут</string>
+    <string name="torch_screen_off_ten_minutes">10 минут</string>
+    
+    <!-- Custom Over scroll Settings -->
+    <string name="ui_overscroll_title">Настройка эффекта в конце прокрутки</string>
+    <string name="overscroll_glow_title">Цвет эффекта</string>
+    <string name="edge_effect_title">Эффект свечения края</string>
+    <string name="bounce_effect_title">Отскакивать</string>
+    <string name="none_effect_title">Ничего</string>
+    <string name="extra_heavy_title">Очень сильно</string>
+    <string name="heavy_title">Сильно</string>
+    <string name="medium_title">Средне</string>
+    <string name="light_title">Слабо</string>
+    <string name="extra_light_title">Очень слабо</string>
+    <string name="overscroll_title">Эффекта в конце прокрутки</string>
+    <string name="overscroll_summary">Выберите эффет при достижения курсором конца списка</string>
+    <string name="overscroll_weight_title">Сила эффекта</string>
+    <string name="overscroll_weight_summary">Установите силу данного эффека</string>
+
+    <!-- Recent panel -->
+    <string name="recent_panel_category">\"Недавние приложения\" от Slim</string>
+    <string name="recent_panel_scale_title">Размер</string>
+    <string name="recent_panel_scale_summary">Размер панели недавних приложений в процентах.</string>
+    <string name="recent_panel_100">100% (по умолчанию)</string>
+    <string name="recent_panel_85">85%</string>
+    <string name="recent_panel_70">70%</string>
+    <string name="recent_panel_expanded_mode_title">Расширенный режим</string>
+    <string name="recent_panel_expanded_mode_summary">Расширенный режим просмотра недавних приложений</string>
+    <string name="recent_panel_expanded_mode_auto">Авто (по умолчанию)</string>
+    <string name="recent_panel_expanded_mode_always">Всегда</string>
+    <string name="recent_panel_expanded_mode_never">Никогда</string>
+    <string name="recent_panel_show_topmost_title">Показывать последнее приложение</string>
+    <string name="recent_panel_show_topmost_summary">Показывать последнее приложение в списке недавних</string>
+    <string name="trds_default_color">TRDS по умолчанию</string>
+    <string name="recent_panel_bg_color_title">Цвет фона панели</string>
+    <string name="recent_card_bg_color_title">Цвет фона карточки</string>
+    <string name="recent_card_text_color_title">Цвет текста карточки</string>
+    
+    <!-- Custom Recents Toggle -->
+    <string name="custom_recent_title">Включить \"Недавние приложения\" от Slim</string>
+    <string name="custom_recent_summary">Переключение версии \"Недавних приложений\" на Slim или на Stock</string>
+
+    <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">Показывать у левого края</string>
+    <string name="recent_panel_lefty_mode_summary">Показывать панель недавних приложений у левого края</string>
 
 </resources>
