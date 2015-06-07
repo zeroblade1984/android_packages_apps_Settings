@@ -685,7 +685,7 @@
     <string name="qs_usb_tether_tile">USB Tethering</string>
     <string name="qs_navbar_tile">Navigation Bar</string>
     <string name="qs_ambient_display_tile">Ambient display</string>
-    <string name="qs_tile_headsup">Heads up</string>
+    <string name="qs_tile_heads_up">Heads up</string>
 
     <!-- Smart cover -->
     <string name="smart_cover_title">Smart cover</string>
