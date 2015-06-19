@@ -209,6 +209,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_trds_on";
                 stringId = R.string.qs_tile_trds;
                 break;
+            case QSConstants.TILE_SYSTEMUI_RESTART:
+                resourceName = "ic_qs_reboot";
+                stringId = R.string.qs_systemui_restart_tile;
+                break;
             default:
                 return null;
         }
