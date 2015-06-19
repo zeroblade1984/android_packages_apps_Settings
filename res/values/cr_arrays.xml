@@ -881,19 +881,6 @@
         <item>2</item>
     </string-array>
 
-    <!--  Status bar power menu -->
-    <string-array name="status_bar_power_menu_entries" translatable="false">
-        <item>@string/status_bar_power_menu_off</item>
-        <item>@string/status_bar_power_menu_action_screen_off</item>
-        <item>@string/status_bar_power_menu_action_dialog</item>
-    </string-array>
-
-    <string-array name="status_bar_power_menu_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <!-- Disable torch on screen off delay -->
     <string-array name="torch_screen_off_delay_entries">
         <item>@string/torch_screen_off_one_second</item>
