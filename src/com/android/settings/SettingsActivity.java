@@ -334,7 +334,8 @@ public class SettingsActivity extends Activity
             QSTiles.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
             AmbientSettings.class.getName(),
-            DisplayRotation.class.getName()
+            DisplayRotation.class.getName(),
+            ButtonSettings.class.getName()
     };
 
 
