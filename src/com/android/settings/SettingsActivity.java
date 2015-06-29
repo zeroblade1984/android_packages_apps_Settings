@@ -118,6 +118,7 @@ import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.temasek.AmbientSettings;
+import com.android.settings.temasek.HeadsUpSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.voice.VoiceInputSettings;
@@ -328,6 +329,7 @@ public class SettingsActivity extends Activity
             BlacklistSettings.class.getName(),
             ProfilesSettings.class.getName(),
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
+            HeadsUpSettings.class.getName(),
             NotificationManagerSettings.class.getName(),
             LockScreenSettings.class.getName(),
             LiveDisplay.class.getName(),
