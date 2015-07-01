@@ -71,6 +71,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String PREF_FONT_STYLE = "font_style";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String KEY_CARRIERLABEL_PREFERENCE = "carrier_options";
     private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker_enabled";
 
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
@@ -91,6 +92,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private ListPreference mStatusBarDateFormat;
     private ColorPickerPreference mColorPicker;
     private ListPreference mFontStyle;
+    private PreferenceScreen mCarrierLabel;
     private SwitchPreference mTicker;
 
     private ListPreference mStatusBarBattery;
@@ -125,6 +127,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarDate = (ListPreference) findPreference(STATUS_BAR_DATE);
         mStatusBarDateStyle = (ListPreference) findPreference(STATUS_BAR_DATE_STYLE);
         mStatusBarDateFormat = (ListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
+
+        mCarrierLabel = (PreferenceScreen) prefSet.findPreference(KEY_CARRIERLABEL_PREFERENCE);
+        if (Utils.isWifiOnly(getActivity()) || 
+        TelephonyManager.getDefault().isMultiSimEnabled()) {
+            prefSet.removePreference(mCarrierLabel);
+        }
 
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent =
