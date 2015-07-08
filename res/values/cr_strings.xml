@@ -438,6 +438,10 @@
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="profile_applist_title">Applications</string>
 
+    <!-- Gesture Anywhere floating mode-->
+    <string name="gesture_anywhere_floating">Gesture Anywhere</string>
+    <string name="gesture_anywhere_floating_summary">Launch shortcuts in float mode</string>
+
     <!-- App Circle sidebar -->
     <string name="category_app_circle_bar_title">App launcher</string>
     <string name="app_circle_bar_title">App circle bar</string>
