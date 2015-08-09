@@ -30,6 +30,12 @@
             android:entries="@array/status_bar_clock_style_entries"
             android:entryValues="@array/status_bar_clock_style_values" />
 
+         <ListPreference
+            android:key="clock_date_position"
+            android:title="@string/clock_date_position"
+            android:entries="@array/clock_date_position_entries"
+            android:entryValues="@array/clock_date_position_values" />
+
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="clock_color"
             android:title="@string/clock_color_title"
