@@ -691,14 +691,6 @@
     <string name="qs_systemui_restart_tile">Рестарт SystemUI</string>
     <string name="qs_tile_slim_floats">Плавающий режим Slim</string>
 
-    <!-- Smart cover -->
-    <string name="smart_cover_title">Умная-обложка</string>
-    <string name="lid_settings_title">Крышка</string>
-    <string name="lid_controls_sleep_title">Управление сном</string>
-    <string name="lid_controls_sleep_summary">Выключение экрана при закрытии крышки</string>
-    <string name="lid_controls_wake_title">Пробуждение экрана</string>
-    <string name="lid_controls_wake_summary">Включить экран при открытии крышки</string>
-
     <!-- Safe headset volume restore checkbox -->
     <string name="safe_headset_volume_title">Безопасная громкость</string>
     <string name="safe_headset_volume_summary">Предотвратить громкий звук, когда впервые подключена гарнитура</string>
