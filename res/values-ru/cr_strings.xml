@@ -8,7 +8,7 @@
     <!-- temasek spare parts -->
     <string name="temasek_settings_title">Настройки от Temasek</string>
     <string name="recents_panel_title">Недавние приложения</string>
-    <string name="recents_panel_settings">Настройки недавних приложений</string>
+    <string name="recents_panel_settings">Настройки \"Недавних приложений\"</string>
     <string name="screen_and_animations_title">Экран и анимация</string>
     <string name="display_settings">Экран</string>
     <string name="display_settings_title">Настройки экрана</string>
@@ -44,6 +44,9 @@
     <!-- About device screen, CPU and RAM info. -->
     <string name="cpu_info">Процессор</string>
     <string name="mem_info">Память</string>
+    
+    <!-- About phone screen, model name -->
+    <string name="model_name">Модель устройства</string>
 
     <!-- Temasek Extra Info -->
     <string name="temaextrainfo">Доп. информация</string>
@@ -294,7 +297,6 @@
     <string name="omniswitch_first_time_message">Убедитесь, что вы включили OmniSwitch. Это можно сделать с помощью настроек внизу</string>
 
     <!-- Recents panel settings -->
-    <string name="recents_panel_settings">Recents panel settings</string>
     <string name="show_clear_all_recents_button_title">Показывать кнопку \"Очистить всё\"</string>
     <string name="show_clear_all_recents_button_summary">Показывать кнопку \"Очистить всё\" в \"Недавних приложениях\"</string>
     <string name="recents_clear_all_location_title">Расположение кнопки \"Очистить всё\"</string>
@@ -328,6 +330,9 @@
     <string name="toast_Translucent_animation">Полупрозрачная</string>
     <string name="toast_SlideLeftRight_animation">Скольжение слева направо</string>
     <string name="toast_SlideRightLeft_animation">Скольжение справа налево</string>
+    
+    <!-- Toast Icons -->
+    <string name="toast_icon_title">Иконка у всплывающих уведомлений</string>
 
     <!-- ListView animation -->
     <string name="interface_settings_animation_title">Настройки анимации</string>
@@ -565,8 +570,6 @@
     <string name="icon_title">Иконка</string>
     <string name="qs_colors_title">Цвет быстрых настроек</string>
     <string name="qs_colors_summary">Возможность изменить фон, цвет иконок и текста плиток быстрых настроек</string>
-    <string name="reset_android">Android</string>
-    <string name="reset_swag">Swag</string>
     <string name="colors_title">Цвета</string>
     <string name="cat_colors_title">Настроки цвета уведомлений</string>
     <string name="text_title">Текст</string>
@@ -595,6 +598,10 @@
     
     <!-- Heads up snooze -->
     <string name="heads_up_snooze_title">Длительность \"отложить\"</string>
+    
+    <!-- Captive Portal -->
+    <string name="captive_portal_detection">Принудительное обнаружение сервера</string>
+    <string name="captive_portal_detection_summary">Если отключено, то соединение с серверами Google не требуется для того, чтобы обнаружить передачу данных.</string>
     
     <!-- Heads Up Floating Mode -->
     <string name="heads_up_floating_window_title">Плавающий режим</string>
@@ -635,6 +642,7 @@
     <string name="custom_carrier_label_explain">Пожалуйста, введите своё имя оператора. Оставить пустым для отображения по умолчанию.</string>
     <string name="custom_carrier_label_notset">Пользовательский логотип не установлен</string>
     <string name="status_bar_carrier_color">Цвет логотипа</string>
+    <string name="status_bar_carrier_size">Размер текста у логотипа</string>
 
     <!-- Show bluetooth icon when disconnected -->
     <string name="status_bar_bluetooth_icon">Показывать иконку Bluetooth</string>
@@ -668,8 +676,8 @@
     <string name="mount_notification_summary">Показывать уведомление при подключении накопителя</string>
 
     <!-- Long press on lock screen lock icon to sleep -->
-    <string name="longpress_lock_icon_to_sleep_title">Долгое нажатие на иконку блокировки для сна</string>
-    <string name="longpress_lock_icon_to_sleep_summary">эта опция не будет работать, если включен защищенный режим</string>
+    <string name="longpress_lock_icon_torch_title">Долгое нажатие на замок для вкл/выкл фонарика</string>
+    <string name="longpress_lock_icon_torch_summary">Эта опция не будет работать, если включен защищенный режим или фонарик используется другим приложением</string>
     
     <!-- Double tap gesture anywhere on the lock screen put device to sleep -->
     <string name="double_tap_sleep_anywhere_title">Двойное нажатие для сна везде</string>
@@ -835,12 +843,45 @@
     <string name="status_bar_clock_style_reset">Сбросить цвет</string>
     <string name="status_bar_clock_style_reset_message">Сбросить цвет часов?</string>
     <string name="clock_font_style_title">Шрифт</string>
-    <string name="clock_font_bold">Жирный</string>
-    <string name="clock_font_condensed">Плотный</string>
-    <string name="clock_font_light">Тонкий</string>
-    <string name="clock_font_light_italic">Тонкий Курсив</string>
     <string name="clock_font_normal">Обычный</string>
+    <string name="clock_font_italic">Курсив</string>
+    <string name="clock_font_bold">Жирный</string>
+    <string name="clock_font_bold_italic">Жирный Курсив</string>
+    <string name="clock_font_light">Легкий</string>
+    <string name="clock_font_light_italic">Легкий Курсив</string>
+    <string name="clock_font_thin">Тонкий</string>
+    <string name="clock_font_thin_italic">Тонкий Курсив</string>
+    <string name="clock_font_condensed">Плотный</string>
+    <string name="clock_font_condensed_italic">Плотный Курсив</string>
+    <string name="clock_font_condensed_bold">Плотный Жирный</string>
+    <string name="clock_font_condensed_bold_italic">Плотный Жирный Курсив</string>
+    <string name="clock_font_medium">Средний</string>
+    <string name="clock_font_medium_italic">Средний Курсив</string>
+    <string name="clock_font_size_title">Размер шрифта</string>
     <string name="status_bar_show_clock_second_title">Показывать секунды</string>
+    <string name="clock_font_size_4">4</string>
+    <string name="clock_font_size_5">5</string>
+    <string name="clock_font_size_6">6</string>
+    <string name="clock_font_size_7">7</string>
+    <string name="clock_font_size_8">8</string>
+    <string name="clock_font_size_9">9</string>
+    <string name="clock_font_size_10">10</string>
+    <string name="clock_font_size_11">11</string>
+    <string name="clock_font_size_12">12</string>
+    <string name="clock_font_size_13">13</string>
+    <string name="clock_font_size_14">14</string>
+    <string name="clock_font_size_15">15</string>
+    <string name="clock_font_size_16">16</string>
+    <string name="clock_font_size_17">17</string>
+    <string name="clock_font_size_18">18</string>
+    <string name="clock_font_size_19">19</string>
+    <string name="clock_font_size_20">20</string>
+    <string name="clock_font_size_21">21</string>
+    <string name="clock_font_size_22">22</string>
+    <string name="clock_font_size_23">23</string>
+    <string name="clock_date_position">Положение даты</string>
+    <string name="clock_date_right">Справа от часов</string>
+    <string name="clock_date_left">Слева от часов</string>
 
     <!-- Pie control -->
     <string name="pie_control_title">Pie-навигация</string>
@@ -1007,7 +1048,7 @@
     <string name="lockgesture_settings_enable_title">Требовать жест</string>
     <!-- Security & location settings screen, setting summary for the checkbox "Require pattern" -->
     <string name="lockgesture_settings_enable_summary">Должны нарисовать жест, чтобы разблокировать экран</string>
-   <!-- Security & location settings screen, setting check box title. This setting controls whether a visible gesture is drawn as the user moves his finger around while drawing the unlock pattern.  If checked, this line is drawn.  If unchecked, there is nothing drawn so the user does not reveal his pattern while he unlocks the phone.-->
+    <!-- Security & location settings screen, setting check box title. This setting controls whether a visible gesture is drawn as the user moves his finger around while drawing the unlock pattern.  If checked, this line is drawn.  If unchecked, there is nothing drawn so the user does not reveal his pattern while he unlocks the phone.-->
     <string name="lockgesture_settings_enable_visible_pattern_title">Сделать жест видимым</string>
     <!-- Security & location settings screen, setting check box title. This controls whether the device locks immediately when the power button is pressed. [CHAR LIMIT=28]-->
     <string name="lockgesture_settings_enable_power_button_instantly_locks">Мгновенная блокировка кнопкой питания</string>
@@ -1106,6 +1147,16 @@
     <string name="recent_panel_lefty_mode_title">Показывать у левого края</string>
     <string name="recent_panel_lefty_mode_summary">Показывать панель недавних приложений у левого края</string>
     
+    <!-- Recent app sidebar -->
+    <string name="recent_app_sidebar_title">Боковая панель приложений</string>
+    <string name="recent_app_sidebar_summary">Показывать ярлыки приложений на другом краю</string>
+    <string name="recent_app_sidebar_style_title">Стиль панели</string>
+    <string name="recent_app_sidebar_style_summary">Изменить стиль панели приложений</string>
+    <string name="recent_app_sidebar_hide_labels_title">Скрыть текст иконок</string>
+    <string name="recent_app_sidebar_label_color_title">Цвет текста</string>
+    <string name="recent_app_sidebar_bg_color_title">Цвет фона</string>
+    <string name="recent_app_sidebar_scale_title">Размер</string>
+    
     <!-- Floating Windows -->
     <string name="slim_action_floats">Действия Slim и Pie</string>
     <string name="slim_action_floats_summary">Запускать действия Slim и Pie в режиме плавающего окна</string>
@@ -1137,6 +1188,21 @@
     <string name="status_bar_temperature_location_left">Слева</string>
     <string name="status_bar_weather_color_title">Цвет текста</string>
     <string name="status_bar_weather_size_title">Размер шрифта</string>
+    <string name="status_bar_weather_font_style_title">Шрифт</string>
+    <string name="status_bar_weather_font_normal">Обычный</string>
+    <string name="status_bar_weather_font_italic">Курсив</string>
+    <string name="status_bar_weather_font_bold">Жирный</string>
+    <string name="status_bar_weather_font_bold_italic">Жирный Курсив</string>
+    <string name="status_bar_weather_font_light">Легкий</string>
+    <string name="status_bar_weather_font_light_italic">Легкий Курсив</string>
+    <string name="status_bar_weather_font_thin">Тонкий</string>
+    <string name="status_bar_weather_font_thin_italic">Тонкий Курсив</string>
+    <string name="status_bar_weather_font_condensed">Плотный</string>
+    <string name="status_bar_weather_font_condensed_italic">Плотный Курсив</string>
+    <string name="status_bar_weather_font_condensed_bold">Плотный Жирный</string>
+    <string name="status_bar_weather_font_condensed_bold_italic">Плотный Жирный Курсив</string>
+    <string name="status_bar_weather_font_medium">Средний</string>
+    <string name="status_bar_weather_font_medium_italic">Средний Курсив</string>
     
     <!-- Headphones icon switch -->
     <string name="show_headset_icon_title">Значок гарнитуры</string>
@@ -1172,5 +1238,54 @@
     <string name="lockscreen_wallpaper_set_title">Задать обои экрана блокировки</string>
     <string name="lockscreen_wallpaper_clear_title">Убрать обои экрана блокировки</string>
     <string name="reset_lockscreen_wallpaper">Вернуть значения по умолчанию</string>
+
+    <!-- QS Tiles Columns -->
+    <string name="qs_num_columns_title">Количество плиток в ряду</string>
+    <string name="qs_num_columns_showing">Отображать плиток в ряду: %1$s</string>
+
+    <!-- Whether the keyguard will directly pass to gesture entry -->
+    <string name="lock_directly_show_gesture">Отображать нарисованный жест</string>
+    
+    <!-- Time-context headers in notification header -->
+    <string name="status_bar_custom_header_title">Динамический фон заголовка</string>
+    <string name="status_bar_custom_header_summary">Изменение заголовка панели уведомлений в зависимости от времени суток</string>
+    
+    <!-- Device policy override -->
+    <string name="device_policy_override_title">Переопределение политики устройства</string>
+    <string name="device_policy_override_summary">Разрешить приложениям переопределять настройки профилей и защищённого экрана блокировки</string>
+    
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Тайная комната</string>
+    <string name="chamber_toast">Тайная комната открыта</string>
+    
+    <!-- Expand volume panel -->
+    <string name="volume_panel_expanded_title">Расширенная панель громкости</string>
+    <string name="volume_panel_expanded_summary">Показывать панель громкости в расширенном режиме по умолчанию</string>
+    
+    <!-- SlimSizer  -->
+    <string name="listsystem">список</string>
+    <string name="sizer_title">Удаление приложений</string>
+    <string name="caution">Внимание!</string>
+    <string name="sizer_message_startup">Эта программа позволяет удалять системные приложения. Используйте с осторожностью и удаляйте только то, что можно удалить без последствий.</string>
+    <string name="cancel">Отмена</string>
+    <string name="sizer_message_delete">Вы точно хотите удалить это/эти приложение(-ия)?</string>
+    <string name="btn_delete">Удалить выделенные приложения!</string>
+    <string name="delete_progress_title">Удаление</string>
+    <string name="delete_progress">Выбранные файлы удаляются...</string>
+    <string name="delete_success">Удалено</string>
+    <string name="delete_fail">Невозможно удалить</string>
+    <string name="btn_profile">Профиль</string>
+    <string name="sizer_message_sdnowrite">Невозможна запись на SD-карту</string>
+    <string name="sizer_message_sdnoread">Невозможно чтение с SD-карты</string>
+    <string name="sizer_message_filesuccess">Профиль создан</string>
+    <string name="sizer_message_filefail">Невозможно создать профиль</string>
+    <string name="sizer_message_noselect">Ничего не выбрано</string>
+    <string name="system_app_remover">Удаление системных приложений</string>
+    <string name="systemappremover_summary">Удаляйте системные приложений на свой страх и риск</string>
+    
+    <!-- Doze notification color invert -->
+    <string name="doze_notification_color_invert_title">Инверсия цвета</string>
+    <string name="doze_notification_color_invert_summary_off">Уведомления при \"Запрете спящего режима\" не будут инвертированы. Используйте для тёмных тем.</string>
+    <string name="doze_notification_color_invert_summary_on">Уведомления при \"Запрете спящего режима\" будут инвертированы. Используйте для светлых/стоковых тем.</string>
 
 </resources>
