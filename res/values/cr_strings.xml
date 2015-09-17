@@ -698,6 +698,7 @@
     <string name="qs_tile_heads_up">Heads up</string>
     <string name="qs_systemui_restart_tile">Restart SystemUI</string>
     <string name="qs_tile_slim_floats">Slim Floats</string>
+    <string name="qs_slim_pie_tile">Pie</string>
 
     <!-- Smart cover -->
     <string name="smart_cover_title">Smart cover</string>
