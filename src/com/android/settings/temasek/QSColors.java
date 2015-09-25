@@ -22,6 +22,8 @@ import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.preference.ListPreference;
 import android.preference.SwitchPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -51,6 +53,8 @@ public class QSColors extends SettingsPreferenceFragment implements
             "qs_color_switch";
     private static final String PREF_BG_COLOR = 
             "expanded_header_background_color";
+    private static final String PREF_CUSTOM_HEADER_DEFAULT =
+            "status_bar_custom_header_default";
 
     private static final int DEFAULT_BACKGROUND_COLOR = 0xff263238;
     private static final int WHITE = 0xffffffff;
@@ -67,6 +71,7 @@ public class QSColors extends SettingsPreferenceFragment implements
     private ColorPickerPreference mBackgroundColor;
     private SwitchPreference mQSShadeTransparency;
     private SwitchPreference mQSSSwitch;
+    private ListPreference mCustomHeaderDefault;
 
     private ContentResolver mResolver;
 
@@ -139,6 +144,14 @@ public class QSColors extends SettingsPreferenceFragment implements
                 Settings.System.QS_COLOR_SWITCH, 0) == 1));
         mQSSSwitch.setOnPreferenceChangeListener(this);
 
+        // Status bar custom header default
+        mCustomHeaderDefault = (ListPreference) findPreference(PREF_CUSTOM_HEADER_DEFAULT);
+        mCustomHeaderDefault.setOnPreferenceChangeListener(this);
+        int customHeaderDefault = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, 0);
+        mCustomHeaderDefault.setValue(String.valueOf(customHeaderDefault));
+        mCustomHeaderDefault.setSummary(mCustomHeaderDefault.getEntry());
+
         setHasOptionsMenu(true);
     }
 
@@ -207,6 +220,14 @@ public class QSColors extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR, intHex);
             preference.setSummary(hex);
             return true;
+        } else if (preference == mCustomHeaderDefault) {
+            int customHeaderDefault = Integer.valueOf((String) newValue);
+            int index = mCustomHeaderDefault.findIndexOfValue((String) newValue);
+            Settings.System.putInt(mResolver, 
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, customHeaderDefault);
+            mCustomHeaderDefault.setSummary(mCustomHeaderDefault.getEntries()[index]);
+            refreshSettings();
+            return true;
         }
         return false;
     }
@@ -255,6 +276,8 @@ public class QSColors extends SettingsPreferenceFragment implements
                              Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
                                     DEFAULT_BG_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, 0);
                             getOwner().refreshSettings();
                         }
                     })
