@@ -79,6 +79,7 @@
     <string name="shortcut_action_menu_big">Меню (большое)</string>
     <string name="shortcut_action_notifications">Уведомления</string>
     <string name="shortcut_action_qs">Быстрые настройки</string>
+    <string name="shortcut_action_smart">\"Умная\" панель уведомлений</string>
     <string name="shortcut_action_torch">Фонарик</string>
     <string name="shortcut_action_screenshot">Скриншот</string>
     <string name="shortcut_action_menu">Меню</string>
@@ -370,7 +371,7 @@
     <string name="cm_lockscreen_shortcuts_title">Ярлыки в нижних углах</string>
     <string name="cm_lockscreen_shortcuts_summary">Посмотреть или изменить ярлыки в нижних углах экрана блокировки</string>
     <!-- Slim lockscreen shortcuts -->
-    <string name="lockscreen_shortcuts_title">Ярлыки посередине экрана</string>
+    <string name="lockscreen_shortcuts_title">Ярлыки в центре экрана</string>
     <string name="lockscreen_shortcuts_summary">Посмотреть или изменить ярлыки посередине экрана блокировки</string>
     <string name="lockscreen_shorcuts_launch_type_title">Тип нажатия на ярлык</string>
     <string name="lockscreen_shortcuts_single_tap">Нажатие</string>
@@ -505,8 +506,8 @@
     <string name="lock_clock_calendar_section_summary">Просмотр или изменение настроек отображения событий календаря виджета \'cLock\' на главном экране или экране блокировки</string>
 
     <!-- QuickSettings haptic feedback -->
-    <string name="quick_settings_vibrate_title">Вибрировать при касании</string>
-    <string name="quick_settings_vibrate_summary">Вибрировать при касании иконок быстрых настроек</string>
+    <string name="quick_settings_vibrate_title">Вибрация при касании</string>
+    <string name="quick_settings_vibrate_summary">Вибрировать при нажатии на иконки быстрых настроек</string>
 
     <!-- Superuser indicator on status bar -->
     <string name="su_indicator">Индикатор суперпользователя</string>
@@ -518,13 +519,13 @@
     <string name="lock_screen_colors_title">Цвета экрана блокировки</string>
     <string name="lock_screen_color_settings_summary">Настройка цветов</string>
     <string name="weather_cat_notifications_title">Уведомления</string>
-    <string name="weather_show_weather_title">Показывать Погоду</string>
+    <string name="weather_show_weather_title">Показывать погоду</string>
     <string name="weather_show_weather_summary">Включить отображение информации о погоде</string>
-    <string name="weather_show_location_title">Показывать Расположение</string>
+    <string name="weather_show_location_title">Показывать местоположение</string>
     <string name="weather_show_location_summary">Включить отображение местоположения</string>
-    <string name="weather_show_timestamp_title">Показывать Время</string>
+    <string name="weather_show_timestamp_title">Показывать время</string>
     <string name="weather_show_timestamp_summary">Включить отображение времени</string>
-    <string name="weather_condition_icon_title">Стиль Иконок</string>
+    <string name="weather_condition_icon_title">Стиль иконок</string>
     <string name="weather_condition_icon_dlg_title">Выберете стиль иконок для отображения погоды</string>
     <string name="weather_condition_icon_monochrome_title">Монохромные</string>
     <string name="weather_condition_icon_colored_title">Цветные</string>
@@ -608,7 +609,7 @@
     <string name="heads_up_floating_window_summary">Нажмите на уведомление и отпустите для открытия его в плавающем режиме, не на главном экране</string>
 
     <!-- Navring targets (enable/disable) -->
-    <string name="navigation_ring_enable_title">Включить ярлыки кольца панели навигации</string>
+    <string name="navigation_ring_enable_title">Включить ярлыки навигационного кольца</string>
 
     <!-- Heads up touch outside -->
     <string name="heads_up_touch_outside_title">Поведение при внешнем нажатии</string>
@@ -639,9 +640,13 @@
     <string name="show_status_bar_carrier_title">Логотип оператора в строке состояния</string>
     <string name="show_status_bar_carrier_summary">Показывать логотип в строке состояния</string>
     <string name="custom_carrier_label_title">Свой логотип</string>
-    <string name="custom_carrier_label_explain">Пожалуйста, введите своё имя оператора. Оставить пустым для отображения по умолчанию.</string>
+    <string name="custom_carrier_label_explain">Пожалуйста, введите имя оператора. Оставьте поле пустым для отображения по умолчанию.</string>
     <string name="custom_carrier_label_notset">Пользовательский логотип не установлен</string>
     <string name="status_bar_carrier_color">Цвет логотипа</string>
+    <string name="show_carrier_disabled">Отключен</string>
+    <string name="show_carrier_keyguard">На экране блокировки</string>
+    <string name="show_carrier_statusbar">В строке состояния</string>
+    <string name="show_carrier_enabled">И там, и там</string>
     <string name="status_bar_carrier_size">Размер текста у логотипа</string>
 
     <!-- Show bluetooth icon when disconnected -->
@@ -676,7 +681,7 @@
     <string name="mount_notification_summary">Показывать уведомление при подключении накопителя</string>
 
     <!-- Long press on lock screen lock icon to sleep -->
-    <string name="longpress_lock_icon_torch_title">Долгое нажатие на замок для вкл/выкл фонарика</string>
+    <string name="longpress_lock_icon_torch_title">Фонарик долгим нажатием на замок</string>
     <string name="longpress_lock_icon_torch_summary">Эта опция не будет работать, если включен защищенный режим или фонарик используется другим приложением</string>
     
     <!-- Double tap gesture anywhere on the lock screen put device to sleep -->
@@ -700,6 +705,7 @@
     <string name="qs_tile_heads_up">Всплывающие уведомления</string>
     <string name="qs_systemui_restart_tile">Рестарт SystemUI</string>
     <string name="qs_tile_slim_floats">Плавающий режим Slim</string>
+    <string name="qs_slim_pie_tile">Pie</string>
 
     <!-- Smart cover -->
     <string name="smart_cover_title">Умная-обложка</string>
@@ -1001,6 +1007,9 @@
     <string name="power_category">Кнопка питания</string>
     <string name="lockscreen_enable_power_menu_title">Показывать на экране блокировки</string>
     <string name="actions_category">Действия</string>
+    <string name="powermenu_screenshot_delay_title">Задать задержку скриншота</string>
+    <string name="power_menu_screenrecord_title">Запись экрана</string>
+    <string name="power_menu_torch_title">Фонарик</string>
 
     <!-- Block QS on secure lock screen -->
     <string name="block_on_secure_keyguard_title">Отключить на экране блокировки</string>
@@ -1247,8 +1256,13 @@
     <string name="lock_directly_show_gesture">Отображать нарисованный жест</string>
     
     <!-- Time-context headers in notification header -->
+    <string name="contextual_title">Динамические заголовки</string>
     <string name="status_bar_custom_header_title">Динамический фон заголовка</string>
     <string name="status_bar_custom_header_summary">Изменение заголовка панели уведомлений в зависимости от времени суток</string>
+    <string name="status_bar_custom_header_default_title">Select your images</string>
+    <string name="custom_header_image_0">По умолчанию</string>
+    <string name="custom_header_image_1">Обновлённые</string>
+    <string name="custom_header_image_2">Мозаика HD</string>
     
     <!-- Device policy override -->
     <string name="device_policy_override_title">Переопределение политики устройства</string>
@@ -1287,5 +1301,15 @@
     <string name="doze_notification_color_invert_title">Инверсия цвета</string>
     <string name="doze_notification_color_invert_summary_off">Уведомления при \"Запрете спящего режима\" не будут инвертированы. Используйте для тёмных тем.</string>
     <string name="doze_notification_color_invert_summary_on">Уведомления при \"Запрете спящего режима\" будут инвертированы. Используйте для светлых/стоковых тем.</string>
+    
+    <!-- On-The-Go -->
+    <string name="power_menu_onthego_title">Режим \"На ходу\"</string>
+    <string name="onthego_alpha_title">Настройка Alpha-канала</string>
+    <string name="onthego_alpha_summary">Настройка прозрачности в режиме \"На ходу\"</string>
+    
+    <!-- Lockscreen see through -->
+    <string name="lockscreen_see_through_title">Вид \"насквозь\"</string>
+    <string name="lockscreen_see_through_summary">Размывает содержимое, находящееся позади экрана блокировки</string>
+    <string name="lockscreen_blur_radius">Интенсивность эффекта размытия</string>
 
 </resources>
