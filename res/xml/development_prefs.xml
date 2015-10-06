@@ -43,10 +43,13 @@
                 android:targetClass="com.android.settings.SetFullBackupPassword" />
     </PreferenceScreen>
 
-    <SwitchPreference
-        android:key="keep_screen_on"
+    <ListPreference
+        android:key="keep_screen_on_modes"
         android:title="@string/keep_screen_on"
-        android:summary="@string/keep_screen_on_summary"/>
+        android:dialogTitle="@string/keep_screen_on"
+        android:entries="@array/keep_screen_on_titles"
+        android:entryValues="@array/keep_screen_on_values"
+        android:persistent="false" />
 
     <ListPreference
         android:key="hdcp_checking"
@@ -177,6 +180,11 @@
             android:title="@string/wifi_allow_scan_with_traffic"
             android:summary="@string/wifi_allow_scan_with_traffic_summary"/>
 
+        <com.android.settings.temasek.GlobalSettingSwitchPreference
+            android:key="captive_portal_detection_enabled"
+            android:title="@string/captive_portal_detection"
+            android:summary="@string/captive_portal_detection_summary" />
+
         <ListPreference
             android:key="select_logd_size"
             android:title="@string/select_logd_size_title"
@@ -231,26 +239,23 @@
             android:title="@string/force_rtl_layout_all_locales"
             android:summary="@string/force_rtl_layout_all_locales_summary"/>
 
-        <ListPreference
+        <com.android.settings.AnimationScalePreference
             android:key="window_animation_scale"
             android:title="@string/window_animation_scale_title"
-            android:persistent="false"
-            android:entries="@array/window_animation_scale_entries"
-            android:entryValues="@array/window_animation_scale_values" />
+            android:dialogTitle="@string/window_animation_scale_title"
+            android:persistent="false" />
 
-        <ListPreference
+        <com.android.settings.AnimationScalePreference
             android:key="transition_animation_scale"
             android:title="@string/transition_animation_scale_title"
-            android:persistent="false"
-            android:entries="@array/transition_animation_scale_entries"
-            android:entryValues="@array/transition_animation_scale_values" />
+            android:dialogTitle="@string/transition_animation_scale_title"
+            android:persistent="false" />
 
-        <ListPreference
+        <com.android.settings.AnimationScalePreference
             android:key="animator_duration_scale"
             android:title="@string/animator_duration_scale_title"
-            android:persistent="false"
-            android:entries="@array/animator_duration_scale_entries"
-            android:entryValues="@array/animator_duration_scale_values" />
+            android:dialogTitle="@string/animator_duration_scale_title"
+            android:persistent="false" />
 
         <ListPreference
             android:key="overlay_display_devices"
@@ -401,5 +406,14 @@
             android:dependency="kill_app_longpress_back" />
 
      </PreferenceCategory>
+
+     <!-- Must remain at bottom -->
+     <Preference
+         android:key="chamber_of_secrets"
+         android:title="\n \n" />
+
+     <SwitchPreference
+         android:key="chamber_of_unlocked_secrets"
+         android:title="@string/chamber_title" />
 
 </PreferenceScreen>

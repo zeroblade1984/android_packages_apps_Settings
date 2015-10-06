@@ -25,11 +25,12 @@ import android.os.Bundle;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
@@ -54,6 +55,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment
     private static final String ACTION_CATEGORY = "action_category";
     private static final String POWER_MENU_LOCKSCREEN = "lockscreen_enable_power_menu";
     private static final String SCREENSHOT_DELAY = "screenshot_delay";
+    private static final String PREF_ON_THE_GO_ALPHA = "on_the_go_alpha";
 
     private SystemSettingSwitchPreference mPowerMenuLockscreen;
 
@@ -67,6 +69,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment
     private SwitchPreference mLockdownPref;
     private SwitchPreference mBugReportPref;
     private SwitchPreference mSilentPref;
+    private SlimSeekBarPreference mOnTheGoAlphaPref;
 
     Context mContext;
     private ArrayList<String> mLocalUserConfig = new ArrayList<String>();
@@ -145,6 +148,11 @@ public class PowerMenuActions extends SettingsPreferenceFragment
                 Settings.System.SCREENSHOT_DELAY, 1);
         mScreenshotDelay.setCurrentValue(ssDelay);
 
+        mOnTheGoAlphaPref = (SlimSeekBarPreference) findPreference(PREF_ON_THE_GO_ALPHA);
+        mOnTheGoAlphaPref.setDefault(50);
+        mOnTheGoAlphaPref.setInterval(1);
+        mOnTheGoAlphaPref.setOnPreferenceChangeListener(this);
+
         getUserConfig();
     }
 
@@ -183,6 +191,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment
         if (mUsersPref != null) {
             if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
                 getPreferenceScreen().removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
+                mUsersPref = null;
             } else {
                 List<UserInfo> users = ((UserManager) mContext.getSystemService(
                         Context.USER_SERVICE)).getUsers();
@@ -273,6 +282,11 @@ public class PowerMenuActions extends SettingsPreferenceFragment
             int value = Integer.parseInt(newValue.toString());
             Settings.System.putInt(mCr, Settings.System.SCREENSHOT_DELAY,
                     value);
+            return true;
+        } else if (preference == mOnTheGoAlphaPref) {
+            float val = Float.parseFloat((String) newValue);
+            Settings.System.putFloat(mCr, Settings.System.ON_THE_GO_ALPHA,
+                    val / 100);
             return true;
         }
         return false;

@@ -30,6 +30,11 @@
             android:persistent="false"/>
 
         <SwitchPreference
+            android:key="directlyshow"
+            android:persistent="false"
+            android:title="@string/lock_directly_show_pattern"/>
+
+        <SwitchPreference
             android:key="visiblepattern"
             android:persistent="false"
             android:title="@string/lockpattern_settings_enable_visible_pattern_title"/>
@@ -57,9 +62,9 @@
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
 
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
-            android:key="long_press_lock_icon_to_sleep"
-            android:title="@string/longpress_lock_icon_to_sleep_title"
-            android:summary="@string/longpress_lock_icon_to_sleep_summary" />
+            android:key="long_press_lock_icon_torch"
+            android:title="@string/longpress_lock_icon_torch_title"
+            android:summary="@string/longpress_lock_icon_torch_summary" />
 
         <Preference android:key="manage_trust_agents"
                     android:title="@string/manage_trust_agents"
@@ -94,13 +99,17 @@
         <PreferenceScreen
             android:key="lockscreen_wallpaper"
             android:title="@string/lockscreen_wallpaper_title"
-            android:summary="@string/lockscreen_wallpaper_summary">
-            <intent
-                android:targetPackage="com.slim.wallpaperpicker"
-                android:targetClass="com.slim.wallpaperpicker.WallpaperPickerActivity">
-                    <extra android:name="keyguardMode" android:value="true" />
-            </intent>
+            android:summary="@string/lockscreen_wallpaper_summary"
+            android:persistent="false"
+            android:fragment="com.android.settings.temasek.LockscreenWallpaper">
         </PreferenceScreen>
+
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="lockscreen_media_metadata"
+            android:title="@string/media_art_title"
+            android:summary="@string/media_art_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

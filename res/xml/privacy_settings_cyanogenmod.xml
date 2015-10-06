@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/privacy_settings_title">
+        android:title="@string/privacy_settings_cyanogenmod_title">
 
         <Preference
             android:key="privacy_guard_manager"
@@ -36,5 +36,12 @@
             <intent android:targetPackage="org.whispersystems.whisperpush"
                     android:targetClass="org.whispersystems.whisperpush.ui.PreferenceActivity" />
         </Preference>
+
+        <!-- SlimSizer -->
+        <PreferenceScreen
+            android:key="system_app_remover"
+            android:title="@string/system_app_remover"
+            android:summary="@string/systemappremover_summary"
+            android:fragment="com.android.settings.temasek.fragments.SystemappRemover" />
 
 </PreferenceScreen>

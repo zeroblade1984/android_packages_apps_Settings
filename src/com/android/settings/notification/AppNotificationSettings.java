@@ -54,6 +54,7 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
     private static final String KEY_SENSITIVE = "sensitive";
     private static final String KEY_SHOW_ON_KEYGUARD = "show_on_keyguard";
     private static final String KEY_NO_ONGOING_ON_KEYGUARD = "no_ongoing_on_keyguard";
+    private static final String KEY_HEADS_UP = "heads_up";
 
     static final String EXTRA_HAS_SETTINGS_INTENT = "has_settings_intent";
     static final String EXTRA_SETTINGS_INTENT = "settings_intent";
@@ -66,6 +67,7 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
     private SwitchPreference mSensitive;
     private SwitchPreference mShowOnKeyguard;
     private SwitchPreference mShowNoOngoingOnKeyguard;
+    private SwitchPreference mHeadsUp;
     private AppRow mAppRow;
     private boolean mCreated;
 
@@ -142,6 +144,11 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
         mSensitive = (SwitchPreference) findPreference(KEY_SENSITIVE);
         mShowOnKeyguard = (SwitchPreference) findPreference(KEY_SHOW_ON_KEYGUARD);
         mShowNoOngoingOnKeyguard = (SwitchPreference) findPreference(KEY_NO_ONGOING_ON_KEYGUARD);
+
+        final int headsUpGlobalSwitch = Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_GLOBAL_SWITCH, 1);
+        mHeadsUp = (SwitchPreference) findPreference(KEY_HEADS_UP);
+        updateHeadsUpSummary(headsUpGlobalSwitch);
 
         final boolean secure = new LockPatternUtils(getActivity()).isSecure();
         final boolean enabled = getLockscreenNotificationsEnabled();
@@ -230,6 +237,17 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
             }
         });
 
+        mHeadsUp.setChecked(mBackend.getHeadsUpNotificationsEnabledForPackage(pkg, uid)
+                != Notification.HEADS_UP_NEVER);
+        mHeadsUp.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                final boolean headsUp = (Boolean) newValue;
+                return mBackend.setHeadsUpNotificationsEnabledForPackage(pkg, uid,
+                        headsUp ? Notification.HEADS_UP_ALLOWED : Notification.HEADS_UP_NEVER);
+            }
+        });
+
         // Users cannot block notifications from system/signature packages
         final boolean isSystemPkg = Utils.isSystemPackage(pm, info);
 
@@ -241,6 +259,7 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
         if (isSystemPkg) {
             getPreferenceScreen().removePreference(mBlock);
             mPriority.setDependency(null); // don't have it depend on a preference that's gone
+            mHeadsUp.setDependency(null);
         }
     }
 
@@ -275,5 +294,29 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
             }
         }
         return null;
+    }
+
+    private void updateHeadsUpSummary(int value) {
+        String summary;
+        Boolean enabled;
+        switch (value) {
+            case 0:     enabled = false;
+                        summary = getResources().getString(
+                                    R.string.app_notification_enable_heads_up_global_disabled_summary);
+                        break;
+            case 1:     enabled = true;
+                        summary = getResources().getString(
+                                    R.string.app_notification_enable_heads_up_summary);
+                        break;
+            case 2:     enabled = false;
+                        summary = getResources().getString(
+                                    R.string.app_notification_enable_heads_up_global_forced_summary);
+                        break;
+            default:    enabled = true;
+                        summary = "";
+                        break;
+        }
+        mHeadsUp.setEnabled(enabled);
+        mHeadsUp.setSummary(summary);
     }
 }

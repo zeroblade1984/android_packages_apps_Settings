@@ -140,6 +140,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_visualizer_static";
                 stringId = R.string.qs_tile_visualizer;
                 break;
+            case QSConstants.TILE_VOLUME:
+                resourceName = "ic_qs_volume_panel";
+                stringId = R.string.qs_tile_volume_panel;
+                break;
             case QSConstants.TILE_SCREEN_TIMEOUT:
                 resourceName = "ic_qs_screen_timeout_vector";
                 stringId = R.string.qs_tile_screen_timeout;
@@ -200,10 +204,6 @@ public class QSTileHolder {
                 resourceName = "ic_qs_doze";
                 stringId = R.string.qs_ambient_display_tile;
                 break;
-	    case QSConstants.TILE_HEADS_UP:
-                resourceName = "ic_qs_heads_up_on";
-                stringId = R.string.qs_tile_heads_up;
-                break;
             case QSConstants.TILE_TRDS:
                 resourceName = "ic_qs_trds_on";
                 stringId = R.string.qs_tile_trds;
@@ -215,6 +215,10 @@ public class QSTileHolder {
             case QSConstants.TILE_SLIM_FLOATS:
                 resourceName = "ic_qs_floating_on";
                 stringId = R.string.qs_tile_slim_floats;
+                break;
+            case QSConstants.TILE_SLIM_PIE:
+                resourceName = "ic_qs_pie_global_on";
+                stringId = R.string.qs_slim_pie_tile;
                 break;
 
             // Dynamic tiles

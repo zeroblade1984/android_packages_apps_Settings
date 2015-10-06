@@ -42,22 +42,24 @@ import android.widget.EditText;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.temasek.SeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class CarrierLabel extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String TAG = "CarrierLabel";
 
-    private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
+    private static final String STATUS_BAR_CUSTOM_CARRIER = "status_bar_custom_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final String STATUS_BAR_CARRIER_FONT_SIZE  = "status_bar_carrier_font_size";
     private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
 
     static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
-    private SwitchPreference mStatusBarCarrier;
+    private ListPreference mStatusBarCarrier;
     private PreferenceScreen mCustomCarrierLabel;
-
     private String mCustomCarrierLabelText;
+    private SeekBarPreference mStatusBarCarrierSize;
     private ColorPickerPreference mCarrierColorPicker;
 
     @Override
@@ -69,19 +71,24 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
-        int intColor;
         String hexColor;
 
-        mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
-        mStatusBarCarrier.setChecked((Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_CARRIER,
-                0, UserHandle.USER_CURRENT) == 1));
+        mStatusBarCarrier = (ListPreference) findPreference(STATUS_BAR_CUSTOM_CARRIER);
+        int statusBarCarrier = Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_CARRIER, 1);
+        mStatusBarCarrier.setValue(String.valueOf(statusBarCarrier));
+        mStatusBarCarrier.setSummary(mStatusBarCarrier.getEntry());
         mStatusBarCarrier.setOnPreferenceChangeListener(this);
         mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
 
+        mStatusBarCarrierSize = (SeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
+        mStatusBarCarrierSize.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, 14));
+        mStatusBarCarrierSize.setOnPreferenceChangeListener(this);
+
         mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
         mCarrierColorPicker.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getContentResolver(),
+        int intColor = Settings.System.getInt(getContentResolver(),
                     Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mCarrierColorPicker.setSummary(hexColor);
@@ -112,14 +119,16 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
                     Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
             return true;
         } else if (preference == mStatusBarCarrier) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.STATUS_BAR_CARRIER,
-                    value ? 1 : 0, UserHandle.USER_CURRENT);
-            //send intent to have network controller update network name
-            Intent i = new Intent();
-            i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
-            getActivity().sendBroadcast(i);
+            int statusBarCarrier = Integer.valueOf((String) newValue);
+            int index = mStatusBarCarrier.findIndexOfValue((String) newValue);
+            Settings.System.putInt(
+                    getContentResolver(), Settings.System.STATUS_BAR_CUSTOM_CARRIER, statusBarCarrier);
+            mStatusBarCarrier.setSummary(mStatusBarCarrier.getEntries()[index]);
+            return true;
+         } else if (preference == mStatusBarCarrierSize) {
+            int width = ((Integer)newValue).intValue();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, width);
             return true;
          }
          return false;

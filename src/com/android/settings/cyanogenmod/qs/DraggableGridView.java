@@ -42,7 +42,7 @@ public class DraggableGridView extends ViewGroup implements
 
     private static final float CHILD_RATIO = .95f;
     private static final int ANIM_DURATION = 150;
-    private int COL_COUNT;
+    private static int COL_COUNT = 3;
 
     protected int mChildSize, mPadding, mLeftOffset, mScroll = 0;
     protected float mLastDelta = 0;
@@ -98,11 +98,12 @@ public class DraggableGridView extends ViewGroup implements
 
         setListeners();
         setChildrenDrawingOrderEnabled(true);
+        setSoundEffectsEnabled(false);
         mDefaultColor = mContext.getResources().getColor(R.color.qs_tile_default_background_color);
     }
 
     public void setUseLargeFirstRow(boolean largeFirstRow) {
-        mUseLargerFirstRow = largeFirstRow;
+        // mUseLargerFirstRow = largeFirstRow;
     }
 
     protected void setListeners() {
@@ -145,6 +146,13 @@ public class DraggableGridView extends ViewGroup implements
         super.removeViewAt(index);
         mNewPositions.remove(index);
     };
+
+    public void resetState() {
+        removeAllViews();
+        mNewPositions.clear();
+        mLastTarget = -1;
+        mDragged = -1;
+    }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -203,6 +211,10 @@ public class DraggableGridView extends ViewGroup implements
             return i + 1;
         }
         return i;
+    }
+
+    public static void setColumnCount(int numColumns) {
+        COL_COUNT = numColumns;
     }
 
     public int getIndexFromCoordinate(int x, int y) {

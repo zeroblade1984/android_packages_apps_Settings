@@ -39,6 +39,7 @@ import android.service.trust.TrustAgentService;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.android.internal.util.cm.QSUtils;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.ChooseLockSettingsHelper;
 import com.android.settings.ManageFingerprints;
@@ -72,6 +73,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment
     private static final String KEY_VISIBLE_PATTERN = "visiblepattern";
     private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
     private static final String KEY_VISIBLE_ERROR_PATTERN = "visible_error_pattern";
+    private static final String KEY_DIRECTLY_SHOW = "directlyshow";
     private static final String KEY_VISIBLE_DOTS = "visibledots";
     private static final String KEY_LOCK_AFTER_TIMEOUT = "lock_after_timeout";
     private static final String KEY_POWER_INSTANTLY_LOCKS = "power_button_instantly_locks";
@@ -79,6 +81,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment
     private static final String KEY_MANAGE_TRUST_AGENTS = "manage_trust_agents";
     private static final String KEY_SHOW_VISUALIZER = "lockscreen_visualizer";
     private static final String KEY_MANAGE_FINGERPRINTS = "manage_fingerprints";
+    private static final String KEY_LONG_PRESS_LOCK_ICON_TORCH = "long_press_lock_icon_torch";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -98,17 +101,19 @@ public class LockScreenSettings extends SettingsPreferenceFragment
 
     private SwitchPreference mBiometricWeakLiveliness;
     private SwitchPreference mVisiblePattern;
-	private SwitchPreference mVisibleGesture;
+    private SwitchPreference mVisibleGesture;
     private SwitchPreference mVisibleErrorPattern;
+    private SwitchPreference mDirectlyShow;
     private SwitchPreference mVisibleDots;
     private SwitchPreference mPowerButtonInstantlyLocks;
+    private SwitchPreference mLongClickTorch;
 
     private DevicePolicyManager mDPM;
 
     // These switch preferences need special handling since they're not all stored in Settings.
     private static final String SWITCH_PREFERENCE_KEYS[] = { KEY_LOCK_AFTER_TIMEOUT,
             KEY_LOCK_ENABLED, KEY_VISIBLE_PATTERN, KEY_VISIBLE_GESTURE, KEY_VISIBLE_ERROR_PATTERN, KEY_VISIBLE_DOTS,
-            KEY_BIOMETRIC_WEAK_LIVELINESS, KEY_POWER_INSTANTLY_LOCKS };
+            KEY_DIRECTLY_SHOW, KEY_BIOMETRIC_WEAK_LIVELINESS, KEY_POWER_INSTANTLY_LOCKS };
 
 
     @Override
@@ -139,6 +144,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         }
         if (mVisibleErrorPattern != null) {
             mVisibleErrorPattern.setChecked(lockPatternUtils.isShowErrorPath());
+        }
+        if (mDirectlyShow != null) {
+            mDirectlyShow.setChecked(lockPatternUtils.shouldPassToSecurityView());
         }
         if (mVisibleDots != null) {
             mVisibleDots.setChecked(lockPatternUtils.isVisibleDotsEnabled());
@@ -208,6 +216,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         // visible error pattern
         mVisibleErrorPattern = (SwitchPreference) root.findPreference(KEY_VISIBLE_ERROR_PATTERN);
 
+        // directly show
+        mDirectlyShow = (SwitchPreference) root.findPreference(KEY_DIRECTLY_SHOW);
+
         // visible dots
         mVisibleDots = (SwitchPreference) root.findPreference(KEY_VISIBLE_DOTS);
 
@@ -246,6 +257,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment
                     generalCategory.findPreference(KEY_SHOW_VISUALIZER);
             if (displayVisualizer != null) {
                 generalCategory.removePreference(displayVisualizer);
+            }
+        }
+
+        // Remove Long Press Lock Icon for Torch option for non-flash devices
+        if(!QSUtils.deviceSupportsFlashLight(getActivity()) && generalCategory != null) {
+            mLongClickTorch = (SwitchPreference) generalCategory
+                    .findPreference(KEY_LONG_PRESS_LOCK_ICON_TORCH);
+            if (mLongClickTorch != null) {
+                generalCategory.removePreference(mLongClickTorch);
             }
         }
 
@@ -460,6 +480,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment
             lockPatternUtils.setLockPatternEnabled((Boolean) value);
         } else if (KEY_VISIBLE_PATTERN.equals(key)) {
             lockPatternUtils.setVisiblePatternEnabled((Boolean) value);
+        } else if (KEY_DIRECTLY_SHOW.equals(key)) {
+            lockPatternUtils.setPassToSecurityView((Boolean) value);
         } else if (KEY_VISIBLE_ERROR_PATTERN.equals(key)) {
             lockPatternUtils.setShowErrorPath((Boolean) value);
         } else if (KEY_VISIBLE_GESTURE.equals(key)) {

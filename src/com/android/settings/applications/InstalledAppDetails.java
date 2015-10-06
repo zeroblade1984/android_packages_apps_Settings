@@ -279,7 +279,7 @@ public class InstalledAppDetails extends Fragment
 
         // This is a protected app component.
         // You cannot clear data for a protected component
-        if (mPackageInfo.applicationInfo.protect) {
+        if (isProtectedApp()) {
             enabled = false;
         }
 
@@ -435,7 +435,7 @@ public class InstalledAppDetails extends Fragment
 
         // This is a protected app component.
         // You cannot a uninstall a protected component
-        if (mPackageInfo.applicationInfo.protect) {
+        if (isProtectedApp()) {
             enabled = false;
         }
 
@@ -595,7 +595,7 @@ public class InstalledAppDetails extends Fragment
         }
         menu.findItem(UNINSTALL_ALL_USERS_MENU).setVisible(showIt);
 
-        menu.findItem(OPEN_PROTECTED_APPS).setVisible(mPackageInfo.applicationInfo.protect);
+        menu.findItem(OPEN_PROTECTED_APPS).setVisible(isProtectedApp());
     }
 
     @Override
@@ -696,6 +696,18 @@ public class InstalledAppDetails extends Fragment
         TextView packageName = (TextView) appSnippet.findViewById(R.id.app_pkgname);
         packageName.setText(mAppEntry.info.packageName);
         packageName.setVisibility(View.VISIBLE);
+        // Set application package path.
+        TextView packagePath = (TextView) appSnippet.findViewById(R.id.app_pkgpath);
+	ApplicationInfo mApplicationInfo = null;
+        try {
+            mApplicationInfo = mPm.getApplicationInfo(mAppEntry.info.packageName, 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        if (mApplicationInfo != null) {
+            packagePath.setText(mApplicationInfo.publicSourceDir);
+            packagePath.setVisibility(View.VISIBLE);
+        }
         // Version number of application
         mAppVersion = (TextView) appSnippet.findViewById(R.id.app_size);
 
@@ -1586,6 +1598,12 @@ public class InstalledAppDetails extends Fragment
                 setNotificationsEnabled(true);
             }
         }
+    }
+
+    private boolean isProtectedApp() {
+        // Some system apps doesn't have applicationInfo. Ensure we don't access to a null
+        // reference. In that case we assume the app isn't protected
+        return mPackageInfo.applicationInfo != null && mPackageInfo.applicationInfo.protect;
     }
 }
 

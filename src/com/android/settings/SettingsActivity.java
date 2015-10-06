@@ -82,6 +82,7 @@ import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
+import com.android.settings.contributors.ContributorsCloudFragment;
 import com.android.settings.cyanogenmod.DisplayRotation;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
@@ -119,7 +120,6 @@ import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.temasek.AmbientSettings;
-import com.android.settings.temasek.HeadsUpSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.voice.VoiceInputSettings;
@@ -330,7 +330,6 @@ public class SettingsActivity extends Activity
             BlacklistSettings.class.getName(),
             ProfilesSettings.class.getName(),
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
-            HeadsUpSettings.class.getName(),
             NotificationManagerSettings.class.getName(),
             LockScreenSettings.class.getName(),
             LiveDisplay.class.getName(),
@@ -338,7 +337,8 @@ public class SettingsActivity extends Activity
             ExpandedDesktopPreferenceFragment.class.getName(),
             AmbientSettings.class.getName(),
             DisplayRotation.class.getName(),
-            ButtonSettings.class.getName()
+            ButtonSettings.class.getName(),
+            ContributorsCloudFragment.class.getName()
     };
 
 

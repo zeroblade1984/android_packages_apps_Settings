@@ -72,10 +72,11 @@
     <uses-permission android:name="android.permission.READ_SEARCH_INDEXABLES" />
     <uses-permission android:name="android.permission.OEM_UNLOCK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.HARDWARE_ABSTRACTION_ACCESS" />
+    <uses-permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS" />
     <uses-permission android:name="com.cyanogen.permission.REQUEST_KILL_SWITCH_OP" />
     <uses-permission android:name="cyanogenmod.permission.FINISH_SETUP" />
     <uses-permission android:name="android.permission.ACCESS_FINGERPRINT_SERVICE" />
+    <uses-permission android:name="cyanogenmod.permission.MODIFY_PROFILES" />
 
     <permission
         android:name="cyanogenmod.permission.PROTECTED_APP"
@@ -488,6 +489,13 @@
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
                 android:value="true" />
         </activity>
+
+        <receiver android:name=".DateChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
 
         <activity android:name="DateTimeSettingsSetupWizard"
                   android:label="@string/date_and_time"
@@ -1870,31 +1878,11 @@
         />
 
         <!-- Custom activities Start -->
-        <activity android:name="Settings$HeadsUpSettingsActivity"
-                android:uiOptions="splitActionBarWhenNarrow"
-                android:label="@string/category_heads_up"
-                android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.temasek.HeadsUpSettings" />
-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings" />
-        </activity>
+        <!-- Heads up -->
+        <uses-permission android:name="android.permission.CHANGE_HEADS_UP_STATE" />
 
-        <activity-alias android:name=".temasek.HeadsUpSettings"
-                android:taskAffinity="com.android.settings"
-                android:label="@string/category_heads_up"
-                android:targetActivity="Settings$HeadsUpSettingsActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:exported="true">
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.android.settings.temasek.HeadsUpSettings" />
-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                       android:resource="@id/security_settings" />
-        </activity-alias>
+        <!-- SystemApp Remover -->
+        <activity android:name="com.android.settings.temasek.fragments.SystemappRemover" />
 
         <!-- Navigation bar toggle -->
         <activity android:name="Settings$ButtonSettingsActivity"
@@ -1962,6 +1950,20 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="cm/profile" />
             </intent-filter>
+        </activity>
+
+        <activity android:name="Settings$ContributorsCloudActivity"
+                android:label="@string/contributors_cloud_fragment_title"
+                android:windowSoftInputMode="stateHidden|adjustNothing"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.CONTRIBUTORS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.contributors.ContributorsCloudFragment" />
         </activity>
 
         <!-- CyanogenMod activities End -->
@@ -2506,25 +2508,6 @@
                 <action android:name="cyanogenmod.intent.action.PACKAGE_PROTECTED" />
             </intent-filter>
         </receiver>
-
-        <activity android:name=".applications.ProtectedAppsActivity"
-                  android:label="@string/protected_apps"
-                  android:excludeFromRecents="true"
-                  android:configChanges="orientation">
-            <intent-filter>
-                <action android:name=".applications.ProtectedAppsActivity" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".applications.LockPatternActivity"
-                  android:label="@string/protected_apps"
-                  android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name=".applications.LockPatternActivity" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
         <receiver android:name=".profiles.SetupDefaultProfileReceiver">
             <intent-filter>

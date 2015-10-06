@@ -17,7 +17,11 @@
 package com.android.settings.notification;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -27,6 +31,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settings.temasek.SeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +42,17 @@ public class NotificationManagerSettings extends SettingsPreferenceFragment
     private static final String TAG = NotificationManagerSettings.class.getSimpleName();
 
     private static final String KEY_LOCK_SCREEN_NOTIFICATIONS = "lock_screen_notifications";
+    private static final String PREF_HEADS_UP_GLOBAL_SWITCH = "heads_up_global_switch";
+    private static final String PREF_HEADS_UP_SNOOZE_TIME = "heads_up_snooze_time";
+    private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
 
     private boolean mSecure;
     private int mLockscreenSelectedValue;
     private DropDownPreference mLockscreen;
+
+    private ListPreference mHeadsUpGlobalSwitch;
+    private SeekBarPreference mHeadsUpSnoozeTime;
+    private SeekBarPreference mHeadsUpTimeOut;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -50,6 +62,66 @@ public class NotificationManagerSettings extends SettingsPreferenceFragment
         mSecure = new LockPatternUtils(getActivity()).isSecure();
         initLockscreenNotifications();
 
+        Resources systemUiResources;
+        try {
+            systemUiResources =
+                    getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (Exception e) {
+            return;
+        }
+
+        mHeadsUpSnoozeTime = (SeekBarPreference) findPreference(PREF_HEADS_UP_SNOOZE_TIME);
+        mHeadsUpSnoozeTime.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                int headsUpSnoozeTime = (Integer) newValue;
+                return Settings.System.putInt(getContentResolver(),
+                        Settings.System.HEADS_UP_SNOOZE_TIME,
+                        headsUpSnoozeTime * 60 * 1000);
+            }
+        });
+        final int defaultSnoozeTime = systemUiResources.getInteger(systemUiResources.getIdentifier(
+                    "com.android.systemui:integer/heads_up_snooze_time", null, null));
+        final int headsUpSnoozeTime = Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_SNOOZE_TIME, defaultSnoozeTime);
+        mHeadsUpSnoozeTime.setValue(headsUpSnoozeTime / 60 / 1000);
+
+        mHeadsUpTimeOut = (SeekBarPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
+        mHeadsUpTimeOut.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                int headsUpTimeOut = (Integer) newValue;
+                return Settings.System.putInt(getContentResolver(),
+                        Settings.System.HEADS_UP_NOTIFCATION_DECAY,
+                        headsUpTimeOut * 1000);
+            }
+        });
+        final int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
+                    "com.android.systemui:integer/heads_up_notification_decay", null, null));
+        final int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_NOTIFCATION_DECAY, defaultTimeOut);
+        mHeadsUpTimeOut.setValue(headsUpTimeOut / 1000);
+
+        mHeadsUpGlobalSwitch = (ListPreference) findPreference(PREF_HEADS_UP_GLOBAL_SWITCH);
+        mHeadsUpGlobalSwitch.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                int headsUpGlobalSwitch = Integer.valueOf((String) newValue);
+                updateHeadsUpGlobalSwitchSummary(headsUpGlobalSwitch);
+                return Settings.System.putInt(getContentResolver(),
+                        Settings.System.HEADS_UP_GLOBAL_SWITCH,
+                        headsUpGlobalSwitch);
+            }
+        });
+        final int headsUpGlobalSwitch = Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_GLOBAL_SWITCH, 1);
+        mHeadsUpGlobalSwitch.setValue(String.valueOf(headsUpGlobalSwitch));
+        updateHeadsUpGlobalSwitchSummary(headsUpGlobalSwitch);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     // === Lockscreen (public / private) notifications ===
@@ -110,6 +182,30 @@ public class NotificationManagerSettings extends SettingsPreferenceFragment
     private boolean getLockscreenAllowPrivateNotifications() {
         return Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.LOCK_SCREEN_ALLOW_PRIVATE_NOTIFICATIONS, 0) != 0;
+    }
+
+    private void updateHeadsUpGlobalSwitchSummary(int value) {
+        String summary;
+        switch (value) {
+            case 0:     summary = getResources().getString(
+                                    R.string.heads_up_global_switch_summary_disabled);
+                        mHeadsUpSnoozeTime.setEnabled(false);
+                        mHeadsUpTimeOut.setEnabled(false);
+                        break;
+            case 1:     summary = getResources().getString(
+                                    R.string.heads_up_global_switch_summary_perapp);
+                        mHeadsUpSnoozeTime.setEnabled(true);
+                        mHeadsUpTimeOut.setEnabled(true);
+                        break;
+            case 2:     summary = getResources().getString(
+                                    R.string.heads_up_global_switch_summary_forced);
+                        mHeadsUpSnoozeTime.setEnabled(true);
+                        mHeadsUpTimeOut.setEnabled(true);
+                        break;
+            default:    summary = "";
+                        break;
+        }
+        mHeadsUpGlobalSwitch.setSummary(summary);
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

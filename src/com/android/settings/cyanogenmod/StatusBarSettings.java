@@ -49,6 +49,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settings.temasek.SeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -67,12 +68,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_DATE = "status_bar_date";
     private static final String STATUS_BAR_DATE_STYLE = "status_bar_date_style";
     private static final String STATUS_BAR_DATE_FORMAT = "status_bar_date_format";
+    private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
     private static final String PREF_COLOR_PICKER = "clock_color";
     private static final String PREF_FONT_STYLE = "font_style";
+    private static final String PREF_STATUS_BAR_CLOCK_FONT_SIZE  = "status_bar_clock_font_size";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_CARRIERLABEL_PREFERENCE = "carrier_options";
-    private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker_enabled";
+    private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker";
 
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
@@ -90,8 +93,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private ListPreference mStatusBarDate;
     private ListPreference mStatusBarDateStyle;
     private ListPreference mStatusBarDateFormat;
+    private ListPreference mClockDatePosition;
     private ColorPickerPreference mColorPicker;
     private ListPreference mFontStyle;
+    private ListPreference mStatusBarClockFontSize;
     private PreferenceScreen mCarrierLabel;
     private SwitchPreference mTicker;
 
@@ -167,6 +172,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarDateStyle.setSummary(mStatusBarDateStyle.getEntry());
         mStatusBarDateStyle.setOnPreferenceChangeListener(this);
 
+        mClockDatePosition = (ListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
+        mClockDatePosition.setOnPreferenceChangeListener(this);
+        mClockDatePosition.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_DATE_POSITION,
+                0)));
+        mClockDatePosition.setSummary(mClockDatePosition.getEntry());
+
         mStatusBarDateFormat.setOnPreferenceChangeListener(this);
         mStatusBarDateFormat.setSummary(mStatusBarDateFormat.getEntry());
         if (mStatusBarDateFormat.getValue() == null) {
@@ -188,11 +200,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         enableStatusBarBatteryDependents(batteryStyle);
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
 
-        mTicker = (SwitchPreference) prefSet.findPreference(KEY_STATUS_BAR_TICKER);
-        final boolean tickerEnabled = systemUiResources.getBoolean(systemUiResources.getIdentifier(
-                    "com.android.systemui:bool/enable_ticker", null, null));
-        mTicker.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_TICKER_ENABLED, tickerEnabled ? 1 : 0) == 1);
+        mTicker = (SwitchPreference) findPreference(KEY_STATUS_BAR_TICKER);
+        mTicker.setChecked(Settings.System.getInt(
+                getContentResolver(), Settings.System.TICKER_ENABLED, 0) == 1);
         mTicker.setOnPreferenceChangeListener(this);
 
         mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
@@ -213,8 +223,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mFontStyle.setOnPreferenceChangeListener(this);
         mFontStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_CLOCK_FONT_STYLE,
-                4)));
+                0)));
         mFontStyle.setSummary(mFontStyle.getEntry());
+
+        mStatusBarClockFontSize = (ListPreference) findPreference(PREF_STATUS_BAR_CLOCK_FONT_SIZE);
+        mStatusBarClockFontSize.setOnPreferenceChangeListener(this);
+        mStatusBarClockFontSize.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_FONT_SIZE, 
+                14)));
+        mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntry());
 
         setHasOptionsMenu(true);
         mCheckPreferences = true;
@@ -268,6 +285,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             Settings.System.putInt(
                     resolver, STATUS_BAR_DATE_STYLE, statusBarDateStyle);
             mStatusBarDateStyle.setSummary(mStatusBarDateStyle.getEntries()[index]);
+            return true;
+        } else if (preference == mClockDatePosition) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mClockDatePosition.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
+            mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
+            parseClockDateFormats();
             return true;
         } else if (preference ==  mStatusBarDateFormat) {
             int index = mStatusBarDateFormat.findIndexOfValue((String) newValue);
@@ -330,8 +355,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                     mStatusBarBatteryShowPercent.getEntries()[index]);
             return true;
         } else if (preference == mTicker) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_TICKER_ENABLED,
+            Settings.System.putInt(resolver, Settings.System.TICKER_ENABLED,
                     (Boolean) newValue ? 1 : 0);
             return true;
         } else if (preference == mColorPicker) {
@@ -348,6 +372,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_FONT_STYLE, val);
             mFontStyle.setSummary(mFontStyle.getEntries()[index]);
+            return true;
+        } else if (preference == mStatusBarClockFontSize) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mStatusBarClockFontSize.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_FONT_SIZE, val);
+            mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntries()[index]);
             return true;
         }
         return false;
@@ -387,10 +418,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mStatusBarDate.setEnabled(false);
             mStatusBarDateStyle.setEnabled(false);
             mStatusBarDateFormat.setEnabled(false);
+            mClockDatePosition.setEnabled(false);
         } else {
             mStatusBarDate.setEnabled(true);
             mStatusBarDateStyle.setEnabled(true);
             mStatusBarDateFormat.setEnabled(true);
+            mClockDatePosition.setEnabled(true);
         }
     }
 

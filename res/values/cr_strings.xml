@@ -5,7 +5,7 @@
     <!-- About phone screen, Temasek version -->
     <string name="temasek_version_title">Temasek unofficial version</string>
     <!-- Do NOT translate this -->
-    <string name="temasek_version_default">V15.7</string>
+    <string name="temasek_version_default">V17.6</string>
 
     <!-- temasek spare parts -->
     <string name="temasek_settings_title">Temasek spare parts</string>
@@ -78,6 +78,7 @@
     <string name="shortcut_action_menu_big">Menu Big</string>
     <string name="shortcut_action_notifications">Notifications</string>
     <string name="shortcut_action_qs">Quicksettings panel</string>
+    <string name="shortcut_action_smart">Smart pulldown</string>
     <string name="shortcut_action_torch">Flashlight</string>
     <string name="shortcut_action_screenshot">Screenshot</string>
     <string name="shortcut_action_menu">Menu</string>
@@ -331,6 +332,9 @@
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
 
+    <!-- Toast Icons -->
+    <string name="toast_icon_title">Toast icon</string>
+
     <!-- ListView animation -->
     <string name="interface_settings_animation_title">Animation options</string>
     <string name="listview_animation_title">ListView animation</string>
@@ -565,8 +569,6 @@
     <string name="icon_title">Icon</string>
     <string name="qs_colors_title">Quick Settings Color Options</string>
     <string name="qs_colors_summary">Change background, icon and text colors for the tiles</string>
-    <string name="reset_android">Android</string>
-    <string name="reset_swag">Swag</string>
     <string name="colors_title">Colors</string>
     <string name="cat_colors_title">Customize notification colors</string>
     <string name="text_title">Text</string>
@@ -574,39 +576,12 @@
     <string name="qs_transparent_shade_summary">Ability to apply color alpha value and make notification shade transparent.</string>
     <string name="qs_color_switch_title">Custom color switch</string>
 
-    <!-- Heads Up -->
-    <string name="category_heads_up">Heads up notifications</string>
-    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
-    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
-    <string name="add_heads_up_package">Add app</string>
-    <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications</string>
-    <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications</string>
-    <string name="heads_up_dnd_title">Do not disturb</string>
-    <string name="heads_up_blacklist_title">Blacklist</string>
-    <string name="heads_up_disabled_notice">To allow applications to display interactive notifications in a pop-up window on your screen, enable Heads up.</string>
-    <string name="heads_up_dismiss_on_remove_title">Swipe behavior</string>
-    <string name="heads_up_dismiss_on_remove_summary_enabled">Hide notification instead of dismiss</string>
-    <string name="heads_up_dismiss_on_remove_summary_disabled">Hide and dismiss notification</string>
-    <string name="show_headsup_button_title">Show quick access button</string>
-    <string name="show_headsup_button_summary">Show a quick access button in the status bar header</string>
-
-    <!-- Heads up timeout -->
-    <string name="heads_up_time_out_title">Time out</string>
-
-    <!-- Heads up snooze -->
-    <string name="heads_up_snooze_title">Snooze timer</string>
-
-    <!-- Heads Up Floating Mode -->
-    <string name="heads_up_floating_window_title">Float mode</string>
-    <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string> 
+    <!-- Captive Portal -->
+    <string name="captive_portal_detection">Captive portal detection</string>
+    <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>
 
     <!-- Navring targets (enable/disable) -->
     <string name="navigation_ring_enable_title">Enable navigation rings</string>
-
-    <!-- Heads up touch outside -->
-    <string name="heads_up_touch_outside_title">Touch outside behavior</string>
-    <string name="heads_up_touch_outside_summary_enabled">Hide notification on touch outside and on home button press</string>
-    <string name="heads_up_touch_outside_summary_disabled">Do not hide notification after touch outside or on home button press</string>
 
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Volume key Answer</string>
@@ -635,6 +610,11 @@
     <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="status_bar_carrier_color">Carrier label color</string>
+    <string name="show_carrier_disabled">Disabled</string>
+    <string name="show_carrier_keyguard">Lockscreen only</string>
+    <string name="show_carrier_statusbar">Statusbar only</string>
+    <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
+    <string name="status_bar_carrier_size">Carrier label text size</string>
 
     <!-- Show bluetooth icon when disconnected -->
     <string name="status_bar_bluetooth_icon">Show Bluetooth icon</string>
@@ -668,8 +648,8 @@
     <string name="mount_notification_summary">Display ongoing notification for mounted storage</string>
 
     <!-- Long press on lock screen lock icon to sleep -->
-    <string name="longpress_lock_icon_to_sleep_title">Long press lock icon to sleep</string>
-    <string name="longpress_lock_icon_to_sleep_summary">This option will not work if both smart lock and accessibility touch exploration are enabled</string>
+    <string name="longpress_lock_icon_torch_title">Long press lock icon to launch torch</string>
+    <string name="longpress_lock_icon_torch_summary">This option will not work if both smart lock and accessibility touch exploration are enabled</string>
 
     <!-- Double tap gesture anywhere on the lock screen put device to sleep -->
     <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
@@ -692,6 +672,7 @@
     <string name="qs_tile_heads_up">Heads up</string>
     <string name="qs_systemui_restart_tile">Restart SystemUI</string>
     <string name="qs_tile_slim_floats">Slim Floats</string>
+    <string name="qs_slim_pie_tile">Pie</string>
 
     <!-- Safe headset volume restore checkbox -->
     <string name="safe_headset_volume_title">Safe headset volume</string>
@@ -827,12 +808,45 @@
     <string name="status_bar_clock_style_reset">Reset color</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
     <string name="clock_font_style_title">Font</string>
+    <string name="clock_font_normal">Normal</string>
+    <string name="clock_font_italic">Italic</string>
     <string name="clock_font_bold">Bold</string>
-    <string name="clock_font_condensed">Condensed</string>
+    <string name="clock_font_bold_italic">Bold Italic</string>
     <string name="clock_font_light">Light</string>
     <string name="clock_font_light_italic">Light Italic</string>
-    <string name="clock_font_normal">Normal</string>
+    <string name="clock_font_thin">Thin</string>
+    <string name="clock_font_thin_italic">Thin Italic</string>
+    <string name="clock_font_condensed">Condensed</string>
+    <string name="clock_font_condensed_italic">Condensed Italic</string>
+    <string name="clock_font_condensed_bold">Condensed Bold</string>
+    <string name="clock_font_condensed_bold_italic">Condensed Bold Italic</string>
+    <string name="clock_font_medium">Medium</string>
+    <string name="clock_font_medium_italic">Medium Italic</string>
+    <string name="clock_font_size_title">Font size</string>
     <string name="status_bar_show_clock_second_title">Clock seconds</string>
+    <string name="clock_font_size_4">4</string>
+    <string name="clock_font_size_5">5</string>
+    <string name="clock_font_size_6">6</string>
+    <string name="clock_font_size_7">7</string>
+    <string name="clock_font_size_8">8</string>
+    <string name="clock_font_size_9">9</string>
+    <string name="clock_font_size_10">10</string>
+    <string name="clock_font_size_11">11</string>
+    <string name="clock_font_size_12">12</string>
+    <string name="clock_font_size_13">13</string>
+    <string name="clock_font_size_14">14</string>
+    <string name="clock_font_size_15">15</string>
+    <string name="clock_font_size_16">16</string>
+    <string name="clock_font_size_17">17</string>
+    <string name="clock_font_size_18">18</string>
+    <string name="clock_font_size_19">19</string>
+    <string name="clock_font_size_20">20</string>
+    <string name="clock_font_size_21">21</string>
+    <string name="clock_font_size_22">22</string>
+    <string name="clock_font_size_23">23</string>
+    <string name="clock_date_position">Date position</string>
+    <string name="clock_date_right">Right of time</string>
+    <string name="clock_date_left">Left of time</string>
 
     <!-- Pie control -->
     <string name="pie_control_title">SlimPIE</string>
@@ -1091,6 +1105,16 @@
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
 
+    <!-- Recent app sidebar -->
+    <string name="recent_app_sidebar_title">App sidebar</string>
+    <string name="recent_app_sidebar_summary">Show app shortcuts on the other edge</string>
+    <string name="recent_app_sidebar_style_title">Sidebar style</string>
+    <string name="recent_app_sidebar_style_summary">Change recent app sidebar style</string>
+    <string name="recent_app_sidebar_hide_labels_title">Hide icon labels</string>
+    <string name="recent_app_sidebar_label_color_title">Label color</string>
+    <string name="recent_app_sidebar_bg_color_title">Background color</string>
+    <string name="recent_app_sidebar_scale_title">Size</string>
+
     <!-- Floating Windows -->
     <string name="slim_action_floats">Slim Actions and Pie</string>
     <string name="slim_action_floats_summary">Launch Slim and Pie Actions in Floating Window Mode</string>
@@ -1111,12 +1135,8 @@
     <string name="dim_nav_buttons_touch_anywhere_summary_on">Touching anywhere on the screen will cause buttons to un-dim</string>
     <string name="dim_nav_buttons_touch_anywhere_summary_off">Only touches on the navbar will cause buttons to un-dim</string>
 
-    <!-- Lockscreen wallpaper -->
-    <string name="lockscreen_wallpaper_title">Wallpaper</string>
-    <string name="lockscreen_wallpaper_summary">Set lockscreen wallpaper</string>
-
     <!-- Status bar temperature -->
-    <string name="status_bar_temperature_title">Temperature</string>
+    <string name="status_bar_temperature_title">Weather temperature</string>
     <string name="status_bar_temperature_hidden">Hidden</string>
     <string name="status_bar_temperature_show_scale">Shown with scale</string>
     <string name="status_bar_temperature_hide_scale">Shown without scale</string>
@@ -1126,6 +1146,21 @@
     <string name="status_bar_temperature_location_left">Show on left</string>
     <string name="status_bar_weather_color_title">Temperature color</string>
     <string name="status_bar_weather_size_title">Font size</string>
+    <string name="status_bar_weather_font_style_title">Font</string>
+    <string name="status_bar_weather_font_normal">Normal</string>
+    <string name="status_bar_weather_font_italic">Italic</string>
+    <string name="status_bar_weather_font_bold">Bold</string>
+    <string name="status_bar_weather_font_bold_italic">Bold Italic</string>
+    <string name="status_bar_weather_font_light">Light</string>
+    <string name="status_bar_weather_font_light_italic">Light Italic</string>
+    <string name="status_bar_weather_font_thin">Thin</string>
+    <string name="status_bar_weather_font_thin_italic">Thin Italic</string>
+    <string name="status_bar_weather_font_condensed">Condensed</string>
+    <string name="status_bar_weather_font_condensed_italic">Condensed Italic</string>
+    <string name="status_bar_weather_font_condensed_bold">Condensed Bold</string>
+    <string name="status_bar_weather_font_condensed_bold_italic">Condensed Bold Italic</string>
+    <string name="status_bar_weather_font_medium">Medium</string>
+    <string name="status_bar_weather_font_medium_italic">Medium Italic</string>
 
     <!-- Headphones icon switch -->
     <string name="show_headset_icon_title">Headset icon</string>
@@ -1154,5 +1189,100 @@
     <string name="pref_scrollingcache_default_enable">Default enable</string>
     <string name="pref_scrollingcache_default_disable">Default disable</string>
     <string name="pref_scrollingcache_force_disable">Force disable</string>
+
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">Set lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
+    <string name="reset_lockscreen_wallpaper">Set to default</string>
+
+    <!-- QS Tiles Columns -->
+    <string name="qs_num_columns_title">Number of tiles per row</string>
+    <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
+
+    <!-- Whether the keyguard will directly pass to gesture entry -->
+    <string name="lock_directly_show_gesture">Directly show gesture </string>
+
+    <!-- Time-context headers in notification header -->
+    <string name="contextual_title">Contextual headers</string>
+    <string name="status_bar_custom_header_title">Custom header image</string>
+    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+    <string name="status_bar_custom_header_default_title">Select your images</string>
+    <string name="custom_header_image_0">Default</string>
+    <string name="custom_header_image_1">Modern</string>
+    <string name="custom_header_image_2">Poly HD</string>
+
+    <!-- Device policy override -->
+    <string name="device_policy_override_title">Device policy override</string>
+    <string name="device_policy_override_summary">Allow apps to force secure lock screen and override profile settings</string>
+
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Chamber of secrets</string>
+    <string name="chamber_toast">The chamber of secrets has opened</string>
+
+    <!-- Expand volume panel -->
+    <string name="volume_panel_expanded_title">Expand volume panel</string>
+    <string name="volume_panel_expanded_summary">Show volume panel in expanded mode by default</string>
+
+    <!-- SlimSizer  -->
+    <string name="listsystem">list</string>
+    <string name="sizer_title">App remover</string>
+    <string name="caution">Caution</string>
+    <string name="sizer_message_startup">This tool allows you to delete system apps. Use with caution and only delete apps you know are safe to be removed.</string>
+    <string name="cancel">Cancel</string>
+    <string name="sizer_message_delete">Are you sure you want to delete this app?</string>
+    <string name="btn_delete">Delete selected APPs now!</string>
+    <string name="delete_progress_title">Deleting</string>
+    <string name="delete_progress">Selected files are being deleted...</string>
+    <string name="delete_success">Deleted</string>
+    <string name="delete_fail">Unable to delete</string>
+    <string name="btn_profile">Profile</string>
+    <string name="sizer_message_sdnowrite">Cannot write to SD Card</string>
+    <string name="sizer_message_sdnoread">Cannot read SD Card</string>
+    <string name="sizer_message_filesuccess">Created profile</string>
+    <string name="sizer_message_filefail">Failed to create profile</string>
+    <string name="sizer_message_noselect">Nothing selected</string>
+    <string name="system_app_remover">System App Remover</string>
+    <string name="systemappremover_summary">Remove system apps by your own risk</string>
+
+    <!-- Doze notification color invert -->
+    <string name="doze_notification_color_invert_title">Color inversion</string>
+    <string name="doze_notification_color_invert_summary_off">Ambient display notifications will not be inverted. Use for dark themes.</string>
+    <string name="doze_notification_color_invert_summary_on">Ambient display notifications will show as inverted. Use for light/stock theme.</string>
+
+    <!-- On-The-Go -->
+    <string name="power_menu_onthego_title">On-The-Go Mode</string>
+    <string name="onthego_alpha_title">On-The-Go Alpha</string>
+    <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay.</string>
+
+    <!-- Lockscreen see through -->
+    <string name="lockscreen_see_through_title">Lockscreen blur</string>
+    <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lockscreen.</string>
+    <string name="lockscreen_blur_radius">Blur effect intensity</string>
+
+    <!-- Status Bar Activity Indicators -->
+    <string name="status_bar_network_activity_title">Activity indicators</string>
+    <string name="status_bar_network_activity_summary">Show indicators in signal bars</string>
+
+    <!-- Media art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Enable media cover art on the lockscreen</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_title">Heads up notification</string>
+    <string name="heads_up_global_switch_title">Heads up notifications mode</string>
+    <string name="heads_up_global_switch_summary_disabled">Heads up notifications are disabled</string>
+    <string name="heads_up_global_switch_summary_perapp">Heads up notifications are en-/disabled on a per app basis</string>
+    <string name="heads_up_global_switch_summary_forced">Heads up notifications are force enabled for all apps</string>
+    <string name="heads_up_global_switch_disabled">Never show heads up notifications</string>
+    <string name="heads_up_global_switch_perapp">Show heads up notifications on a per app basis</string>
+    <string name="heads_up_global_switch_forced">Always show heads up notifications</string>
+    <string name="app_notification_enable_heads_up_title">Show heads up</string>
+    <string name="app_notification_enable_heads_up_summary">Show notifications from this app as heads up</string>
+    <string name="app_notification_enable_heads_up_global_disabled_summary">Heads up are currently globally disabled in notification settings</string>
+    <string name="app_notification_enable_heads_up_global_forced_summary">Heads up are currently globally enabled in notification settings</string>
+    <string name="heads_up_snooze_title">Snooze timer</string>
+    <string name="heads_up_time_out_title">Time out</string>
 
 </resources>

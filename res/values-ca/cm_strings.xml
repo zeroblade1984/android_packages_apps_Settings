@@ -249,6 +249,7 @@
   <string name="privacy_guard_reset_text">Reiniciar permisos?</string>
   <string name="privacy_guard_help_text">En aquesta pantalla pots triar en quines aplicacions el Guarda de privacitat hauria d\'estar actiu picant simplement en elles. Les aplicacions seleccionades no podran accedir a les dades personals com els contactes, missatges o els registres de trucades. Fent una pulsació llarga en una entrada de l\'aplicació s\'obrirà la pantalla de detalls de l\'aplicació.\n\nLes aplicacions integrades per defecte no es mostren, però poden ser mostrades seleccionant l\'opció del menú respectiu.</string>
   <string name="privacy_guard_manager_show_system_apps">Mostra les aplicacions integrades</string>
+  <string name="privacy_guard_notification_title">Mostra una notificació</string>
   <string name="app_ops_btn_text">Modifica</string>
   <string name="increasing_ring_volume_option_title">Volum del to de trucada creixent</string>
   <string name="increasing_ring_min_volume_title">Volum inicial</string>
@@ -342,6 +343,8 @@
   <string name="notification_light_default_value">Predeterminat</string>
   <string name="notification_light_missed_call_title">Trucada perduda</string>
   <string name="notification_light_voicemail_title">Contestador</string>
+  <string name="notification_light_screen_on">Llums amb la pantalla encesa</string>
+  <string name="keywords_lights_brightness_level">atenua la brillantor dels leds</string>
   <string name="notification_ringtone_title_cm">To de les notificacions</string>
   <string name="headset_connect_player_title">Crida l\'aplicació de música</string>
   <string name="headset_connect_player_summary">Crida l\'aplicació de música predeterminada quan es connecten els auriculars</string>
@@ -482,6 +485,7 @@
   <string name="ok">D\'acord</string>
   <string name="profile_menu_delete_title">Esborra</string>
   <string name="profile_action_none">Deixa sense canvis</string>
+  <string name="profile_action_system">Per defecte del sistema</string>
   <string name="profile_action_disable">Apagar</string>
   <string name="profile_action_enable">Encén</string>
   <string name="profile_trigger_a2dp_connect">En connectar l\'A2DP</string>
@@ -682,6 +686,9 @@
   <string name="settings_cmlicense_activity_title">Llicència CyanogenMod</string>
   <string name="lockpattern_settings_enable_error_path_title">Mostra el patró erroni</string>
   <string name="lockpattern_settings_enable_dots_title">Mostra els punts del patró</string>
+  <string name="lock_directly_show_password">Mostra directament l\'entrada de contrasenya</string>
+  <string name="lock_directly_show_pattern">Mostra directament la vista del patró</string>
+  <string name="lock_directly_show_pin">Mostra directament l\'entrada del PIN</string>
   <string name="unlock_quick_unlock_control_title">Desbloqueig ràpid</string>
   <string name="unlock_quick_unlock_control_summary">Desbloqueja automàticament quan s\'introdueixi el PIN/contrasenya correcta</string>
   <string name="unlock_scramble_pin_layout_title">Disposició aleatòria</string>
@@ -700,6 +707,7 @@
   <string name="status_bar_show_weather_summary">Mostra el temps per sobre el panell d\'ajustos ràpids</string>
   <string name="qs_category_title">Panell d\'ajustos ràpids</string>
   <string name="qs_brightness_slider_title">Mostra el deslliçador de brillantor</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Amaga les cel·les privades quan estigui bloquejat</string>
   <string name="qs_order_title">Selecciona i ordena cel·les</string>
   <string name="add_qs">Afegeix una nova cel·la</string>
   <string name="qs_action_delete">Esborra</string>
@@ -722,6 +730,7 @@
   <string name="qs_tile_compass">Brúixola</string>
   <string name="qs_tile_lockscreen">Pantalla de bloqueig</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Panell de volum</string>
   <string name="qs_tile_screen_timeout">Temps d\'espera de la pantalla</string>
   <string name="qs_tile_usb_tether">Ancoratge USB</string>
   <string name="qs_tile_heads_up">Notificacions emergents</string>
@@ -831,6 +840,17 @@
   <string name="live_display_low_power_summary">Ajusta la pantalla per un consum d\'energia més baix però sense degradació</string>
   <string name="live_display_enhance_color_title">Millora els colors</string>
   <string name="live_display_enhance_color_summary">Millora la vividesa del color dels tons de la pell, paisatges i altres imatges</string>
+  <string name="live_display_color_profile_title">Perfil de color</string>
+  <string name="live_display_color_profile_standard_title">Estàndard</string>
+  <string name="live_display_color_profile_standard_summary">Colors precisos i blancs brillants</string>
+  <string name="live_display_color_profile_natural_title">Natural</string>
+  <string name="live_display_color_profile_natural_summary">Colors realistes i tons de la pell</string>
+  <string name="live_display_color_profile_dynamic_title">Dinàmic</string>
+  <string name="live_display_color_profile_dynamic_summary">Colors realçats i blancs brillants</string>
+  <string name="live_display_color_profile_cinema_title">Cinema</string>
+  <string name="live_display_color_profile_cinema_summary">Reproducció del color perfecte per a multimèdia</string>
+  <string name="live_display_color_profile_astronomy_title">Astronomia</string>
+  <string name="live_display_color_profile_astronomy_summary">Vermells profunds per preservar la visió nocturna</string>
   <string name="battery_saver_threshold">Llindar d\'estalvi de bateria</string>
   <string name="battery_saver_summary">Redueix el rendiment i limita les dades en segon pla</string>
   <string name="battery_saver_summary_unavailable">No disponible durant la càrrega</string>
@@ -933,6 +953,7 @@
   <string name="fingerprint_enrollment_error_title_3">Hmm, alguna cosa ha sortit malament</string>
   <string name="fingerprint_enrollment_error_title_4">Uh oh, intenta-ho un altre cop</string>
   <string name="fingerprint_enrollment_error_title_5">Whoops, hi ha hagut un error</string>
+  <string name="lockscreen_settings_and_fingerprint">Pantalla de bloqueig &amp; empremtes digitals</string>
   <string name="menu_stats_reset">Reinicia estadístiques</string>
   <string name="reset_stats_msg">L\'historial d\'estadístiques de la bateria serà reiniciat</string>
   <string name="dock_battery_not_present">Bateria no trobada a l\'acoblament</string>
@@ -943,4 +964,22 @@
   <string name="lto_download_data_wifi_only">Descàrrega de dades assistides de GPS</string>
   <string name="lto_download_data_wifi_only_on">Sobre qualsevol xarxa</string>
   <string name="lto_download_data_wifi_only_off">Només sobre xarxes Wi\u2011Fi</string>
+  <string name="keep_screen_on_never">Mai</string>
+  <string name="keep_screen_on_debugging">Durant la depuració USB</string>
+  <string name="keep_screen_on_charging">Mentre es carrega</string>
+  <string name="contributors_cloud_fragment_title">Contribuïdors</string>
+  <string name="contributors_cloud_loading_message">S\'estan carregant les dades dels contribuïdors\u2026</string>
+  <string name="contributors_cloud_failed_message">No s\'han pogut carregar les dades dels contribuïdors</string>
+  <string name="contributor_info_menu">Informació del contribuïdor</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Nom:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Sobrenom:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Publicacions:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Rang:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Informació de les contribucions</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Total de contribuïdors:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Total de publicacions:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Darrera actualització:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Vols restaurar les cel·les d\'ajustaments ràpids?</string>
 </resources>
