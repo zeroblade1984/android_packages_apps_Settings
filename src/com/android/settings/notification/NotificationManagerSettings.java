@@ -70,32 +70,18 @@ public class NotificationManagerSettings extends SettingsPreferenceFragment
             return;
         }
 
+        // Heads up snooze time
         mHeadsUpSnoozeTime = (SeekBarPreference) findPreference(PREF_HEADS_UP_SNOOZE_TIME);
-        mHeadsUpSnoozeTime.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                int headsUpSnoozeTime = (Integer) newValue;
-                return Settings.System.putInt(getContentResolver(),
-                        Settings.System.HEADS_UP_SNOOZE_TIME,
-                        headsUpSnoozeTime * 60 * 1000);
-            }
-        });
+        mHeadsUpSnoozeTime.setOnPreferenceChangeListener(this);
         final int defaultSnoozeTime = systemUiResources.getInteger(systemUiResources.getIdentifier(
                     "com.android.systemui:integer/heads_up_snooze_time", null, null));
         final int headsUpSnoozeTime = Settings.System.getInt(getContentResolver(),
                 Settings.System.HEADS_UP_SNOOZE_TIME, defaultSnoozeTime);
         mHeadsUpSnoozeTime.setValue(headsUpSnoozeTime / 60 / 1000);
 
+        // Heads up time out (decay time)
         mHeadsUpTimeOut = (SeekBarPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
-        mHeadsUpTimeOut.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                int headsUpTimeOut = (Integer) newValue;
-                return Settings.System.putInt(getContentResolver(),
-                        Settings.System.HEADS_UP_NOTIFCATION_DECAY,
-                        headsUpTimeOut * 1000);
-            }
-        });
+        mHeadsUpTimeOut.setOnPreferenceChangeListener(this);
         final int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
                     "com.android.systemui:integer/heads_up_notification_decay", null, null));
         final int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
@@ -103,25 +89,39 @@ public class NotificationManagerSettings extends SettingsPreferenceFragment
         mHeadsUpTimeOut.setValue(headsUpTimeOut / 1000);
 
         mHeadsUpGlobalSwitch = (ListPreference) findPreference(PREF_HEADS_UP_GLOBAL_SWITCH);
-        mHeadsUpGlobalSwitch.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                int headsUpGlobalSwitch = Integer.valueOf((String) newValue);
-                updateHeadsUpGlobalSwitchSummary(headsUpGlobalSwitch);
-                return Settings.System.putInt(getContentResolver(),
-                        Settings.System.HEADS_UP_GLOBAL_SWITCH,
-                        headsUpGlobalSwitch);
-            }
-        });
+        mHeadsUpGlobalSwitch.setOnPreferenceChangeListener(this);
         final int headsUpGlobalSwitch = Settings.System.getInt(getContentResolver(),
                 Settings.System.HEADS_UP_GLOBAL_SWITCH, 1);
         mHeadsUpGlobalSwitch.setValue(String.valueOf(headsUpGlobalSwitch));
-        updateHeadsUpGlobalSwitchSummary(headsUpGlobalSwitch);
     }
 
     @Override
     public void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mHeadsUpSnoozeTime) {
+            int headsUpSnoozeTime = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.HEADS_UP_SNOOZE_TIME,
+                headsUpSnoozeTime * 60 * 1000);
+            return true;
+        } else if (preference == mHeadsUpTimeOut) {
+            int headsUpTimeOut = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.HEADS_UP_NOTIFCATION_DECAY,
+                headsUpTimeOut * 1000);
+            return true;
+        } else if (preference == mHeadsUpGlobalSwitch) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.HEADS_UP_GLOBAL_SWITCH, value);
+                updateHeadsUpGlobalSwitchSummary(value);
+            return true;
+        }
+        return false;
     }
 
     // === Lockscreen (public / private) notifications ===
