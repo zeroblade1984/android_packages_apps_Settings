@@ -1293,4 +1293,9 @@
     <string name="heads_up_snooze_title">Snooze timer</string>
     <string name="heads_up_time_out_title">Time out</string>
 
+    <!-- Heads up touch outside -->
+    <string name="heads_up_touch_outside_title">Touch outside behavior</string>
+    <string name="heads_up_touch_outside_summary_enabled">Hide heads up on touch outside and on home button press</string>
+    <string name="heads_up_touch_outside_summary_disabled">Do not hide heads up on touch outside or on home button press</string>
+
 </resources>
