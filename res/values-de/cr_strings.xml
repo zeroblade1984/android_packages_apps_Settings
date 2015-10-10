@@ -3,51 +3,51 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- About phone screen, Temasek version -->
-    <string name="temasek_version_title">Temasek unofficial version</string>
+    <string name="temasek_version_title">Inoffizielle Temasek Version</string>
 
     <!-- temasek spare parts -->
-    <string name="temasek_settings_title">Temasek spare parts</string>
-    <string name="recents_panel_title">Recents panel</string>
-    <string name="recents_panel_settings">Recents panel settings</string>
-    <string name="screen_and_animations_title">Screen and animations</string>
-    <string name="display_settings">Display</string>
-    <string name="display_settings_title">Display settings</string>
-    <string name="general_options_title">General</string>
+    <string name="temasek_settings_title">Temasek Grabbelkiste</string>
+    <string name="recents_panel_title">Anwendungsliste</string>
+    <string name="recents_panel_settings">Einstellungen Anwendungsliste</string>
+    <string name="screen_and_animations_title">Bildschirm und Animationen</string>
+    <string name="display_settings">Bildschirm</string>
+    <string name="display_settings_title">Bildschirmeinstellungen</string>
+    <string name="general_options_title">Allgemein</string>
 
     <!-- General strings -->
-    <string name="attention">Attention</string>
-    <string name="reset">Reset</string>
-    <string name="help">Help</string>
-    <string name="default_string">Default</string>
-    <string name="enabled">Enabled</string>
-    <string name="disabled">Disabled</string>
+    <string name="attention">Achtung</string>
+    <string name="reset">Zurücksetzen</string>
+    <string name="help">Hilfe</string>
+    <string name="default_string">Standard</string>
+    <string name="enabled">Aktiv</string>
+    <string name="disabled">Inaktiv</string>
     <string name="ok">Ok</string>
-    <string name="reset_message">Reset all entries to default?</string>
+    <string name="reset_message">Alle Einträge auf Standard zurücksetzen?</string>
     <string name="extras_temasek_settings">Temasek Extras</string>
-    <string name="reset_default_message">Reset default</string>
-    <string name="additional_options_title">Additional options</string>
+    <string name="reset_default_message">Standard zurücksetzen</string>
+    <string name="additional_options_title">Zusätzliche Optionen</string>
 
     <!-- Changelog -->
-    <string name="changelog_temasek_title">Changelog</string>
-    <string name="changelog_temasek_error">Unable to load changelog</string>
+    <string name="changelog_temasek_title">Änderungsprotokoll</string>
+    <string name="changelog_temasek_error">Änderungsprotokoll kann nicht gelkaden werden</string>
     
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="dialog_color_picker">Farbauswahl</string>
+    <string name="press_color_to_apply">Antippen um Farbe zu wählen</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
-    <string name="color_default">Default</string>
+    <string name="color_default">Standard</string>
 
     <!-- About device screen, CPU and RAM info. -->
     <string name="cpu_info">CPU</string>
     <string name="mem_info">RAM</string>
 
     <!-- Temasek Extra Info -->
-    <string name="temaextrainfo">Extra information</string>
-    <string name="temaextrainfo_summary">Display extra info for cpu, display, etc</string>
+    <string name="temaextrainfo">Weitere Informationen</string>
+    <string name="temaextrainfo_summary">Weitere Informationen für cpu, display, etc zeigen</string>
 
     <!-- Viper4Android -->
     <string name="viper_title">Viper4Android</string>
@@ -59,11 +59,11 @@
     <string name="ota_title">OTA update</string>
 
     <!-- long press back to kill configurable timeout -->
-    <string name="kill_app_longpress_timeout_title">Long press timeout</string>
-    <string name="timeout_2000">2 seconds (default)</string>
-    <string name="timeout_1500">1,5 seconds</string>
-    <string name="timeout_1000">1 second</string>
-    <string name="timeout_500">0,5 second</string>
+    <string name="kill_app_longpress_timeout_title">Zeitlimit für langen Klick</string>
+    <string name="timeout_2000">2 Sekunden (Standard)</string>
+    <string name="timeout_1500">1,5 Sekunden</string>
+    <string name="timeout_1000">1 Sekunden</string>
+    <string name="timeout_500">0,5 Sekunden</string>
 
     <!-- Slim Shortcuts -->
     <string name="slim_shortcut_picker">Slim Actions</string>
