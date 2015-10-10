@@ -6,7 +6,7 @@
     <string name="temasek_version_title">Inoffizielle Temasek Version</string>
 
     <!-- temasek spare parts -->
-    <string name="temasek_settings_title">Temasek Grabbelkiste</string>
+    <string name="temasek_settings_title">Temasek Einstellungen</string>
     <string name="recents_panel_title">Anwendungsliste</string>
     <string name="recents_panel_settings">Einstellungen Anwendungsliste</string>
     <string name="screen_and_animations_title">Bildschirm und Animationen</string>
@@ -29,7 +29,7 @@
 
     <!-- Changelog -->
     <string name="changelog_temasek_title">Änderungsprotokoll</string>
-    <string name="changelog_temasek_error">Änderungsprotokoll kann nicht gelkaden werden</string>
+    <string name="changelog_temasek_error">Änderungsprotokoll kann nicht geladen werden</string>
     
     <!-- Color Picker -->
     <string name="dialog_color_picker">Farbauswahl</string>
@@ -67,41 +67,41 @@
 
     <!-- Slim Shortcuts -->
     <string name="slim_shortcut_picker">Slim Actions</string>
-    <string name="shortcut_action_none">None</string>
-    <string name="shortcut_action_app">Custom app</string>
+    <string name="shortcut_action_none">Keine</string>
+    <string name="shortcut_action_app">Bestimmte App</string>
     <string name="shortcut_action_home">Home</string>
-    <string name="shortcut_action_back">Back</string>
-    <string name="shortcut_action_kill">Kill app</string>
-    <string name="shortcut_action_lastapp">Last app</string>
-    <string name="shortcut_action_menu_big">Menu Big</string>
-    <string name="shortcut_action_notifications">Notifications</string>
+    <string name="shortcut_action_back">Zurück</string>
+    <string name="shortcut_action_kill">App beenden</string>
+    <string name="shortcut_action_lastapp">Letzte App</string>
+    <string name="shortcut_action_menu_big">Großes Menü</string>
+    <string name="shortcut_action_notifications">Benachrichtigung</string>
     <string name="shortcut_action_qs">Quicksettings panel</string>
     <string name="shortcut_action_smart">Smart pulldown</string>
-    <string name="shortcut_action_torch">Flashlight</string>
+    <string name="shortcut_action_torch">Taschenlampe</string>
     <string name="shortcut_action_screenshot">Screenshot</string>
-    <string name="shortcut_action_menu">Menu</string>
-    <string name="shortcut_action_ime">Open IME Switcher</string>
-    <string name="shortcut_action_power_menu">Power menu</string>
-    <string name="shortcut_action_recent">Recents</string>
-    <string name="shortcut_action_restartui">Restart SystemUI</string>
-    <string name="shortcut_action_power">Screen Off</string>
-    <string name="shortcut_action_search">Search in app</string>
-    <string name="shortcut_action_ring_vib">Ring/Vib</string>
-    <string name="shortcut_action_ring_silent">Ring/Silent</string>
-    <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
-    <string name="shortcut_action_camera">Camera</string>
-    <string name="shortcut_action_media_next">Music - next track</string>
-    <string name="shortcut_action_media_play_pause">Music - play/pause</string>
-    <string name="shortcut_action_media_previous">Music - previous track</string>
-    <string name="shortcut_action_wake_device">Wake up device</string>
+    <string name="shortcut_action_menu">Menü</string>
+    <string name="shortcut_action_ime">IME Switcher öffnen</string>
+    <string name="shortcut_action_power_menu">Power Menü</string>
+    <string name="shortcut_action_recent">Letzte Apps</string>
+    <string name="shortcut_action_restartui">SystemUI neustarten</string>
+    <string name="shortcut_action_power">Bildschirm aus</string>
+    <string name="shortcut_action_search">In app suchen</string>
+    <string name="shortcut_action_ring_vib">Klingeln/Vib</string>
+    <string name="shortcut_action_ring_silent">Klingeln/Still</string>
+    <string name="shortcut_action_ring_vib_silent">Klingeln/Vib/Still</string>
+    <string name="shortcut_action_camera">Kamera</string>
+    <string name="shortcut_action_media_next">Musik - nächstes Lied</string>
+    <string name="shortcut_action_media_play_pause">Musik - Start/Pause</string>
+    <string name="shortcut_action_media_previous">Musik - vorheriges Lied</string>
+    <string name="shortcut_action_wake_device">Gerät aufwecken</string>
 
     <string name="shortcut_action_longpress">Longpress:</string>
-    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
-    <string name="shortcut_action_select_action">Choose action:</string>
-    <string name="shortcut_action_select_action_newaction">Choose new action:</string>
-    <string name="shortcut_action_reset">Reset</string>
-    <string name="shortcut_action_add">Add</string>
-    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
+    <string name="shortcut_action_select_action_longpress">Longpress Aktion wählen:</string>
+    <string name="shortcut_action_select_action">Aktion wählen:</string>
+    <string name="shortcut_action_select_action_newaction">Neue Aktion wählen:</string>
+    <string name="shortcut_action_reset">Zurücksetzen</string>
+    <string name="shortcut_action_add">Hinzufügen</string>
+    <string name="shortcut_action_reset_message">Alle Einträge auf Standard zurücksetzen?</string>
     <string name="shortcut_action_max">Maximum entries size has been reached</string>
     <string name="shortcut_action_warning">Warning</string>
     <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
