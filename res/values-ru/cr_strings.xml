@@ -576,37 +576,11 @@
     <string name="text_title">Текст</string>
     <string name="qs_transparent_shade_title">Прозрачность</string>
     <string name="qs_transparent_shade_summary">Возможность делать панель прозрачной</string>
-    <string name="qs_color_switch_title">Переключить пользовательский цвет</string>
-
-    <!-- Heads Up -->
-    <string name="category_heads_up">Всплывающие уведомления</string>
-    <string name="summary_heads_up_enabled">\"Всплывающие уведомления\" включены</string>
-    <string name="summary_heads_up_disabled">\"Всплывающие уведомления\" выключены</string>
-    <string name="add_heads_up_package">Добавить приложение</string>
-    <string name="add_heads_up_dnd_summary">Не показывать всплывающие уведомления при работе с этими приложениями</string>
-    <string name="add_heads_up_blacklist_summary">Не показывать всплывающие уведомления от этих приложений</string>
-    <string name="heads_up_dnd_title">Не беспокоить</string>
-    <string name="heads_up_blacklist_title">Чёрный список</string>
-    <string name="heads_up_disabled_notice">\"Всплывающие уведомления\" позволяют отображать интерактивные уведомления от приложений во всплывающем окне.</string>
-    <string name="heads_up_dismiss_on_remove_title">Поведение при свайпе</string>
-    <string name="heads_up_dismiss_on_remove_summary_enabled">Скрывать уведомление вместо удаления</string>
-    <string name="heads_up_dismiss_on_remove_summary_disabled">Скрывать и удалять уведомление</string>
-    <string name="show_headsup_button_title">Показывать кнопку быстрого доступа</string>
-    <string name="show_headsup_button_summary">Показывать кнопку быстрого доступа в заголовке строки состояния</string>
-
-    <!-- Heads up timeout -->
-    <string name="heads_up_time_out_title">Длительность</string>
-    
-    <!-- Heads up snooze -->
-    <string name="heads_up_snooze_title">Длительность \"отложить\"</string>
+    <string name="qs_color_switch_title">Пользовательские цвета</string>
     
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Принудительное обнаружение сервера</string>
     <string name="captive_portal_detection_summary">Если отключено, то соединение с серверами Google не требуется для того, чтобы обнаружить передачу данных.</string>
-    
-    <!-- Heads Up Floating Mode -->
-    <string name="heads_up_floating_window_title">Плавающий режим</string>
-    <string name="heads_up_floating_window_summary">Нажмите на уведомление и отпустите для открытия его в плавающем режиме, не на главном экране</string>
 
     <!-- Navring targets (enable/disable) -->
     <string name="navigation_ring_enable_title">Включить ярлыки навигационного кольца</string>
@@ -1251,7 +1225,7 @@
     <string name="contextual_title">Динамические заголовки</string>
     <string name="status_bar_custom_header_title">Динамический фон заголовка</string>
     <string name="status_bar_custom_header_summary">Изменение заголовка панели уведомлений в зависимости от времени суток</string>
-    <string name="status_bar_custom_header_default_title">Select your images</string>
+    <string name="status_bar_custom_header_default_title">Выбрать изображения</string>
     <string name="custom_header_image_0">По умолчанию</string>
     <string name="custom_header_image_1">Обновлённые</string>
     <string name="custom_header_image_2">Мозаика HD</string>
@@ -1303,5 +1277,34 @@
     <string name="lockscreen_see_through_title">Вид \"насквозь\"</string>
     <string name="lockscreen_see_through_summary">Размывает содержимое, находящееся позади экрана блокировки</string>
     <string name="lockscreen_blur_radius">Интенсивность эффекта размытия</string>
+	
+    <!-- Status Bar Activity Indicators -->
+    <string name="status_bar_network_activity_title">Индикатор сетевой активности</string>
+    <string name="status_bar_network_activity_summary">Показывать индикатор сетевой активности на значках сети или Wi-Fi</string>
 
+    <!-- Media art -->
+    <string name="media_art_title">Показывать обложку трека</string>
+    <string name="media_art_summary">Показывать обложку трека на экране блокировки</string>
+	
+    <!-- Some stuff from cm_strings.xml that is not from cm -->
+    <string name="battery_light_really_full_color_title">Индикация при 100%</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_title">Всплывающие уведомления</string>
+    <string name="heads_up_global_switch_title">Режим всплывающих уведомлений</string>
+    <string name="heads_up_global_switch_summary_disabled">Всплывающие уведомления отключены</string>
+    <string name="heads_up_global_switch_summary_perapp">Всплывающие уведомления переключаются отдельно для каждого приложения</string>
+    <string name="heads_up_global_switch_summary_forced">Всплывающие уведомления включены для всех приложений</string>
+    <string name="heads_up_global_switch_disabled">Не показывать всплывающие уведомления</string>
+    <string name="heads_up_global_switch_perapp">Всплывающие уведомления для каждого приложения</string>
+    <string name="heads_up_global_switch_forced">Всегда показывать всплывающие уведомления</string>
+    <string name="app_notification_enable_heads_up_title">Показывать всплывающие уведомления</string>
+    <string name="app_notification_enable_heads_up_summary">Показывать уведомления от этого приложения как всплывающие</string>
+    <string name="app_notification_enable_heads_up_global_disabled_summary">Всплывающие уведомления отключены в настройках уведомлений</string>
+    <string name="app_notification_enable_heads_up_global_forced_summary">Всплывающие уведомления включены в настройках уведомлений</string>
+    <string name="heads_up_snooze_title">Длительность \"отложить\"</string>
+    <string name="heads_up_time_out_title">Длительность</string>
+    <string name="heads_up_floating_window_title">Плавающий режим</string>
+    <string name="heads_up_floating_window_summary">Нажмите на уведомление и отпустите для открытия его в плавающем режиме, не на главном экране</string>
+	
 </resources>
