@@ -295,7 +295,6 @@
     <string name="omniswitch_first_time_message">Bitte OmniSwitch aktivieren. Dazu \"Einstellungen\" öffnen und OmniSwitch dort aktivieren.</string>
 
     <!-- Recents panel settings -->
-    <string name="recents_panel_settings">Einstellungen für Anwendungsverlauf</string>
     <string name="show_clear_all_recents_button_title">Alle gecachten Apps schließen Button</string>
     <string name="show_clear_all_recents_button_summary">Alle schließen Button anzeigen</string>
     <string name="recents_clear_all_location_title">Position des alle schließen Buttons</string>
@@ -451,12 +450,6 @@
     <string name="app_circle_bar_summary">Circle app launcher zeigen wenn die rechte Bildschirmseite berührt wird</string>
     <string name="app_circle_bar_included_apps_title">Apps</string>
     <string name="app_circle_bar_included_apps_summary">Apps werden im app circle bar gezeigt</string>
-    <string name="trigger_width_title">Trigger Breite</string>
-    <string name="trigger_width_summary">Breite der Trigger Region anpassen</string>
-    <string name="trigger_top_title">Trigger Position</string>
-    <string name="trigger_top_summary">Vertikale Position der Trigger Region anpassen</string>
-    <string name="trigger_bottom_title">Trigger Höhe</string>
-    <string name="trigger_bottom_summary">Höhe der Trigger Region anpassen</string>
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">Lautstärke Stufen</string>
@@ -706,40 +699,40 @@
     <string name="doze_overwrite_value_title">Standardwert überschreiben</string>
     <string name="doze_overwrite_value_summary">Standardwert darf durch Benutzerwert überschrieben werden</string>
 
-    <string name="doze_list_mode_title">Doze mode</string>
-    <string name="doze_list_mode_summary">Option to configure doze mode</string>
+    <string name="doze_list_mode_title">Schlummer Modus</string>
+    <string name="doze_list_mode_summary">Optionen zum konfigurieren vom Schlummer Modus</string>
 
-    <string name="doze_pulse_title">Time settings</string>
-    <string name="doze_pulse_duration_in_title">Fade in</string>
+    <string name="doze_pulse_title">Zeit Einstellungen</string>
+    <string name="doze_pulse_duration_in_title">Einblendungszeit</string>
     <string name="doze_pulse_duration_in_summary"></string>
 
-    <string name="doze_pulse_duration_visible_title">Visible duration</string>
+    <string name="doze_pulse_duration_visible_title">Zeige dauer</string>
     <string name="doze_pulse_duration_visible_summary"></string>
 
-    <string name="doze_pulse_duration_out_title">Fade out</string>
+    <string name="doze_pulse_duration_out_title">ausblenden</string>
     <string name="doze_pulse_duration_out_summary"></string>
 
     <string name="doze_pulse_on_notifications_title">Pulse doze</string>
     <string name="doze_pulse_on_notifications_summary">Pulse display on pending notifications</string>
 
-    <string name="doze_shake_title">Shake settings</string>
-    <string name="doze_shake_mode_title">Shake mode</string>
-    <string name="doze_shake_mode_summary">Use shake sensor value to trigger activation</string>
-    <string name="doze_shake_mode_test_summary">Do you want to test shake sensor?</string>
-    <string name="doze_shake_mode_test_result">Apply current value?</string>
-    <string name="doze_shake_test">Shake your device now</string>
-    <string name="doze_shake_it">Shake detected!</string>
+    <string name="doze_shake_title">Schüttel Einstellungen</string>
+    <string name="doze_shake_mode_title">Schüttel Modus</string>
+    <string name="doze_shake_mode_summary">Nutze den Bewegungssensor, um Aktivitäten hervorzurufen</string>
+    <string name="doze_shake_mode_test_summary">Willst du den Bewegungssensor testen?</string>
+    <string name="doze_shake_mode_test_result">Wende aktuellen Wert an?</string>
+    <string name="doze_shake_test">Schüttel dein Gerät jetzt</string>
+    <string name="doze_shake_it">Bewegung erkannt!</string>
 
-    <string name="doze_shake_acc_threshold_title">Shake threshold</string>
+    <string name="doze_shake_acc_threshold_title">Bewegungsgrenzwert</string>
     <string name="doze_shake_acc_threshold_summary">Configure shake strength required to trigger activation</string>
 
-    <string name="doze_time_mode_title">Show clock and date</string>
+    <string name="doze_time_mode_title">Zeige Uhrzeit und Datum</string>
     <string name="doze_time_mode_summary">Force showing time when there is no notification</string>
 
-    <string name="doze_brightness_category_title">Brightness</string>
-    <string name="doze_brightness_title">Brightness level</string>
+    <string name="doze_brightness_category_title">Helligkeit</string>
+    <string name="doze_brightness_title">Helligkeits Level</string>
 
-    <string name="doze_auto_brightness_title">Auto brightness</string>
+    <string name="doze_auto_brightness_title">Automatische Helligkeit</string>
     <string name="doze_auto_brightness_summary">Adjusts the brightness of the screen to take into account the ambient light of your surroundings</string>
 
     <string name="twohundred_ms">200 ms</string>
@@ -756,12 +749,12 @@
     <string name="fourhalf_second">4.5 s</string>
     <string name="five_second">5 s</string>
 
-    <string name="veryeasy_shake">Very easy</string>
-    <string name="easy_shake">Easy</string>
+    <string name="veryeasy_shake">Sehr einfach</string>
+    <string name="easy_shake">Einfach</string>
     <string name="medium_shake">Standard</string>
-    <string name="hard_shake">Hard</string>
-    <string name="veryhard_shake">Very hard</string>
-    <string name="strong_shake">Strong</string>
+    <string name="hard_shake">Hart</string>
+    <string name="veryhard_shake">Sehr hart</string>
+    <string name="strong_shake">Stark</string>
 
     <string name="fully_mode">Full mode</string>
     <string name="pocket_shake_mode">Pocket and shake</string>
@@ -777,19 +770,19 @@
     <string name="tether_wifi_network_text">WiFi Tether Network</string>
 
     <!-- Battery saver -->
-    <string name="battery_saver_title">Warning color</string>
-    <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>
+    <string name="battery_saver_title">Warnfarbe</string>
+    <string name="battery_saver_style_reset_message">Lösche Stromspar Warnungsfarbe?</string>
 
     <!-- Alarms and no interrupt zen mode -->
-    <string name="zen_mode_none_category">No interruptions</string>
-    <string name="zen_mode_alarms">Allow alarms</string>
+    <string name="zen_mode_none_category">Keine Unterbrechungen</string>
+    <string name="zen_mode_alarms">Erlaube Weckrufe</string>
 
     <!-- Text for forcing expanded notifications -->
-    <string name="disable_fc_notifications_title">Disable FC Notifications</string>
-    <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
+    <string name="disable_fc_notifications_title">Deaktiviere FC Benachrichtigungen</string>
+    <string name="disable_fc_notifications_summary">Alle FC Benachrichtigungen werden deaktiviert</string>
 
     <!-- Status bar ticker -->
-    <string name="status_bar_ticker_title">Notification Ticker</string>
+    <string name="status_bar_ticker_title">Benachrichtigungs Ticker</string>
     <string name="status_bar_ticker_summary">Notification text animation in the statusbar</string>
 
     <!-- Unaccounted and overcounted battery stats -->
@@ -797,7 +790,7 @@
     <string name="show_unac_and_overcounted_stats_summary">Show in battery statistics unaccounted and over-counted usage.</string>
 
     <!-- Battery Bar -->
-    <string name="battery_icon">Battery icon style</string>
+    <string name="battery_icon">Batterie Symbol Stil</string>
     <string name="battery_not_title">Battery icon in notifications</string>
     <string name="battery_not_summary">Battery icon will show up where the clear all button shows up</string>
     <string name="battery_bar_location">Battery bar location</string>
@@ -809,17 +802,17 @@
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
 
     <!-- Status bar - Clock -->
-    <string name="status_bar_clock_category">Clock</string>
-    <string name="clock_color_title">Color</string>
-    <string name="status_bar_clock_style_reset">Reset color</string>
-    <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
-    <string name="clock_font_style_title">Font</string>
+    <string name="status_bar_clock_category">Uhr</string>
+    <string name="clock_color_title">Farbe</string>
+    <string name="status_bar_clock_style_reset">Lösche Farbe</string>
+    <string name="status_bar_clock_style_reset_message">Lösche Uhr Farbe?</string>
+    <string name="clock_font_style_title">Schrift</string>
     <string name="clock_font_normal">Normal</string>
-    <string name="clock_font_italic">Italic</string>
-    <string name="clock_font_bold">Bold</string>
-    <string name="clock_font_bold_italic">Bold Italic</string>
-    <string name="clock_font_light">Light</string>
-    <string name="clock_font_light_italic">Light Italic</string>
+    <string name="clock_font_italic">Kursiv</string>
+    <string name="clock_font_bold">Fett</string>
+    <string name="clock_font_bold_italic">Fett-Kursiv</string>
+    <string name="clock_font_light">Dünn</string>
+    <string name="clock_font_light_italic">Dünn-Kursiv</string>
     <string name="clock_font_thin">Thin</string>
     <string name="clock_font_thin_italic">Thin Italic</string>
     <string name="clock_font_condensed">Condensed</string>
@@ -878,7 +871,7 @@
     <string name="pie_icon_color_mode_summary">Change the button icon color mode</string>
     <string name="pie_trigger_note_title">Note</string>
     <string name="pie_trigger_note_summary">To avoid conflicts with status bar or navigation bar, the triggers on these edges are automatically turned off if one or both are available</string>
-    <string name="pie_background_color_title">Background color</string>
+    <string name="pie_background_color_title">Hintergrundfarbe</string>
     <string name="pie_snap_color_title">Snap point color</string>
     <string name="pie_text_color_title">Text color</string>
     <string name="pie_background_alpha_title">Background transparency</string>
@@ -899,7 +892,6 @@
     <string name="pie_button_second_layer_summary">Change second layer buttons</string>
     <string name="pie_button_style_summary">Change pie button style</string>
     <string name="pie_style_reset_message">Reset style entries to default?</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
     <string name="icon_color_mode_all_icons">All icons</string>
     <string name="icon_color_mode_system_icons">System icons</string>
     <string name="icon_color_mode_system_custom_icons">System and custom icons</string>
@@ -910,8 +902,8 @@
 
     <!-- Navigation bar visibility -->
     <string name="navigation_menu_default_jb_behavior">Show on request (default)</string>
-    <string name="navigation_menu_never_show">Never show</string>
-    <string name="navigation_menu_always_show">Always show</string>
+    <string name="navigation_menu_never_show">Zeige nie</string>
+    <string name="navigation_menu_always_show">Zeige immer</string>
     <string name="title_pref_menu_display">Menu visibility</string>
     <string name="summary_pref_menu_display">How and when do you want the menu buttons to appear?</string>
 
@@ -940,13 +932,6 @@
     <string name="tab_position_summary">Display the tab on the top, middle, or bottom on the side of the screen.</string>
     <string name="tab_size_title">Tab size</string>
     <string name="tab_size_summary">Change the size of the visible tab.</string>
-    <string name="trigger_category">Trigger region</string>
-    <string name="trigger_width_title">Trigger width</string>
-    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
-    <string name="trigger_top_title">Trigger position</string>
-    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
-    <string name="trigger_bottom_title">Trigger height</string>
-    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
     <!-- Breathing Notifications -->
     <string name="breathing_notifications_title">Breathing notifications</string>
@@ -959,12 +944,12 @@
 
     <!-- TRDS 5.0 -->	
     <string name="theme_settings_title">TRDS</string>
-    <string name="theme_auto_mode_title">Switch theme</string>
+    <string name="theme_auto_mode_title">Ändere Theme</string>
     <string name="theme_override_custom_colors_title">Override custom colors</string>
     <string name="theme_override_custom_colors_summary">Override custom notification and qs colors</string>
     <string name="theme_auto_mode_off">Manual</string>
     <string name="theme_auto_mode_lightsensor">On light condition change (experimental)</string>
-    <string name="theme_auto_mode_twilight">On daytime</string>
+    <string name="theme_auto_mode_twilight">Am Tag</string>
     <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
     <string name="theme_reset_message">Reset theme state to default?</string>
 
@@ -1169,7 +1154,7 @@
     <string name="status_bar_weather_font_medium_italic">Medium Italic</string>
 
     <!-- Headphones icon switch -->
-    <string name="show_headset_icon_title">Headset icon</string>
+    <string name="show_headset_icon_title">Headset Symbol</string>
     <string name="show_headset_icon_summary">Shows icon when headsets are connected.</string>
 
     <!-- Notification color settings -->
@@ -1182,14 +1167,14 @@
     <string name="notification_color_mode_never_title">Never</string>
     <string name="notification_icon_color_mode_greyscale_title">If the icon is an greyscale icon</string>
     <string name="notification_bg_color_mode_no_color_title">If the notification doesn\`t include an own color</string>
-    <string name="notification_color_mode_always_title">Always</string>
+    <string name="notification_color_mode_always_title">Immer</string>
 
     <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Three finger gesture</string>
-    <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
+    <string name="three_finger_gesture">Drei Finger Geste</string>
+    <string name="three_finger_gesture_summary">Wische mit drei Fingern, um einen Screenshot zu machen</string>
 
     <!-- Scrolling Cache -->
-    <string name="pref_scrollingcache_title">Scrolling cache</string>
+    <string name="pref_scrollingcache_title">Scroll Cache</string>
     <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
     <string name="pref_scrollingcache_force_enable">Force enable</string>
     <string name="pref_scrollingcache_default_enable">Default enable</string>
@@ -1197,11 +1182,11 @@
     <string name="pref_scrollingcache_force_disable">Force disable</string>
 
     <!-- Lockscreen wallpaper -->
-    <string name="lockscreen_wallpaper_title">Wallpaper</string>
-    <string name="lockscreen_wallpaper_summary">Set lockscreen wallpaper</string>
-    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
-    <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
-    <string name="reset_lockscreen_wallpaper">Set to default</string>
+    <string name="lockscreen_wallpaper_title">Hintergrundbild</string>
+    <string name="lockscreen_wallpaper_summary">Wähle Sperrbildschirm Hintergrundfarbe</string>
+    <string name="lockscreen_wallpaper_set_title">Setze Sperrbildschirm Hintergrundfarbe</string>
+    <string name="lockscreen_wallpaper_clear_title">Lösche Sperrbildschirm Hintergrundfarbe</string>
+    <string name="reset_lockscreen_wallpaper">Setze auf Standart zurück</string>
 
     <!-- QS Tiles Columns -->
     <string name="qs_num_columns_title">Number of tiles per row</string>
