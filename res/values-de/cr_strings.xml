@@ -295,7 +295,6 @@
     <string name="omniswitch_first_time_message">Bitte OmniSwitch aktivieren. Dazu \"Einstellungen\" öffnen und OmniSwitch dort aktivieren.</string>
 
     <!-- Recents panel settings -->
-    <string name="recents_panel_settings">Einstellungen für Anwendungsverlauf</string>
     <string name="show_clear_all_recents_button_title">Alle gecachten Apps schließen Button</string>
     <string name="show_clear_all_recents_button_summary">Alle schließen Button anzeigen</string>
     <string name="recents_clear_all_location_title">Position des alle schließen Buttons</string>
@@ -451,12 +450,6 @@
     <string name="app_circle_bar_summary">Circle app launcher zeigen wenn die rechte Bildschirmseite berührt wird</string>
     <string name="app_circle_bar_included_apps_title">Apps</string>
     <string name="app_circle_bar_included_apps_summary">Apps werden im app circle bar gezeigt</string>
-    <string name="trigger_width_title">Trigger Breite</string>
-    <string name="trigger_width_summary">Breite der Trigger Region anpassen</string>
-    <string name="trigger_top_title">Trigger Position</string>
-    <string name="trigger_top_summary">Vertikale Position der Trigger Region anpassen</string>
-    <string name="trigger_bottom_title">Trigger Höhe</string>
-    <string name="trigger_bottom_summary">Höhe der Trigger Region anpassen</string>
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">Lautstärke Stufen</string>
@@ -899,7 +892,6 @@
     <string name="pie_button_second_layer_summary">Change second layer buttons</string>
     <string name="pie_button_style_summary">Change pie button style</string>
     <string name="pie_style_reset_message">Reset style entries to default?</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
     <string name="icon_color_mode_all_icons">All icons</string>
     <string name="icon_color_mode_system_icons">System icons</string>
     <string name="icon_color_mode_system_custom_icons">System and custom icons</string>
@@ -940,13 +932,6 @@
     <string name="tab_position_summary">Display the tab on the top, middle, or bottom on the side of the screen.</string>
     <string name="tab_size_title">Tab size</string>
     <string name="tab_size_summary">Change the size of the visible tab.</string>
-    <string name="trigger_category">Trigger region</string>
-    <string name="trigger_width_title">Trigger width</string>
-    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
-    <string name="trigger_top_title">Trigger position</string>
-    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
-    <string name="trigger_bottom_title">Trigger height</string>
-    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
     <!-- Breathing Notifications -->
     <string name="breathing_notifications_title">Breathing notifications</string>
