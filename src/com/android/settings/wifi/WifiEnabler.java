@@ -136,8 +136,9 @@ public class WifiEnabler extends GenericSwitchToggle  {
                 break;
             case WifiManager.WIFI_STATE_ENABLED:
                 setChecked(true);
-                if (mSwitchBar != null)
+                if (mSwitchBar != null) {
                     mSwitchBar.showSpinner(true);
+                }
                 setEnabled(true);
                 updateSearchIndex(true);
                 break;
@@ -146,15 +147,17 @@ public class WifiEnabler extends GenericSwitchToggle  {
                 break;
             case WifiManager.WIFI_STATE_DISABLED:
                 setChecked(false);
-                if (mSwitchBar != null)
+                if (mSwitchBar != null) {
                     mSwitchBar.showSpinner(false);
+                }
                 setEnabled(true);
                 updateSearchIndex(false);
                 break;
             default:
                 setChecked(false);
-                if (mSwitchBar != null)
+                if (mSwitchBar != null) {
                     mSwitchBar.showSpinner(false);
+                }
                 setEnabled(false);
                 updateSearchIndex(false);
         }

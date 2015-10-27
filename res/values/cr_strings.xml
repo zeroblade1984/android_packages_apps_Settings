@@ -5,7 +5,7 @@
     <!-- About phone screen, Temasek version -->
     <string name="temasek_version_title">Temasek unofficial version</string>
     <!-- Do NOT translate this -->
-    <string name="temasek_version_default">V18.1</string>
+    <string name="temasek_version_default">V18.2</string>
 
     <!-- temasek spare parts -->
     <string name="temasek_settings_title">Temasek spare parts</string>
@@ -1290,9 +1290,16 @@
     <string name="heads_up_touch_outside_summary_enabled">Hide heads up on touch outside and on home button press</string>
     <string name="heads_up_touch_outside_summary_disabled">Do not hide heads up on touch outside or on home button press</string>
 
+    <!-- Heads up dismiss on remove -->
+    <string name="heads_up_dismiss_on_remove_title">Swipe behavior</string>
+    <string name="heads_up_dismiss_on_remove_summary_enabled">Hide notification instead of dismiss</string>
+    <string name="heads_up_dismiss_on_remove_summary_disabled">Hide and dismiss notification</string>
+
     <!-- Allow fake signature checkbox in developer settings -->
     <string name="allow_signature_fake">Allow signature spoofing</string>
     <string name="allow_signature_fake_summary">Allow apps to bypass security systems by pretending to be a different app</string>
     <string name="allow_signature_fake_warning">Allowing apps to bypass security systems can lead to serious security and privacy problems! Check that only benign apps use the corresponding permission when this is active.</string>
+
+    <string name="general_notifications_title">General notifications</string>
 
 </resources>

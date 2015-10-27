@@ -120,7 +120,7 @@ public class WifiSettings extends RestrictedSettingsFragment
     private WifiManager.ActionListener mConnectListener;
     private WifiManager.ActionListener mSaveListener;
     private WifiManager.ActionListener mForgetListener;
-    
+
     private WifiEnabler mWifiEnabler;
     // An access point being editted is stored here.
     private AccessPoint mSelectedAccessPoint;

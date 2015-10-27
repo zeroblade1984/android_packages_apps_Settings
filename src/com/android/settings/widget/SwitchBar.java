@@ -161,11 +161,7 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
     }
 
     public void setSpinnerEntries(String[] entries) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>
-                     (getContext(), R.layout.spinner_item, entries);     
-        adapter.setDropDownViewResource
-                     (R.layout.spinner_dropdown_item);
-        mSpinner.setAdapter(adapter);
+        mSpinner.setAdapter(new SpinnerAdapter(getContext(), entries));
     }
 
     public final Spinner getSpinner() {
@@ -248,6 +244,37 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
             throw new IllegalStateException("Cannot remove OnItemSelectedListener");
         }
         mItemSelectedListeners.remove(listener);
+    }
+
+    private static class SpinnerAdapter<T> extends ArrayAdapter<T> {
+
+        private final T[] entries;
+
+        public SpinnerAdapter(Context context, T[] entries) {
+            super(context, R.layout.spinner_item, entries);
+            this.entries = entries;
+        }
+
+        private View createView(LayoutInflater inflater, ViewGroup parent, int position, boolean dropDown) {
+            TextView textView = (TextView) inflater.inflate(R.layout.spinner_item, parent, false)
+                    .findViewById(android.R.id.text1);
+            textView.setText(entries[position].toString());
+            if (!dropDown) textView.setPadding(0, textView.getPaddingTop(),
+                    textView.getPaddingRight(), textView.getPaddingBottom());
+            else textView.setBackground(getContext().getDrawable(R.drawable.switchbar_background));
+            return textView;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            return createView(LayoutInflater.from(getContext()), parent, position, false);
+        }
+
+        @Override
+        public View getDropDownView(int position, View convertView, ViewGroup parent) {
+            return createView(LayoutInflater.from(getContext()), parent, position, true);
+        }
+
     }
 
     static class SavedState extends BaseSavedState {
