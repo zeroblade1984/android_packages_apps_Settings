@@ -1209,38 +1209,38 @@
     <string name="device_policy_override_summary">Allow apps to force secure lock screen and override profile settings</string>
 
     <!-- Chamber of Secrets -->
-    <string name="chamber_title">Chamber of secrets</string>
-    <string name="chamber_toast">The chamber of secrets has opened</string>
+    <string name="chamber_title">Kammer der Geheimnisse</string>
+    <string name="chamber_toast">Die Kammer der Geheimnisse hat sich geöffnet</string>
 
     <!-- Expand volume panel -->
     <string name="volume_panel_expanded_title">Expand volume panel</string>
     <string name="volume_panel_expanded_summary">Show volume panel in expanded mode by default</string>
 
     <!-- SlimSizer  -->
-    <string name="listsystem">list</string>
-    <string name="sizer_title">App remover</string>
-    <string name="caution">Caution</string>
-    <string name="sizer_message_startup">This tool allows you to delete system apps. Use with caution and only delete apps you know are safe to be removed.</string>
-    <string name="cancel">Cancel</string>
-    <string name="sizer_message_delete">Are you sure you want to delete this app?</string>
-    <string name="btn_delete">Delete selected APPs now!</string>
-    <string name="delete_progress_title">Deleting</string>
-    <string name="delete_progress">Selected files are being deleted...</string>
-    <string name="delete_success">Deleted</string>
-    <string name="delete_fail">Unable to delete</string>
-    <string name="btn_profile">Profile</string>
-    <string name="sizer_message_sdnowrite">Cannot write to SD Card</string>
-    <string name="sizer_message_sdnoread">Cannot read SD Card</string>
-    <string name="sizer_message_filesuccess">Created profile</string>
-    <string name="sizer_message_filefail">Failed to create profile</string>
-    <string name="sizer_message_noselect">Nothing selected</string>
-    <string name="system_app_remover">System App Remover</string>
-    <string name="systemappremover_summary">Remove system apps by your own risk</string>
+    <string name="listsystem">Liste</string>
+    <string name="sizer_title">App-Entferner</string>
+    <string name="caution">Achtung</string>
+    <string name="sizer_message_startup">Mit diesem Werkzeug können System-Apps entfernt werden. Mit Vorsicht verwenden und nur solche Apps löschen, wo Sie sicher sind, dass sie gelöscht werden dürfen.</string>
+    <string name="cancel">Abbechen</string>
+    <string name="sizer_message_delete">Sind Sie sicher, dass diese App gelöscht werden soll?</string>
+    <string name="btn_delete">Ausgewählte APPs jetzt löschen!</string>
+    <string name="delete_progress_title">Lösche</string>
+    <string name="delete_progress">Ausgewählte Apps werden jetzt gelöscht...</string>
+    <string name="delete_success">Gelöscht</string>
+    <string name="delete_fail">Kann nicht löschen</string>
+    <string name="btn_profile">Profil</string>
+    <string name="sizer_message_sdnowrite">Kann nicht auf die SD-Karte schreiben</string>
+    <string name="sizer_message_sdnoread">Kann SD-Karte nicht lesen</string>
+    <string name="sizer_message_filesuccess">Profil erzeugt</string>
+    <string name="sizer_message_filefail">Fehler beim Erzeugen des Profils</string>
+    <string name="sizer_message_noselect">Nichts ausgewählt</string>
+    <string name="system_app_remover">System App Entferner</string>
+    <string name="systemappremover_summary">Sie entfernen System Apps auf eigenes Risiko</string>
 
     <!-- Doze notification color invert -->
-    <string name="doze_notification_color_invert_title">Color inversion</string>
-    <string name="doze_notification_color_invert_summary_off">Ambient display notifications will not be inverted. Use for dark themes.</string>
-    <string name="doze_notification_color_invert_summary_on">Ambient display notifications will show as inverted. Use for light/stock theme.</string>
+    <string name="doze_notification_color_invert_title">Farbumkehrung</string>
+    <string name="doze_notification_color_invert_summary_off">Umgebende Bildschirmbenachrichtigungen werden nicht invertiert. Bei dunklen Themes verwenden.</string>
+    <string name="doze_notification_color_invert_summary_on">Umgebende Bildschirmbenachrichtigungen werden invertiert dargestellt. Bei hellem/stock Theme verwenden.</string>
 
     <!-- On-The-Go -->
     <string name="power_menu_onthego_title">On-The-Go Mode</string>
@@ -1248,9 +1248,9 @@
     <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay.</string>
 
     <!-- Lockscreen see through -->
-    <string name="lockscreen_see_through_title">Lockscreen blur</string>
-    <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lockscreen.</string>
-    <string name="lockscreen_blur_radius">Blur effect intensity</string>
+    <string name="lockscreen_see_through_title">Sperrbildschirm unscharf</string>
+    <string name="lockscreen_see_through_summary">Stellt den Inhalt hinter dem Sperrbildschirm verschwommen dar.</string>
+    <string name="lockscreen_blur_radius">Stärke des Unschärfe-Effekts</string>
 
     <!-- Status Bar Activity Indicators -->
     <string name="status_bar_network_activity_title">Activity indicators</string>
