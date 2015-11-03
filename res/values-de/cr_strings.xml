@@ -106,13 +106,13 @@
     <string name="shortcut_action_warning">Warnung</string>
     <string name="shortcut_action_warning_message">Letzter Eintrag kann nicht gelöscht werden</string>
     <string name="shortcut_action_disable_message">Deaktiviert\nZum aktivieren neuen Eintrag hinzufügen</string>
-    <string name="shortcut_image_not_valid">Gewählte App hat kein gültiges Icon zurückgegeben. Andere App benutzen.</string>
+    <string name="shortcut_image_not_valid">Gewählte App hat kein gültiges Symbol zurückgegeben. Andere App benutzen.</string>
     <string name="shortcut_duplicate_entry">Gewählte Aktion kann nur einmal hinzugefügt werden.</string>
     <string name="shortcut_action_help_shortcut">Shortcut</string>
     <string name="shortcut_action_help_button">Button</string>
     <string name="shortcut_action_help_app">App</string>
-    <string name="shortcut_action_help_icon">, Icon auswählen, um weitere Optionen zu erhalten.</string>
-    <string name="shortcut_action_help_main">Plus Icon wählen, um %1$s hinzuzufügen. Wenn %1$s hinzugefügt ist, ändert sich das Ziel %2$s wenn die Zeile gewählt wird\n\nUm %1$s zu entfernen, horizontal wischen. Ankerpunkt verschieben um %1$s in Liste anzuordnen.\n\nReset wählen um zur Standardeinstellung zurückzukehren.</string>
+    <string name="shortcut_action_help_icon">, Symbol auswählen, um weitere Optionen zu erhalten.</string>
+    <string name="shortcut_action_help_main">Plus Symbol wählen, um %1$s hinzuzufügen. Wenn %1$s hinzugefügt ist, ändert sich das Ziel %2$s wenn die Zeile gewählt wird\n\nUm %1$s zu entfernen, horizontal wischen. Ankerpunkt verschieben um %1$s in Liste anzuordnen.\n\nReset wählen um zur Standardeinstellung zurückzukehren.</string>
     <string name="shortcut_action_help_delete_last_entry">Wenn alle %1$s in der Liste entfernt wurden ist die Funktion deaktiviert.</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Alle %1$s in der Listge entfernen deaktiviert das zweite Pie-Layer.</string>
     <string name="shortcut_action_theme_switch">Theme wechseln</string>
@@ -120,11 +120,11 @@
 
     <string name="shortcuts_applications">Anwendungen</string>
     <string name="shortcuts_select_custom_app_title">Eigene Anwendung wählen</string>
-    <string name="shortcuts_icon_picker_type">Icon Typ wählen:</string>
+    <string name="shortcuts_icon_picker_type">Symbol Typ wählen:</string>
     <string name="shortcuts_icon_default">Standard</string>
-    <string name="shortcuts_icon_presets">System Icons</string>
+    <string name="shortcuts_icon_presets">System Symbole</string>
     <string name="shortcuts_icon_custom">Gallerie</string>
-    <string name="shortcuts_icon_picker_choose_icon_title">Icon wählen</string>
+    <string name="shortcuts_icon_picker_choose_icon_title">Symbolwählen</string>
 
     <string name="shortcuts_icon_picker_alarm">Alarm</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
@@ -330,7 +330,7 @@
     <string name="toast_SlideRightLeft_animation">Von rechts nach links gleiten</string>
 
     <!-- Toast Icons -->
-    <string name="toast_icon_title">Toast Icon</string>
+    <string name="toast_icon_title">Toast Symbol</string>
 
     <!-- ListView animation -->
     <string name="interface_settings_animation_title">Animations-Einstellungen</string>
@@ -494,7 +494,7 @@
     <string name="lock_clock_weather_section_title">Wetter</string>
     <string name="lock_clock_weather_section_summary">Darstellung des Wetters im \'cLock\' Widget anpassen</string>
     <string name="lock_clock_calendar_section_title">Kalender Einträge</string>
-    <string name="lock_clock_calendar_section_summary">Darstellung der Kaldender Einträge im \'cLock\' Widget anpassen</string>
+    <string name="lock_clock_calendar_section_summary">Darstellung der Kalender Einträge im \'cLock\' Widget anpassen</string>
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Beim Berühren vibrieren</string>
@@ -514,13 +514,13 @@
     <string name="weather_show_location_summary">Aktivieren um den Standort anzuzeigen</string>
     <string name="weather_show_timestamp_title">Zeit zeigen</string>
     <string name="weather_show_timestamp_summary">Zeit der letzten Wetteraktualisierung zeigen</string>
-    <string name="weather_condition_icon_title">Witterungsbedingung Icon</string>
+    <string name="weather_condition_icon_title">Witterungsbedingung Symbol</string>
     <string name="weather_condition_icon_dlg_title">Icon zur Anzeige der Witterungsbedingung wählen</string>
     <string name="weather_condition_icon_monochrome_title">Schwarz-Weiß</string>
     <string name="weather_condition_icon_colored_title">Bunt</string>
     <string name="weather_condition_icon_vclouds_title">VClouds</string>
-    <string name="weather_colorize_all_icons_title">Alle Icons einfärben</string>
-    <string name="weather_colorize_all_icons_summary">Wenn Aktiviert werden alle Icons gefärbt sonst nur die Schwarz-Weißen</string>
+    <string name="weather_colorize_all_icons_title">Alle Symbole einfärben</string>
+    <string name="weather_colorize_all_icons_summary">Wenn Aktiviert werden alle Symbole gefärbt sonst nur die Schwarz-Weißen</string>
     <string name="weather_hide_panel_title">Wetter Anzeige verstecken</string>
     <string name="weather_hide_panel_dlg_title">Soll die Wetter Anzeige ausgeblendet werden</string>
     <string name="weather_hide_panel_auto_title">Automatisch</string>
@@ -639,7 +639,7 @@
     <string name="mount_notification_summary">Benachrichtigung anzeigen wenn ein Medium eingehängt wurde (mount)</string>
 
     <!-- Long press on lock screen lock icon to sleep -->
-    <string name="longpress_lock_icon_torch_title">Langer Klick aufs Sperren Icon im Sperrbildschirm aktiviert Taschenlampe</string>
+    <string name="longpress_lock_icon_torch_title">Langer Klick aufs Sperren Symbolim Sperrbildschirm aktiviert Taschenlampe</string>
     <string name="longpress_lock_icon_torch_summary">Diese Funktion funktioniert nicht wenn Smart Lock und Accessibility Touch Exploration aktiv sind</string>
 
     <!-- Double tap gesture anywhere on the lock screen put device to sleep -->
@@ -706,14 +706,14 @@
     <string name="doze_pulse_duration_in_title">Einblendungszeit</string>
     <string name="doze_pulse_duration_in_summary"></string>
 
-    <string name="doze_pulse_duration_visible_title">Zeige dauer</string>
+    <string name="doze_pulse_duration_visible_title">Anzeigedauer</string>
     <string name="doze_pulse_duration_visible_summary"></string>
 
     <string name="doze_pulse_duration_out_title">ausblenden</string>
     <string name="doze_pulse_duration_out_summary"></string>
 
-    <string name="doze_pulse_on_notifications_title">Pulse doze</string>
-    <string name="doze_pulse_on_notifications_summary">Pulse display on pending notifications</string>
+    <string name="doze_pulse_on_notifications_title">Pulse Doze</string>
+    <string name="doze_pulse_on_notifications_summary">Pulsieren bei neuen Benachrichtigungen</string>
 
     <string name="doze_shake_title">Schüttel Einstellungen</string>
     <string name="doze_shake_mode_title">Schüttel Modus</string>
@@ -724,32 +724,32 @@
     <string name="doze_shake_it">Bewegung erkannt!</string>
 
     <string name="doze_shake_acc_threshold_title">Bewegungsgrenzwert</string>
-    <string name="doze_shake_acc_threshold_summary">Configure shake strength required to trigger activation</string>
+    <string name="doze_shake_acc_threshold_summary">Einstellen wie sehr geschüttelt werden muss um Aktionen auszulösen</string>
 
     <string name="doze_time_mode_title">Zeige Uhrzeit und Datum</string>
-    <string name="doze_time_mode_summary">Force showing time when there is no notification</string>
+    <string name="doze_time_mode_summary">Uhrzeit immer zeigen wenn keine Benachrichtigungen vorhanden sind</string>
 
     <string name="doze_brightness_category_title">Helligkeit</string>
     <string name="doze_brightness_title">Helligkeits Level</string>
 
     <string name="doze_auto_brightness_title">Automatische Helligkeit</string>
-    <string name="doze_auto_brightness_summary">Adjusts the brightness of the screen to take into account the ambient light of your surroundings</string>
+    <string name="doze_auto_brightness_summary">Bildschirmhelligkeit automatisch an die Umgebungshelligkeit anpassen</string>
 
     <string name="twohundred_ms">200 ms</string>
     <string name="fivehundred_ms">500 ms</string>
     <string name="one_second">1 s</string>
-    <string name="one_second_default">1 s (default)</string>
+    <string name="one_second_default">1 s (Standard)</string>
     <string name="onehalf_second">1.5 s</string>
     <string name="two_second">2 s</string>
     <string name="twohalf_second">2.5 s</string>
     <string name="three_second">3 s</string>
-    <string name="three_second_default">3 s (default)</string>
+    <string name="three_second_default">3 s (Standard)</string>
     <string name="threehalf_second">3.5 s</string>
     <string name="four_second">4 s</string>
     <string name="fourhalf_second">4.5 s</string>
     <string name="five_second">5 s</string>
 
-    <string name="veryeasy_shake">Sehr einfach</string>
+    <string name="veryeasy_shake">Sehr leicht</string>
     <string name="easy_shake">Einfach</string>
     <string name="medium_shake">Standard</string>
     <string name="hard_shake">Hart</string>
@@ -761,13 +761,13 @@
     <string name="pocket_pulse_mode">Pocket and pulse</string>
     <string name="pocket_only_mode">Pocket</string>
     <string name="shake_pulse_mode">Shake and pulse</string>
-    <string name="pulse_only_mode">Pulse (default)</string>
+    <string name="pulse_only_mode">Pulse (Standard)</string>
 
     <!-- User Selectable Tether Networks-->
-    <string name="tether_usb_network_summary">Press to change USB Network</string>
-    <string name="tether_usb_network_text">USB Tether Network</string>
-    <string name="tether_user_network_default">Use System Default</string>
-    <string name="tether_wifi_network_text">WiFi Tether Network</string>
+    <string name="tether_usb_network_summary">Drücken um USB Netzwerk zu wechseln</string>
+    <string name="tether_usb_network_text">USB Tether Netzwerk</string>
+    <string name="tether_user_network_default">System Standard verwenden</string>
+    <string name="tether_wifi_network_text">WiFi Tether Netzwerk</string>
 
     <!-- Battery saver -->
     <string name="battery_saver_title">Warnfarbe</string>
@@ -783,7 +783,7 @@
 
     <!-- Status bar ticker -->
     <string name="status_bar_ticker_title">Benachrichtigungs Ticker</string>
-    <string name="status_bar_ticker_summary">Notification text animation in the statusbar</string>
+    <string name="status_bar_ticker_summary">Benachrichtigungstext in der Statusleiste animieren</string>
 
     <!-- Unaccounted and overcounted battery stats -->
     <string name="show_unac_and_overcounted_stats_title">Show unaccounted/overcounted stats</string>
@@ -791,15 +791,15 @@
 
     <!-- Battery Bar -->
     <string name="battery_icon">Batterie Symbol Stil</string>
-    <string name="battery_not_title">Battery icon in notifications</string>
-    <string name="battery_not_summary">Battery icon will show up where the clear all button shows up</string>
-    <string name="battery_bar_location">Battery bar location</string>
-    <string name="battery_bar_color">Battery bar color</string>
-    <string name="battery_bar">Battery bar options</string>
-    <string name="battery_bar_style_title">Battery bar style</string>
-    <string name="battery_bar_thickness_title">Battery bar thickness</string>
-    <string name="battery_bar_animate_title">Charging animation</string>
-    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+    <string name="battery_not_title">Batterie Symbol in Benachrichtigungen</string>
+    <string name="battery_not_summary">Batterie Symbol wird gezeigt wo der "Alles löschen" Button angezeigt wird</string>
+    <string name="battery_bar_location">Batterie Symbol Position</string>
+    <string name="battery_bar_color">Farbe des Batterie Symbols</string>
+    <string name="battery_bar">Batterie Symbol Optionen</string>
+    <string name="battery_bar_style_title">Batterie Symbol Stil</string>
+    <string name="battery_bar_thickness_title">Batterie Symbol Größe</string>
+    <string name="battery_bar_animate_title">Lade Animation</string>
+    <string name="battery_bar_animate_summary">Die Lade Animation kann das System verlangsamen</string>
 
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_category">Uhr</string>
@@ -811,18 +811,18 @@
     <string name="clock_font_italic">Kursiv</string>
     <string name="clock_font_bold">Fett</string>
     <string name="clock_font_bold_italic">Fett-Kursiv</string>
-    <string name="clock_font_light">Dünn</string>
-    <string name="clock_font_light_italic">Dünn-Kursiv</string>
-    <string name="clock_font_thin">Thin</string>
-    <string name="clock_font_thin_italic">Thin Italic</string>
-    <string name="clock_font_condensed">Condensed</string>
-    <string name="clock_font_condensed_italic">Condensed Italic</string>
-    <string name="clock_font_condensed_bold">Condensed Bold</string>
-    <string name="clock_font_condensed_bold_italic">Condensed Bold Italic</string>
-    <string name="clock_font_medium">Medium</string>
-    <string name="clock_font_medium_italic">Medium Italic</string>
-    <string name="clock_font_size_title">Font size</string>
-    <string name="status_bar_show_clock_second_title">Clock seconds</string>
+    <string name="clock_font_light">Leicht</string>
+    <string name="clock_font_light_italic">Leicht-Kursiv</string>
+    <string name="clock_font_thin">Dünn</string>
+    <string name="clock_font_thin_italic">Dünn-Kursiv</string>
+    <string name="clock_font_condensed">Schmal</string>
+    <string name="clock_font_condensed_italic">Schmal-Kursiv</string>
+    <string name="clock_font_condensed_bold">Schmal-Fett</string>
+    <string name="clock_font_condensed_bold_italic">Schmal-Fett-Kursiv</string>
+    <string name="clock_font_medium">Mittel</string>
+    <string name="clock_font_medium_italic">Mittel-Kursiv</string>
+    <string name="clock_font_size_title">Schriftgröße</string>
+    <string name="status_bar_show_clock_second_title">Sekundenanzeige</string>
     <string name="clock_font_size_4">4</string>
     <string name="clock_font_size_5">5</string>
     <string name="clock_font_size_6">6</string>
@@ -843,33 +843,33 @@
     <string name="clock_font_size_21">21</string>
     <string name="clock_font_size_22">22</string>
     <string name="clock_font_size_23">23</string>
-    <string name="clock_date_position">Date position</string>
-    <string name="clock_date_right">Right of time</string>
-    <string name="clock_date_left">Left of time</string>
+    <string name="clock_date_position">Datumsposition</string>
+    <string name="clock_date_right">Rechts neben Zeit</string>
+    <string name="clock_date_left">Links neben Zeit</string>
 
     <!-- Pie control -->
     <string name="pie_control_title">SlimPIE</string>
-    <string name="pie_control_summary">Enable pie on screen navigation</string>
-    <string name="pie_control_size">Navigation size</string>
-    <string name="pie_control_trigger_positions">Trigger options</string>
-    <string name="pie_control_trigger_left">Trigger left screen border</string>
-    <string name="pie_control_trigger_bottom">Trigger bottom screen border</string>
-    <string name="pie_control_trigger_right">Trigger right screen border</string>
-    <string name="pie_control_trigger_top">Trigger top screen border</string>
-    <string name="pie_control_trigger_top_summary">Top pie does not show status and clock information</string>
-    <string name="pie_button_style">Buttons style</string>
-    <string name="pie_button_color_title">Button color</string>
-    <string name="pie_button_alpha_title">Button transparency</string>
-    <string name="pie_button_outline_color_title">Button outline color</string>
-    <string name="pie_button_pressed_color_title">Button pressed color</string>
-    <string name="pie_button_long_pressed_color_title">Button long pressed color</string>
-    <string name="pie_button_pressed_alpha_title">Button pressed transparency</string>
-    <string name="pie_icon_style">Button icon style</string>
-    <string name="pie_icon_color_title">Button icon color</string>
-    <string name="pie_icon_color_mode_title">Button icon color mode</string>
-    <string name="pie_icon_color_mode_dialog_title">Colorize</string>
-    <string name="pie_icon_color_mode_summary">Change the button icon color mode</string>
-    <string name="pie_trigger_note_title">Note</string>
+    <string name="pie_control_summary">Pie Bildschirm Navigation aktivieren</string>
+    <string name="pie_control_size">Navigationsgröße</string>
+    <string name="pie_control_trigger_positions">Auslöser Einstellungen</string>
+    <string name="pie_control_trigger_left">Auslöser am linken Bildschirmrand</string>
+    <string name="pie_control_trigger_bottom">Auslöser am unteren Bildschirmrand</string>
+    <string name="pie_control_trigger_right">Auslöser am rechten Bildschirmrand</string>
+    <string name="pie_control_trigger_top">Auslöser am oberen Bildschirmrand</string>
+    <string name="pie_control_trigger_top_summary">Oberes Pie Element zeigt keine Status und Zeit Informationen</string>
+    <string name="pie_button_style">Button Stil</string>
+    <string name="pie_button_color_title">Button Farbe</string>
+    <string name="pie_button_alpha_title">Button Transparenz</string>
+    <string name="pie_button_outline_color_title">Button Rahmen Farbe</string>
+    <string name="pie_button_pressed_color_title">Farbe wenn Button gedrückt ist</string>
+    <string name="pie_button_long_pressed_color_title">Farbe wenn Button lange gedrückt wird</string>
+    <string name="pie_button_pressed_alpha_title">Button Transparenz wenn gedrückt</string>
+    <string name="pie_icon_style">Button Symbol Stil</string>
+    <string name="pie_icon_color_title">Button Symbol Farbe</string>
+    <string name="pie_icon_color_mode_title">Button Symbol Farbemodus</string>
+    <string name="pie_icon_color_mode_dialog_title">Färben</string>
+    <string name="pie_icon_color_mode_summary">Farbmodus des Buttons ändern</string>
+    <string name="pie_trigger_note_title">Hinweis</string>
     <string name="pie_trigger_note_summary">To avoid conflicts with status bar or navigation bar, the triggers on these edges are automatically turned off if one or both are available</string>
     <string name="pie_background_color_title">Hintergrundfarbe</string>
     <string name="pie_snap_color_title">Snap point color</string>
@@ -901,7 +901,7 @@
     <string name="pie_trigger_sensitivity_summary">Adjust the pie trigger sensitivity</string>
 
     <!-- Navigation bar visibility -->
-    <string name="navigation_menu_default_jb_behavior">Show on request (default)</string>
+    <string name="navigation_menu_default_jb_behavior">Show on request (Standard)</string>
     <string name="navigation_menu_never_show">Zeige nie</string>
     <string name="navigation_menu_always_show">Zeige immer</string>
     <string name="title_pref_menu_display">Menu visibility</string>
@@ -1037,7 +1037,7 @@
     <string name="nfc_polling_mode_title">NFC polling mode</string>
     <string name="nfc_polling_mode_screen_off">Bildschirm aus</string>
     <string name="nfc_polling_mode_screen_locked">Bildschirm an, gesperrt</string>
-    <string name="nfc_polling_mode_screen_unlocked">Bildschirm an, entsperrt (default)</string>
+    <string name="nfc_polling_mode_screen_unlocked">Bildschirm an, entsperrt (Standard)</string>
 
     <!-- Notification drawer clear all icon -->
     <string name="notification_drawer_clear_all_icon_color_title">Clear all icon</string>
@@ -1053,7 +1053,7 @@
     <string name="disable_torch_screen_off_title">Disable torch on screen off</string>
     <string name="disable_torch_screen_off_delay_title">Delay</string>
     <string name="torch_screen_off_one_second">1 second</string>
-    <string name="torch_screen_off_ten_second">10 Sekunden (default)</string>
+    <string name="torch_screen_off_ten_second">10 Sekunden (Standard)</string>
     <string name="torch_screen_off_thirty_second">30 Sekunden</string>
     <string name="torch_screen_off_one_minute">1 minute</string>
     <string name="torch_screen_off_five_minutes">5 minutes</string>
@@ -1083,7 +1083,7 @@
     <string name="recent_panel_scale_title">Size</string>
     <string name="recent_panel_expanded_mode_title">Expanded mode</string>
     <string name="recent_panel_expanded_mode_summary">Recent tasks expanded preview mode</string>
-    <string name="recent_panel_expanded_mode_auto">Auto (default)</string>
+    <string name="recent_panel_expanded_mode_auto">Auto (Standard)</string>
     <string name="recent_panel_expanded_mode_always">Always</string>
     <string name="recent_panel_expanded_mode_never">Never</string>
     <string name="recent_panel_show_topmost_title">Show topmost task</string>
@@ -1136,7 +1136,7 @@
     <string name="status_bar_temperature_location_right">Show on right</string>
     <string name="status_bar_temperature_location_left">Show on left</string>
     <string name="status_bar_weather_color_title">Temperature color</string>
-    <string name="status_bar_weather_size_title">Font size</string>
+    <string name="status_bar_weather_size_title">Schriftgröße</string>
     <string name="status_bar_weather_font_style_title">Font</string>
     <string name="status_bar_weather_font_normal">Normal</string>
     <string name="status_bar_weather_font_italic">Italic</string>
