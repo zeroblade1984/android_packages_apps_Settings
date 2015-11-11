@@ -95,8 +95,8 @@
     <string name="shortcut_action_media_previous">Musik - vorheriges Lied</string>
     <string name="shortcut_action_wake_device">Gerät aufwecken</string>
 
-    <string name="shortcut_action_longpress">Longpress:</string>
-    <string name="shortcut_action_select_action_longpress">Longpress Aktion wählen:</string>
+    <string name="shortcut_action_longpress">Lange drücken:</string>
+    <string name="shortcut_action_select_action_longpress">Lange drücken Aktion wählen:</string>
     <string name="shortcut_action_select_action">Aktion wählen:</string>
     <string name="shortcut_action_select_action_newaction">Neue Aktion wählen:</string>
     <string name="shortcut_action_reset">Zurücksetzen</string>
@@ -108,13 +108,13 @@
     <string name="shortcut_action_disable_message">Deaktiviert\nZum aktivieren neuen Eintrag hinzufügen</string>
     <string name="shortcut_image_not_valid">Gewählte App hat kein gültiges Symbol zurückgegeben. Andere App benutzen.</string>
     <string name="shortcut_duplicate_entry">Gewählte Aktion kann nur einmal hinzugefügt werden.</string>
-    <string name="shortcut_action_help_shortcut">Shortcut</string>
-    <string name="shortcut_action_help_button">Button</string>
+    <string name="shortcut_action_help_shortcut">Kurzwahl</string>
+    <string name="shortcut_action_help_button">Knopf</string>
     <string name="shortcut_action_help_app">App</string>
     <string name="shortcut_action_help_icon">, Symbol auswählen, um weitere Optionen zu erhalten.</string>
     <string name="shortcut_action_help_main">Plus Symbol wählen, um %1$s hinzuzufügen. Wenn %1$s hinzugefügt ist, ändert sich das Ziel %2$s wenn die Zeile gewählt wird\n\nUm %1$s zu entfernen, horizontal wischen. Ankerpunkt verschieben um %1$s in Liste anzuordnen.\n\nReset wählen um zur Standardeinstellung zurückzukehren.</string>
     <string name="shortcut_action_help_delete_last_entry">Wenn alle %1$s in der Liste entfernt wurden ist die Funktion deaktiviert.</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Alle %1$s in der Listge entfernen deaktiviert das zweite Pie-Layer.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Alle %1$s in der Liste entfernen deaktiviert das zweite Pie-Layer.</string>
     <string name="shortcut_action_theme_switch">Theme wechseln</string>
 
 
@@ -123,8 +123,8 @@
     <string name="shortcuts_icon_picker_type">Symbol Typ wählen:</string>
     <string name="shortcuts_icon_default">Standard</string>
     <string name="shortcuts_icon_presets">System Symbole</string>
-    <string name="shortcuts_icon_custom">Gallerie</string>
-    <string name="shortcuts_icon_picker_choose_icon_title">Symbolwählen</string>
+    <string name="shortcuts_icon_custom">Galerie</string>
+    <string name="shortcuts_icon_picker_choose_icon_title">Symbol wählen</string>
 
     <string name="shortcuts_icon_picker_alarm">Alarm</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
@@ -267,22 +267,22 @@
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">CPU Info anzeigen</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
-    <string name="show_cpu_info_summary">Overlay mit aktuellen CPU Informationen</string>
+    <string name="show_cpu_info_summary">Überlagerung mit aktuellen CPU Informationen</string>
 
     <!-- Sound settings -->
     <string name="advanced_sound_title">Erweiterte Einstellungen</string>
     <string name="sound_title">Töne</string>
 
     <!-- Camera sound switch -->
-    <string name="camera_sounds_title">Kamera Auslöser Klang</string>
-    <string name="camera_sounds_summary">Kamera Auslöser Klang aktivieren</string>
-    <string name="camera_sound_warning_dialog_text">In einigen Ländern ist das Abschalten des Kamera Auslöser Klangs nicht legal.</string>
+    <string name="camera_sounds_title">Kameraverschluss Ton</string>
+    <string name="camera_sounds_summary">Kameraverschluss Ton aktivieren</string>
+    <string name="camera_sound_warning_dialog_text">In einigen Ländern ist das Abschalten des Kameraverschluss Ton's illegal.</string>
 
     <!-- MediaScanner behavior on boot -->
     <string name="options_settings_title">Einstellungen</string>
     <string name="media_scanner_on_boot_title">MediaScanner Verhalten beim Neustart</string>
     <string name="media_scanner_on_boot_enabled">Medien durchsuchen</string>
-    <string name="media_scanner_on_boot_ask">Vor dem suchen bestätigen (Benachrichtigung)</string>
+    <string name="media_scanner_on_boot_ask">Vor dem Suchen bestätigen (Benachrichtigung)</string>
     <string name="media_scanner_on_boot_disabled">Medien nicht durchsuchen</string>
 
     <!-- OmniSwitch -->
@@ -307,7 +307,7 @@
     <string name="recents_clear_all_dismiss_all_title">Alle Tasks beenden</string>
     <string name="recents_clear_all_dismiss_all_summary">Soll auch die App im Vordergrund beendet werden?</string>
     <string name="recents_show_membar_title">RAM Anzeige</string>
-    <string name="recents_show_membar_summary">Verfügbares RAM als Balken darstellen</string>
+    <string name="recents_show_membar_summary">Verfügbaren RAM als Balken darstellen</string>
 
     <!-- Toast animations -->
     <string name="toast_animation_title">Toast Animationen</string>
@@ -1128,7 +1128,7 @@
 
     <!-- Status bar temperature -->
     <string name="status_bar_temperature_title">Weather temperature</string>
-    <string name="status_bar_temperature_hidden">Hidden</string>
+    <string name="status_bar_temperature_hidden">Versteckt</string>
     <string name="status_bar_temperature_show_scale">Shown with scale</string>
     <string name="status_bar_temperature_hide_scale">Shown without scale</string>
     <string name="status_bar_temperature_location_title">Placement</string>
@@ -1155,7 +1155,7 @@
 
     <!-- Headphones icon switch -->
     <string name="show_headset_icon_title">Headset Symbol</string>
-    <string name="show_headset_icon_summary">Shows icon when headsets are connected.</string>
+    <string name="show_headset_icon_summary">Zeige Symbol, wenn ein Headset angeschlossen ist.</string>
 
     <!-- Notification color settings -->
     <string name="notification_color_settings_title">Notification colors</string>
@@ -1175,11 +1175,11 @@
 
     <!-- Scrolling Cache -->
     <string name="pref_scrollingcache_title">Scroll Cache</string>
-    <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
-    <string name="pref_scrollingcache_force_enable">Force enable</string>
-    <string name="pref_scrollingcache_default_enable">Default enable</string>
-    <string name="pref_scrollingcache_default_disable">Default disable</string>
-    <string name="pref_scrollingcache_force_disable">Force disable</string>
+    <string name="pref_scrollingcache_summary">Der Scroll Cache kann die Performance auf Kosten vom Speicher verbessern</string>
+    <string name="pref_scrollingcache_force_enable">Immer aktiviert</string>
+    <string name="pref_scrollingcache_default_enable">Standart aktiviert</string>
+    <string name="pref_scrollingcache_default_disable">Standart deaktiviert</string>
+    <string name="pref_scrollingcache_force_disable">Immer Deaktiviert</string>
 
     <!-- Lockscreen wallpaper -->
     <string name="lockscreen_wallpaper_title">Hintergrundbild</string>
@@ -1193,11 +1193,11 @@
     <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
 
     <!-- Whether the keyguard will directly pass to gesture entry -->
-    <string name="lock_directly_show_gesture">Directly show gesture </string>
+    <string name="lock_directly_show_gesture">Zeige Geste direkt </string>
 
     <!-- Time-context headers in notification header -->
     <string name="contextual_title">Contextual headers</string>
-    <string name="status_bar_custom_header_title">Custom header image</string>
+    <string name="status_bar_custom_header_title">Eigenes Header-Bild</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
     <string name="status_bar_custom_header_default_title">Select your images</string>
     <string name="custom_header_image_0">Standard</string>
@@ -1210,7 +1210,7 @@
 
     <!-- Chamber of Secrets -->
     <string name="chamber_title">Kammer der Geheimnisse</string>
-    <string name="chamber_toast">Die Kammer der Geheimnisse hat sich geöffnet</string>
+    <string name="chamber_toast">Die Kammer der Geheimnisse wurde geöffnet</string>
 
     <!-- Expand volume panel -->
     <string name="volume_panel_expanded_title">Expand volume panel</string>
@@ -1243,27 +1243,27 @@
     <string name="doze_notification_color_invert_summary_on">Umgebende Bildschirmbenachrichtigungen werden invertiert dargestellt. Bei hellem/stock Theme verwenden.</string>
 
     <!-- On-The-Go -->
-    <string name="power_menu_onthego_title">On-The-Go Mode</string>
-    <string name="onthego_alpha_title">On-The-Go Alpha</string>
+    <string name="power_menu_onthego_title">Laufmodus</string>
+    <string name="onthego_alpha_title">Laufmodus Alpha</string>
     <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay.</string>
 
     <!-- Lockscreen see through -->
     <string name="lockscreen_see_through_title">Sperrbildschirm unscharf</string>
-    <string name="lockscreen_see_through_summary">Stellt den Inhalt hinter dem Sperrbildschirm verschwommen dar.</string>
-    <string name="lockscreen_blur_radius">Stärke des Unschärfe-Effekts</string>
+    <string name="lockscreen_see_through_summary">Stellt den Inhalt hinter dem Sperrbildschirm unscharf dar.</string>
+    <string name="lockscreen_blur_radius">Stärke des Unschärfe-Effektes</string>
 
     <!-- Status Bar Activity Indicators -->
-    <string name="status_bar_network_activity_title">Activity indicators</string>
-    <string name="status_bar_network_activity_summary">Show indicators in signal bars</string>
+    <string name="status_bar_network_activity_title">Aktivitäts Indikatoren</string>
+    <string name="status_bar_network_activity_summary">Zeige Indikatoren in der Statusleiste</string>
 
     <!-- Media art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>
 
     <!-- Heads up -->
-    <string name="heads_up_title">Heads up notification</string>
-    <string name="heads_up_global_switch_title">Heads up notifications mode</string>
-    <string name="heads_up_global_switch_summary_disabled">Heads up notifications are disabled</string>
+    <string name="heads_up_title">Kopfüber Benachrichtigungen</string>
+    <string name="heads_up_global_switch_title">Kopfüber Benachrichtigungs-Modus</string>
+    <string name="heads_up_global_switch_summary_disabled">Kopfüber Benachrichtigungen sind deaktiviert</string>
     <string name="heads_up_global_switch_summary_perapp">Heads up notifications are en-/disabled on a per app basis</string>
     <string name="heads_up_global_switch_summary_forced">Heads up notifications are force enabled for all apps</string>
     <string name="heads_up_global_switch_disabled">Never show heads up notifications</string>
