@@ -276,7 +276,7 @@
     <!-- Camera sound switch -->
     <string name="camera_sounds_title">Kameraverschluss Ton</string>
     <string name="camera_sounds_summary">Kameraverschluss Ton aktivieren</string>
-    <string name="camera_sound_warning_dialog_text">In einigen Ländern ist das Abschalten des Kameraverschluss Ton's illegal.</string>
+    <string name="camera_sound_warning_dialog_text">In einigen Ländern ist das Abschalten des Kameraverschluss Tons illegal.</string>
 
     <!-- MediaScanner behavior on boot -->
     <string name="options_settings_title">Einstellungen</string>
